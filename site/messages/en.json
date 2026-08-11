@@ -92,7 +92,8 @@
   "footer": {
     "imprint": "Impressum",
     "privacy": "Datenschutz",
-    "rights": "Zaritzki Fine Dentistry"
+    "rights": "Zaritzki Fine Dentistry",
+    "tagline": "A private dental practice in Berlin for privately insured and self-paying patients."
   },
   "pending": {
     "label": "Awaiting practice confirmation"
