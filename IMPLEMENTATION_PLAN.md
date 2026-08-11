@@ -16,6 +16,107 @@
 **Product truth:** [`PRODUCT.md`](PRODUCT.md)
 **Visual authority:** [`DESIGN_SYSTEM_REFERENCE.md`](DESIGN_SYSTEM_REFERENCE.md) and `tokens/*.css`
 
+## Continuation handoff — after Phase 5
+
+This is the authoritative restart point for a new agent. Read this section,
+then `HANDOFF.md`, the Global Constraints below, the Phase 6 binding note, and
+`BUILD_CHECKLIST.md` before taking any action.
+
+### Repository and review state
+
+- Workspace: `C:\Users\Lam\Desktop\Code Projects\Zaritzki Fine Dentistry Design System\zaritzki_handoff`
+- Branch: `feat/zaritzki-landing-page`
+- Verified implementation baseline before this documentation update: `4e425dd`
+  (`docs: complete phase five verification`). The handoff documentation commit
+  should be the next commit; confirm the actual `HEAD` with `git log -5 --oneline`.
+- Phases 1–4 are implemented, verified, and explicitly approved by the user.
+- Phase 5 is implemented and verified, but `User approved Phase 5` remains
+  unchecked. Do not mark it approved or begin Phase 6 until the user explicitly
+  confirms the gate.
+- At handoff, the user reported that only 14% of their weekly Codex allowance
+  remained. The recommendation was to wait for the allowance reset because
+  Phase 6 is not safely predictable within 14%. Treat that percentage as
+  time-sensitive: ask the user whether the allowance has reset and whether they
+  authorize Phase 6 before dispatching Task 17.
+- The worktree and port 3000 were clean at the Phase 5 closeout. Re-check both;
+  never discard or overwrite new user changes.
+
+### Fresh verified baseline
+
+The final post-fix verification produced all of the following:
+
+| Check | Result |
+|---|---|
+| Unit tests | 93/93 passed |
+| Desktop/mobile E2E | 16/16 passed |
+| Lint | no warnings or errors |
+| Strict TypeScript | clean |
+| Production build | clean |
+| Pending CLI | exactly four facts |
+| Direction seed | `2c7cb46c` present in the built server artifact |
+| Anchor clearance | `145px` mobile / `137px` desktop present in emitted CSS |
+| Port 3000 | no listener |
+
+The four and only four unresolved facts are the typed `OPEN_FACTS` entries
+`clinicians`, `sharedTeam`, `selfPayWording`, and `photography`. Sourcing stock
+photography in Task 17 does **not** make `photography` known: the practice must
+still approve or replace all twelve images.
+
+### Unresolved user-reported hero issue
+
+After Phase 5 verification, the user reported: “The hero section still bugs on
+smaller displays.” No exact viewport, browser, or failure mode was supplied.
+This is unresolved and is now a binding Phase 6 acceptance item.
+
+- Do not claim that Task 17 photography will automatically fix it.
+- Do not conflate it with commit `275e906`, which fixed hash targets being
+  hidden beneath sticky/fixed chrome; that anchor bug is separately covered by
+  E2E and is already resolved.
+- First reproduce the hero at the user's affected viewport. If local inspection
+  does not reveal one unambiguous failure, ask the user for the viewport/device
+  and what overlaps, clips, disappears, or overflows. Do not guess.
+- Once reproduced, use `superpowers:systematic-debugging` and strict TDD. Add a
+  failing behavior or geometry regression before changing production CSS.
+- At minimum inspect headline, lede, qualifier, primary CTA, location controls,
+  step rail, and sticky booking bar for clipping, overlap, horizontal overflow,
+  and short-height behavior. Re-run the existing desktop and mobile projects
+  after the focused fix.
+- Record the diagnosis, RED/GREEN evidence, viewport, screenshots, review
+  verdict, and commit in the SDD ledger and checklist.
+
+### Resume procedure and Windows notes
+
+1. Read the user’s three standing rules: update the checklist after every task
+   and phase; stop for review after every phase; never invent uncertain facts.
+2. Confirm branch, `HEAD`, `git status --short`, and that port 3000 is clear.
+3. Obtain explicit Phase 5 approval and confirmation that Phase 6 may start.
+4. Use `superpowers:subagent-driven-development`,
+   `superpowers:executing-plans`, strict `superpowers:test-driven-development`,
+   and Impeccable exactly as in the earlier phases. Use a fresh implementer and
+   fresh independent reviewer per task; do not run the detector before Task 20.
+5. On PowerShell use `npm.cmd` and `npx.cmd`, not bare `npm`/`npx` or the stale
+   `pnpm` examples in older plan steps. `npm.cmd run pending` may need approved
+   normal-environment access because sandboxed `tsx` can fail with a misleading
+   `uv_os_get_passwd` / `ENOMEM` error.
+6. Run visual captures sequentially. Concurrent Playwright screenshot processes
+   previously stalled the local dev server. Writes to `C:\tmp` also returned
+   `EPERM`; use the planned workspace paths such as `site/screenshots/`.
+7. A one-shot full-page screenshot does not scroll through Reveal observers and
+   can show large blank sections. Exercise the real scroll/anchor flow first so
+   every section has entered the viewport, then capture. Also preserve a clean
+   first-viewport capture for hero review.
+8. Stop the preview server after inspection and verify port 3000 is released.
+
+### Known non-blocking review notes
+
+These are documented hardening opportunities, not permission to expand scope
+before the Phase 6 acceptance work: per-face FontFace status coverage; the
+`useLocation` outside-provider guard; direct IntersectionObserver scroll-spy
+callback coverage; exact proof rating/testimonial/contact assertions; full
+ProofBand/ClosingCta order locking; and an upper viewport bound in the anchor
+clearance E2E. Preserve them in the ledger and let Task 19/20 own any relevant
+hardening.
+
 ---
 
 ## Global Constraints
@@ -3958,6 +4059,16 @@ git commit -m "feat: compose the landing page from the walk's sections"
 
 # Phase 6 — Assets, search, and verification
 
+> **Binding continuation note (2026-08-11):** Phase 5 user approval and renewed
+> execution budget are prerequisites. Task 17 still owns the missing image
+> files, but the user-reported smaller-display hero bug is a separate Task 20
+> acceptance item and must be reproduced rather than assumed. Before the
+> detector/final screenshots, diagnose it with systematic debugging, add a
+> focused failing regression, implement the minimum fix, obtain independent
+> review, and verify the existing desktop/mobile suites. For final full-page
+> screenshots, scroll through the real page first so Reveal sections have
+> entered the viewport; also retain an untouched first-viewport capture.
+
 ## Task 17: Source and verify the photography
 
 **Files:**
@@ -4366,6 +4477,13 @@ git commit -m "test: add conversion, accessibility, no-JS, and voice guards"
 - Consumes: the finished build.
 - Produces: the run's exit condition, as the direction contract's FINISH line requires.
 
+> **Responsive acceptance gate:** before Step 1, resolve the continuation
+> handoff's user-reported smaller-display hero issue using systematic debugging
+> and strict TDD. If the symptom cannot be reproduced unambiguously, stop and
+> ask the user for the affected viewport/device and visible failure. Commit the
+> independently reviewed fix separately before running the detector. This gate
+> is mandatory even if Task 17's photographs make the hero appear different.
+
 - [ ] **Step 1: Run the mechanical design detector once**
 
 ```bash
@@ -4383,9 +4501,20 @@ npx playwright screenshot --viewport-size=1440,900 --full-page http://localhost:
 npx playwright screenshot --viewport-size=390,844 --full-page http://localhost:3000/en screenshots/mobile.png
 ```
 
+The command block is illustrative only on this Windows workspace. Use
+`npm.cmd`/`npx.cmd`, start one server, and capture sequentially. Before each
+full-page capture, drive the page through its real anchors/scroll positions so
+all Reveal observers have fired. Capture the untouched hero first viewport
+separately at the reproduced smaller-display viewport.
+
 - [ ] **Step 3: Inspect both, fix material gaps in one batch, and recapture once**
 
-Two rounds is the ceiling. Check specifically: the CTA hugs its label at both widths; the step rail sticks on desktop and scrolls on mobile; text over photography holds contrast; nothing overflows horizontally; the pale Charlottenburg imagery still reads inside the espresso chrome.
+Two rounds is the ceiling. Check specifically: the user-reported smaller-display
+hero symptom is absent at the confirmed reproduction viewport; the hero
+headline, lede, qualifier, and CTA are not clipped or covered; the CTA hugs its
+label at both widths; the step rail sticks on desktop and scrolls on mobile;
+text over photography holds contrast; nothing overflows horizontally; the pale
+Charlottenburg imagery still reads inside the espresso chrome.
 
 - [ ] **Step 4: Spawn the finish reviewer**
 

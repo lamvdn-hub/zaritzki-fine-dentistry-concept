@@ -53,10 +53,12 @@ This checklist is updated after every task and phase. Phase transitions require 
 
 ## Phase 6 — Assets, search, and verification
 
+- [ ] Phase 5 explicitly approved and execution budget confirmed before starting
 - [ ] Task 17 — Source and verify photography
 - [ ] Task 18 — Structured data and metadata
 - [ ] Task 19 — End-to-end behavior, accessibility, and guards
 - [ ] Task 20 — Detector, finish review, and documentation
+- [ ] Reproduce and resolve the user-reported smaller-display hero issue with TDD and independent review
 - [ ] Phase 6 verification complete
 - [ ] User approved Phase 6
 
@@ -65,4 +67,4 @@ This checklist is updated after every task and phase. Phase transitions require 
 - [x] Phase 3: preserve phone access on mobile and externalize footer copy.
 - [x] Phase 4: create `StepRail` before consumers; keep no-JavaScript content visible; implement rail release behavior.
 - [x] Phase 5: keep translation data serializable across the server/client boundary; type every unresolved fact.
-- [ ] Phase 6: strengthen interaction/reduced-motion/contrast verification; replace the Unicode star; use safe temporary image outputs; pass the complete finish-review packet.
+- [ ] Phase 6: strengthen interaction/reduced-motion/contrast verification; reproduce and fix the smaller-display hero issue; replace the Unicode star; use safe workspace image outputs and sequential captures; pass the complete finish-review packet.
