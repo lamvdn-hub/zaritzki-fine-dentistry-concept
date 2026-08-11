@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { margin: 0; padding: 28px; background: var(--surface-page); }
+  .wrap { display: flex; flex-direction: column; gap: 22px; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .lbl { font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div id="root" class="wrap"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Card, CardEyebrow, CardTitle, CardBody, Badge, Tag } = window.ZaritzkiFineDentistryDesignSystem_dfee56;
+function Demo(){
+  return (<>
+    <div className="cards">
+      <Card interactive>
+        <CardEyebrow>Prophylaxis</CardEyebrow>
+        <CardTitle>Professional cleaning</CardTitle>
+        <CardBody>A thorough, gentle clean tailored to your enamel and gum line.</CardBody>
+      </Card>
+      <Card variant="inverse">
+        <CardEyebrow>Membership</CardEyebrow>
+        <CardTitle>The care circle</CardTitle>
+        <CardBody>Priority scheduling and annual check-ups, cared for year-round.</CardBody>
+      </Card>
+    </div>
+    <div>
+      <div className="lbl">Badges</div>
+      <div className="row">
+        <Badge variant="success" dot>Accepting patients</Badge>
+        <Badge variant="gold">Private &amp; statutory</Badge>
+        <Badge variant="solid">Featured</Badge>
+        <Badge variant="neutral">Charlottenburg</Badge>
+        <Badge variant="warning">2 slots left</Badge>
+        <Badge variant="danger">Closed today</Badge>
+        <Badge variant="info">By referral</Badge>
+      </div>
+    </div>
+    <div>
+      <div className="lbl">Tags</div>
+      <div className="row">
+        <Tag selected>Implantology</Tag>
+        <Tag>Whitening</Tag>
+        <Tag>Orthodontics</Tag>
+        <Tag onRemove={()=>{}}>Removable</Tag>
+      </div>
+    </div>
+  </>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body>
+</html>

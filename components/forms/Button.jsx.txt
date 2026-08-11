@@ -1,0 +1,74 @@
+import React from 'react';
+
+let injected = false;
+function inject() {
+  if (injected || typeof document === 'undefined') return;
+  injected = true;
+  const css = `
+.zk-btn{--_h:44px;--_px:22px;--_fs:0.9375rem;display:inline-flex;align-items:center;justify-content:center;gap:0.55em;
+  font-family:var(--font-sans);font-weight:var(--fw-semibold);font-size:var(--_fs);letter-spacing:0.01em;line-height:1;
+  height:var(--_h);padding:0 var(--_px);border-radius:var(--radius-sm);border:1px solid transparent;cursor:pointer;
+  text-decoration:none;white-space:nowrap;transition:background var(--duration-fast) var(--ease-standard),
+  color var(--duration-fast) var(--ease-standard),border-color var(--duration-fast) var(--ease-standard),
+  box-shadow var(--duration-fast) var(--ease-standard),transform var(--duration-fast) var(--ease-standard);}
+.zk-btn:active{transform:translateY(1px);}
+.zk-btn:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;}
+.zk-btn[disabled],.zk-btn[aria-disabled="true"]{opacity:0.45;cursor:not-allowed;transform:none;}
+.zk-btn--sm{--_h:36px;--_px:16px;--_fs:0.875rem;}
+.zk-btn--lg{--_h:54px;--_px:30px;--_fs:1rem;}
+.zk-btn--block{display:flex;width:100%;}
+.zk-btn__icon{display:inline-flex;flex:0 0 auto;}
+.zk-btn__icon svg{width:1.1em;height:1.1em;display:block;}
+/* primary — brass fill */
+.zk-btn--primary{background:var(--gold);color:var(--brand-contrast);box-shadow:var(--shadow-xs);}
+.zk-btn--primary:hover{background:var(--gold-light);box-shadow:var(--shadow-gold);}
+.zk-btn--primary:active{background:var(--gold-deep);}
+/* secondary — espresso solid */
+.zk-btn--secondary{background:var(--espresso);color:var(--ivory);}
+.zk-btn--secondary:hover{background:var(--cocoa);}
+.zk-btn--secondary:active{background:#160f0a;}
+/* ghost — hairline on light */
+.zk-btn--ghost{background:transparent;color:var(--text-body);border-color:var(--border-strong);}
+.zk-btn--ghost:hover{background:var(--parchment);border-color:var(--umber);}
+.zk-btn--ghost:active{background:var(--stone);}
+/* link — quiet text */
+.zk-btn--link{background:transparent;color:var(--gold-deep);height:auto;padding:0;border-radius:0;}
+.zk-btn--link:hover{color:var(--cognac);}
+.zk-btn--link:active{transform:none;}
+`;
+  const el = document.createElement('style');
+  el.setAttribute('data-zk', 'button');
+  el.textContent = css;
+  document.head.appendChild(el);
+}
+
+export function Button({
+  variant = 'primary',
+  size = 'md',
+  fullWidth = false,
+  iconLeft,
+  iconRight,
+  disabled = false,
+  as = 'button',
+  className = '',
+  children,
+  ...rest
+}) {
+  inject();
+  const Tag = as;
+  const classes = [
+    'zk-btn',
+    `zk-btn--${variant}`,
+    size !== 'md' ? `zk-btn--${size}` : '',
+    fullWidth ? 'zk-btn--block' : '',
+    className,
+  ].filter(Boolean).join(' ');
+  const extra = Tag === 'button' ? { disabled } : { 'aria-disabled': disabled || undefined };
+  return (
+    <Tag className={classes} {...extra} {...rest}>
+      {iconLeft && <span className="zk-btn__icon">{iconLeft}</span>}
+      {children && <span>{children}</span>}
+      {iconRight && <span className="zk-btn__icon">{iconRight}</span>}
+    </Tag>
+  );
+}

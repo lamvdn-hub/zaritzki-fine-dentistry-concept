@@ -1,0 +1,28 @@
+// Site header — wordmark, nav, book CTA. `onNav(page)` switches screens, `page` is active.
+function SiteHeader({ page, onNav, dark = false }) {
+  const { Button } = window.ZaritzkiFineDentistryDesignSystem_dfee56;
+  const { Phone, Menu } = window.ZKIcons;
+  const links = [['services','Services'],['approach','Approach'],['team','Team'],['book','Contact']];
+  const fg = dark ? 'var(--ivory)' : 'var(--text-strong)';
+  const muted = dark ? 'rgba(245,240,230,.72)' : 'var(--text-muted)';
+  return (
+    <header style={{position:'sticky',top:0,zIndex:20,background:dark?'rgba(26,15,8,0.72)':'rgba(251,248,241,0.82)',backdropFilter:'blur(12px)',borderBottom:`1px solid ${dark?'rgba(255,255,255,.10)':'var(--border-soft)'}`}}>
+      <div style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'0 var(--gutter)',height:78,display:'flex',alignItems:'center',gap:32}}>
+        <a onClick={()=>onNav('home')} style={{cursor:'pointer',display:'flex',flexDirection:'column',lineHeight:1}}>
+          <span style={{fontFamily:'var(--font-display)',fontSize:26,fontWeight:500,color:fg,letterSpacing:'.01em'}}>Zaritzki</span>
+          <span style={{fontFamily:'var(--font-sans)',fontSize:9,fontWeight:600,letterSpacing:'.34em',textTransform:'uppercase',color:'var(--gold-light)',marginTop:3}}>Fine Dentistry</span>
+        </a>
+        <nav style={{display:'flex',gap:28,marginLeft:20}}>
+          {links.map(([id,label])=>(
+            <a key={id} onClick={()=>onNav(id)} style={{cursor:'pointer',fontFamily:'var(--font-sans)',fontSize:15,fontWeight:page===id?600:500,color:page===id?'var(--gold-light)':muted,letterSpacing:'.01em'}}>{label}</a>
+          ))}
+        </nav>
+        <div style={{marginLeft:'auto',display:'flex',alignItems:'center',gap:16}}>
+          <a href="tel:+493000000000" style={{display:'flex',alignItems:'center',gap:8,fontFamily:'var(--font-sans)',fontSize:14,fontWeight:600,color:muted}}><Phone size={17}/> 030 88 62 40</a>
+          <Button variant="primary" size="sm" onClick={()=>onNav('book')}>Book a visit</Button>
+        </div>
+      </div>
+    </header>
+  );
+}
+window.SiteHeader = SiteHeader;

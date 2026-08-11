@@ -1,0 +1,13 @@
+import * as React from 'react';
+
+export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
+  /** Colour intent. */
+  variant?: 'neutral' | 'gold' | 'solid' | 'success' | 'warning' | 'danger' | 'info';
+  size?: 'sm' | 'md';
+  /** Show a leading status dot. */
+  dot?: boolean;
+  children?: React.ReactNode;
+}
+
+/** Small uppercase status label for states and categories. */
+export function Badge(props: BadgeProps): JSX.Element;

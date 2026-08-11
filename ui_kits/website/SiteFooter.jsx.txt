@@ -1,0 +1,36 @@
+// Site footer — espresso ground, gold rule, practice details.
+function SiteFooter({ onNav }) {
+  const { MapPin, Clock, Phone } = window.ZKIcons;
+  const col = { display:'flex', flexDirection:'column', gap:12 };
+  const h = { fontFamily:'var(--font-sans)', fontSize:11, fontWeight:700, letterSpacing:'.18em', textTransform:'uppercase', color:'var(--gold-light)', margin:'0 0 4px' };
+  const a = { fontFamily:'var(--font-sans)', fontSize:14, color:'var(--text-on-dark-muted)', cursor:'pointer', display:'flex', gap:8, alignItems:'flex-start', lineHeight:1.5 };
+  return (
+    <footer style={{background:'var(--espresso)',color:'var(--text-on-dark)',borderTop:'1px solid var(--hairline-gold)'}}>
+      <div style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'64px var(--gutter) 40px',display:'grid',gridTemplateColumns:'1.6fr 1fr 1fr 1.2fr',gap:40}}>
+        <div>
+          <div style={{fontFamily:'var(--font-display)',fontSize:32,fontWeight:500,color:'var(--ivory)'}}>Zaritzki</div>
+          <div style={{fontFamily:'var(--font-sans)',fontSize:10,fontWeight:600,letterSpacing:'.34em',textTransform:'uppercase',color:'var(--gold-light)',margin:'6px 0 20px'}}>Fine Dentistry · Berlin</div>
+          <p style={{fontFamily:'var(--font-sans)',fontSize:14,lineHeight:1.7,color:'var(--text-on-dark-muted)',maxWidth:'34ch',margin:0}}>A calmer kind of dental practice in the heart of Charlottenburg — considered care in surroundings that put you at ease.</p>
+        </div>
+        <div style={col}><h4 style={h}>Practice</h4>
+          {[['services','Services'],['approach','Approach'],['team','Our team'],['book','Book a visit']].map(([id,l])=>(<a key={id} style={a} onClick={()=>onNav&&onNav(id)}>{l}</a>))}
+        </div>
+        <div style={col}><h4 style={h}>Hours</h4>
+          <div style={a}><Clock size={16}/><span>Mon–Thu · 8–18<br/>Fri · 8–14</span></div>
+          <div style={a}><span style={{color:'var(--gold-light)',fontWeight:600}}>Emergencies seen same day</span></div>
+        </div>
+        <div style={col}><h4 style={h}>Visit</h4>
+          <a style={a}><MapPin size={16}/><span>Kurfürstendamm 000<br/>10709 Berlin</span></a>
+          <a style={a} href="tel:+493088624000"><Phone size={16}/><span>030 88 62 40</span></a>
+        </div>
+      </div>
+      <div style={{borderTop:'1px solid rgba(255,255,255,.08)'}}>
+        <div style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'18px var(--gutter)',display:'flex',justifyContent:'space-between',fontFamily:'var(--font-sans)',fontSize:12,color:'rgba(245,240,230,.5)'}}>
+          <span>© 2026 Zaritzki Fine Dentistry</span>
+          <span style={{display:'flex',gap:20}}><a style={{color:'inherit'}}>Impressum</a><a style={{color:'inherit'}}>Datenschutz</a></span>
+        </div>
+      </div>
+    </footer>
+  );
+}
+window.SiteFooter = SiteFooter;

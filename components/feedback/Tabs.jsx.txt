@@ -1,0 +1,44 @@
+import React from 'react';
+
+let injected = false;
+function inject() {
+  if (injected || typeof document === 'undefined') return;
+  injected = true;
+  const css = `
+.zk-tabs__list{display:flex;gap:var(--space-5);border-bottom:1px solid var(--border-soft);}
+.zk-tab{position:relative;font-family:var(--font-sans);font-size:var(--text-md);font-weight:var(--fw-medium);
+  color:var(--text-muted);background:none;border:none;cursor:pointer;padding:0 0 14px;line-height:1.2;
+  transition:color var(--duration-fast) var(--ease-standard);}
+.zk-tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;transition:transform var(--duration-base) var(--ease-out);}
+.zk-tab:hover{color:var(--text-strong);}
+.zk-tab--active{color:var(--text-strong);font-weight:var(--fw-semibold);}
+.zk-tab--active::after{transform:scaleX(1);}
+.zk-tab:focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px;border-radius:2px;}
+.zk-tabs__panel{padding-top:var(--space-5);font-family:var(--font-sans);color:var(--text-body);}
+`;
+  const el = document.createElement('style');
+  el.setAttribute('data-zk', 'tabs');
+  el.textContent = css;
+  document.head.appendChild(el);
+}
+
+export function Tabs({ items = [], defaultTab, value, onChange, className = '' }) {
+  inject();
+  const [internal, setInternal] = React.useState(defaultTab ?? (items[0] && items[0].id));
+  const active = value !== undefined ? value : internal;
+  const select = (id) => { if (value === undefined) setInternal(id); onChange && onChange(id); };
+  const current = items.find((i) => i.id === active) || items[0];
+  return (
+    <div className={['zk-tabs', className].filter(Boolean).join(' ')}>
+      <div className="zk-tabs__list" role="tablist">
+        {items.map((it) => (
+          <button key={it.id} role="tab" aria-selected={it.id === active}
+            className={['zk-tab', it.id === active ? 'zk-tab--active' : ''].filter(Boolean).join(' ')}
+            onClick={() => select(it.id)}>{it.label}</button>
+        ))}
+      </div>
+      <div className="zk-tabs__panel" role="tabpanel">{current && current.content}</div>
+    </div>
+  );
+}

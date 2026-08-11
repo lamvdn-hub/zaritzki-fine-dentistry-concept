@@ -1,0 +1,253 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Mulish:wght@200;300;400;600;700&display=swap');
+
+.zk { --ivory:#F5F0E6; --cream:#FBF8F1; --parchment:#EFE7D6; --stone:#E0D5C0; --clay:#9A8663;
+  --espresso:#241A12; --cocoa:#3A2A1D; --walnut:#5C4128; --umber:#7A5638; --ink:#33261A;
+  --gold:#B58A3E; --gold-light:#CDA75E; --gold-deep:#8F6C2C; --gold-wash:#EDE3CC;
+  --cognac:#A45A2A; --serif:'Cormorant Garamond',Georgia,serif; --sans:'Mulish',system-ui,sans-serif; }
+
+.pg { max-width:980px; margin:0 auto; border:1px solid var(--border); border-radius:14px; overflow:hidden; font-family:var(--sans); box-shadow:0 10px 40px rgba(0,0,0,.16); }
+.sec { position:relative; }
+.tag { position:absolute; left:0; top:0; z-index:9; background:var(--accent); color:#fff; font-size:9px; letter-spacing:.1em; text-transform:uppercase; padding:3px 8px; border-radius:0 0 6px 0; font-family:system-ui,sans-serif; font-weight:600; }
+.fix { position:absolute; right:0; top:0; z-index:9; background:#34c759; color:#08300f; font-size:9px; letter-spacing:.1em; text-transform:uppercase; padding:3px 8px; border-radius:0 0 0 6px; font-family:system-ui,sans-serif; font-weight:700; }
+.dark { background:var(--espresso); color:var(--ivory); }
+.lite { background:var(--ivory); color:var(--ink); }
+.parch { background:var(--parchment); color:var(--ink); }
+.pad { padding:44px 46px; }
+.eb { font-size:9px; font-weight:600; letter-spacing:.22em; text-transform:uppercase; }
+.dark .eb { color:var(--gold-light); } .lite .eb,.parch .eb { color:var(--gold-deep); }
+.h { font-family:var(--serif); font-weight:400; letter-spacing:-.01em; line-height:1.05; margin:12px 0 0; }
+.p { font-size:12.5px; font-weight:300; line-height:1.72; margin:12px 0 0; max-width:50ch; }
+.dark .p { color:rgba(245,240,230,.74); } .lite .p,.parch .p { color:var(--umber); }
+
+/* ——— CTA: hugs its label, never stretches ——— */
+.btn { align-self:flex-start; width:auto; display:inline-flex; align-items:center; gap:9px;
+  background:var(--gold); color:#2A1E10; font-size:11px; font-weight:700; letter-spacing:.03em;
+  padding:13px 20px; border-radius:4px; margin-top:22px; white-space:nowrap; }
+.btn .ar { font-size:12px; line-height:1; opacity:.75; }
+.btn.mid { align-self:center; }
+
+.ph { position:relative; background:
+  radial-gradient(56% 68% at 72% 36%, rgba(196,97,28,.30), transparent 62%),
+  radial-gradient(40% 55% at 18% 80%, rgba(92,65,40,.5), transparent 70%),
+  linear-gradient(118deg,#1a120c 0%,#2e2117 46%,#4a3423 74%,#654327 100%); }
+.ph.pale { background:
+  radial-gradient(52% 64% at 66% 30%, rgba(255,255,255,.55), transparent 64%),
+  radial-gradient(44% 52% at 22% 78%, rgba(164,90,42,.14), transparent 72%),
+  linear-gradient(140deg,#FBF8F1 0%,#EFE7D6 52%,#DCCFB6 100%); }
+.phl { position:absolute; right:10px; bottom:9px; z-index:5; font-size:7.5px; letter-spacing:.16em; text-transform:uppercase; color:rgba(245,240,230,.38); }
+.ph.pale .phl { color:rgba(36,26,18,.42); }
+.hero .phl { bottom:auto; top:10px; }
+
+.hdr { display:flex; align-items:center; justify-content:space-between; padding:12px 46px; background:rgba(36,26,18,.86); border-bottom:1px solid rgba(181,138,62,.28); position:relative; z-index:6; }
+.mark { font-family:var(--serif); font-size:19px; font-weight:500; color:var(--ivory); }
+.mark em { font-style:italic; font-weight:300; color:var(--gold-light); }
+.hR { display:flex; align-items:center; gap:15px; font-size:8.5px; letter-spacing:.16em; text-transform:uppercase; color:rgba(245,240,230,.55); }
+.sw { display:inline-flex; border:1px solid rgba(181,138,62,.45); border-radius:4px; overflow:hidden; }
+.sw span { padding:6px 10px; font-size:8px; letter-spacing:.12em; }
+.sw span.on { background:var(--gold); color:#2A1E10; font-weight:700; }
+.sw span+span { border-left:1px solid rgba(181,138,62,.35); }
+.cta { background:var(--gold); color:#2A1E10; padding:7px 12px; border-radius:4px; font-size:8.5px; font-weight:700; letter-spacing:.12em; }
+
+.hero { position:relative; min-height:350px; display:flex; flex-direction:column; }
+.scrim { position:absolute; inset:0; background:linear-gradient(90deg,rgba(20,12,7,.9) 0%,rgba(20,12,7,.62) 46%,rgba(20,12,7,.18) 100%); }
+.heroIn { position:relative; z-index:4; flex:1; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:38px 46px; max-width:620px; }
+.rail { position:relative; z-index:4; display:grid; grid-template-columns:repeat(5,1fr); border-top:1px solid rgba(181,138,62,.32); background:rgba(20,12,7,.62); }
+.rail div { padding:11px 14px; border-right:1px solid rgba(245,240,230,.1); }
+.rail div:last-child { border-right:0; }
+.rail .n { font-size:7.5px; letter-spacing:.14em; color:var(--gold); }
+.rail .t { font-family:var(--serif); font-size:14px; margin-top:2px; color:var(--ivory); }
+.rail .on { background:rgba(181,138,62,.14); } .rail .on .t { color:var(--gold-light); }
+
+.split { display:grid; grid-template-columns:1fr 1fr; min-height:270px; }
+.cell { display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:40px 44px; }
+
+/* treatments */
+.tl { margin-top:20px; border-top:1px solid var(--stone); width:100%; }
+.tl .r { display:grid; grid-template-columns:1fr auto auto; align-items:baseline; gap:16px; padding:8px 0; border-bottom:1px solid var(--stone); }
+.tl .nm { font-family:var(--serif); font-size:19px; color:var(--espresso); }
+.tl .no { font-size:9.5px; color:var(--umber); letter-spacing:.03em; }
+.tl .pr { font-size:9.5px; color:var(--clay); letter-spacing:.06em; text-align:right; min-width:64px; }
+.tlh { display:grid; grid-template-columns:1fr auto auto; gap:16px; font-size:7.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--clay); padding-bottom:7px; }
+.tlh span:last-child { text-align:right; min-width:64px; }
+
+.cost { display:grid; grid-template-columns:1fr 1fr 1fr; gap:22px; margin-top:24px; }
+.cost div { border-top:1px solid var(--gold); padding-top:11px; }
+.cost .k { font-size:8.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-deep); }
+.cost .v { font-size:12px; line-height:1.6; color:var(--umber); margin-top:6px; font-weight:300; }
+.flag { display:inline-block; font-size:8px; letter-spacing:.12em; text-transform:uppercase; background:#9E3B2E; color:#F6E9E4; padding:2px 6px; border-radius:3px; font-weight:700; margin-left:6px; vertical-align:middle; }
+
+.proof { display:grid; grid-template-columns:1fr 1fr; }
+.proof div { padding:30px 44px; border-right:1px solid rgba(181,138,62,.22); }
+.proof div:last-child { border-right:0; }
+.proof .st { font-family:var(--serif); font-size:36px; color:var(--gold-light); line-height:1; }
+.proof .sl { font-size:10px; color:rgba(245,240,230,.6); margin-top:7px; letter-spacing:.05em; }
+
+.addr { display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:26px; }
+.addr .an { font-family:var(--serif); font-size:23px; color:var(--espresso); }
+.addr .ad { font-size:11.5px; line-height:1.75; color:var(--umber); margin-top:7px; font-weight:300; }
+.map { height:78px; margin-top:12px; border:1px solid var(--stone); border-radius:6px; background:
+  repeating-linear-gradient(90deg,rgba(154,134,99,.16) 0 1px,transparent 1px 26px),
+  repeating-linear-gradient(0deg,rgba(154,134,99,.16) 0 1px,transparent 1px 22px), var(--cream);
+  display:flex; align-items:center; justify-content:center; font-size:8px; letter-spacing:.16em; text-transform:uppercase; color:var(--clay); }
+
+.ftr { padding:30px 46px; background:var(--cocoa); border-top:1px solid rgba(181,138,62,.4); display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; font-size:9.5px; color:rgba(245,240,230,.5); letter-spacing:.05em; }
+.ftr .fm { font-family:var(--serif); font-size:17px; color:var(--ivory); letter-spacing:0; }
+.stick { background:rgba(36,26,18,.94); border-top:1px solid var(--gold); padding:11px 46px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.stick .sl { font-size:10px; color:rgba(245,240,230,.72); font-weight:300; }
+
+@media (max-width:760px){ .split,.proof,.cost,.addr{grid-template-columns:1fr;} .rail{grid-template-columns:repeat(2,1fr);} .pad,.cell,.heroIn{padding:26px 22px;} }
+</style>
+
+<div class="zk">
+  <h2>Page flow — v2</h2>
+  <p class="subtitle">Two changes: the call to action now hugs its label instead of stretching, and <em>The talk</em> keeps the treatment list and gains a duration and from-price column so it carries real weight. Green markers show what moved.</p>
+
+  <div class="pg">
+
+    <div class="sec"><span class="tag">sticky header</span>
+      <div class="hdr">
+        <div class="mark">Zaritzki <em>Fine Dentistry</em></div>
+        <div class="hR">
+          <span class="sw"><span class="on">Mitte</span><span>Charlottenburg</span></span>
+          <span>030 854 030 00</span><span style="color:var(--gold-light)">EN</span><span>DE</span>
+          <span class="cta">Book</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec"><span class="tag">01 · the street — hero</span><span class="fix">CTA proportion fixed</span>
+      <div class="hero ph">
+        <div class="scrim"></div>
+        <span class="phl">photograph · the entrance at dusk</span>
+        <div class="heroIn">
+          <div class="eb">Private Zahnarztpraxis · Berlin Mitte</div>
+          <h1 class="h" style="font-size:44px">A calmer kind of<br>dental visit</h1>
+          <p class="p">Walk the whole appointment before you book it — the door, the lounge, the conversation, the room, and what it costs when you leave.</p>
+          <p class="p" style="font-size:11px;margin-top:14px;color:rgba(245,240,230,.58)">Privately insured and self-paying patients · Monday to Friday, 08:00–20:00</p>
+          <span class="btn">Book a first consultation <span class="ar">→</span></span>
+        </div>
+        <div class="rail">
+          <div class="on"><div class="n">01</div><div class="t">The street</div></div>
+          <div><div class="n">02</div><div class="t">The lounge</div></div>
+          <div><div class="n">03</div><div class="t">The talk</div></div>
+          <div><div class="n">04</div><div class="t">The room</div></div>
+          <div><div class="n">05</div><div class="t">Leaving</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec"><span class="tag">02 · the lounge</span>
+      <div class="split dark">
+        <div class="ph"><span class="phl">photograph · the lounge</span></div>
+        <div class="cell">
+          <div class="eb">02 — The lounge</div>
+          <h2 class="h" style="font-size:31px">You will not be kept<br>waiting in a queue</h2>
+          <p class="p">Appointments are spaced so that yours starts when it says it will. The room you wait in was furnished, not fitted out.</p>
+          <p class="p" style="font-size:11px;color:var(--gold-light);margin-top:14px">08:00–20:00, Monday to Friday — appointments before work and after it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec"><span class="tag">03 · the talk — treatments</span><span class="fix">list kept + weighted</span>
+      <div class="split lite">
+        <div class="cell">
+          <div class="eb">03 — The talk</div>
+          <h2 class="h" style="font-size:31px">Nothing happens<br>until we've talked</h2>
+          <p class="p">Your first appointment is a conversation and an examination. You leave knowing what you need, what it costs, and what happens if you do nothing.</p>
+          <div class="tl">
+            <div class="tlh"><span>Treatment</span><span>Typical</span><span>From</span></div>
+            <div class="r"><span class="nm">Diagnostik und Planung</span><span class="no">every first visit</span><span class="pr">€—</span></div>
+            <div class="r"><span class="nm">Implantate</span><span class="no">planned in-house</span><span class="pr">€—</span></div>
+            <div class="r"><span class="nm">Invisalign</span><span class="no">adults &amp; teenagers</span><span class="pr">€—</span></div>
+            <div class="r"><span class="nm">Veneers</span><span class="no">·</span><span class="pr">€—</span></div>
+            <div class="r"><span class="nm">Endodontologie</span><span class="no">root canal</span><span class="pr">€—</span></div>
+            <div class="r"><span class="nm">Parodontologie</span><span class="no">gum treatment</span><span class="pr">€—</span></div>
+            <div class="r"><span class="nm">Whitening</span><span class="no">·</span><span class="pr">€—</span></div>
+            <div class="r" style="border:0"><span class="no" style="font-size:9px">Remaining treatments and all prices <span class="flag">need from you</span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="ph pale"><span class="phl">photograph · Ku'damm consulting room — pale register</span></div>
+      </div>
+    </div>
+
+    <div class="sec"><span class="tag">04 · the room</span>
+      <div class="split dark">
+        <div class="ph"><span class="phl">photograph · the treatment room</span></div>
+        <div class="cell">
+          <div class="eb">04 — The room</div>
+          <h2 class="h" style="font-size:31px">Lamplight, not<br>a light in your eyes</h2>
+          <p class="p">The surgery was designed to look like the rest of the practice. Same wood, same lamps, same quiet — with the equipment the work actually requires.</p>
+          <p class="p" style="font-size:11px;margin-top:14px;color:rgba(245,240,230,.5)">Clinician names and credentials <span class="flag">need from you</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec"><span class="tag">05 · leaving — cost &amp; insurance</span>
+      <div class="parch pad">
+        <div class="eb">05 — Leaving</div>
+        <h2 class="h" style="font-size:31px">What it costs, said plainly</h2>
+        <p class="p">We are a private practice. That is the reason the appointments are long and the rooms are like this — and it means we can only treat you if you are privately insured or paying yourself.</p>
+        <div class="cost">
+          <div><div class="k">Privately insured</div><div class="v">Billed per GOZ. We prepare an itemised estimate for your insurer before treatment begins.</div></div>
+          <div><div class="k">Self-paying</div><div class="v">Written estimate before anything is agreed. No treatment starts without your signature. <span class="flag">confirm wording</span></div></div>
+          <div><div class="k">Statutory (GKV)</div><div class="v">We cannot treat statutory patients. Said here rather than after you've booked.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec"><span class="tag">proof — real, citable</span>
+      <div class="dark proof">
+        <div><div class="st">5.0 ★</div><div class="sl">69 reviews · Jägerstraße 41, Mitte</div></div>
+        <div><div class="st">5.0 ★</div><div class="sl">20 reviews · Kurfürstendamm 52, Charlottenburg</div></div>
+      </div>
+    </div>
+
+    <div class="sec"><span class="tag">both practices</span>
+      <div class="lite pad">
+        <div class="eb">Two practices</div>
+        <h2 class="h" style="font-size:31px">Mitte and Charlottenburg</h2>
+        <div class="addr">
+          <div>
+            <div class="an">Mitte</div>
+            <div class="ad">Jägerstraße 41, 10117 Berlin<br>Mon–Fri 08:00–20:00<br>030 854 030 00</div>
+            <div class="map">map</div>
+          </div>
+          <div>
+            <div class="an">Charlottenburg</div>
+            <div class="ad">Kurfürstendamm 52, 10707 Berlin<br>Mon–Fri 08:00–20:00<br>030 854 030 00</div>
+            <div class="map">map</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec"><span class="tag">close</span><span class="fix">CTA proportion fixed</span>
+      <div class="hero ph" style="min-height:210px">
+        <div class="scrim" style="background:rgba(20,12,7,.78)"></div>
+        <div class="heroIn" style="max-width:100%;align-items:center;text-align:center">
+          <h2 class="h" style="font-size:34px">Ready when you are</h2>
+          <p class="p" style="margin-left:auto;margin-right:auto">New patients are welcome at both practices.</p>
+          <span class="btn mid">Book at Jägerstraße <span class="ar">→</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec"><span class="tag">sticky booking bar — appears after hero</span>
+      <div class="stick">
+        <span class="sl">Jägerstraße 41 · Mon–Fri 08:00–20:00 · privately insured &amp; self-paying</span>
+        <span class="cta">Book a first consultation</span>
+      </div>
+    </div>
+
+    <div class="sec"><span class="tag">footer</span>
+      <div class="ftr">
+        <span class="fm">Zaritzki Fine Dentistry</span>
+        <span>Jägerstraße 41 · Kurfürstendamm 52</span>
+        <span>Impressum · Datenschutz</span>
+        <span>Deutsch · English</span>
+      </div>
+    </div>
+
+  </div>
+</div>

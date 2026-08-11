@@ -1,0 +1,12 @@
+import * as React from 'react';
+
+export interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
+  /** Filled (espresso) selected state — for filter chips. */
+  selected?: boolean;
+  /** When provided, renders a removable × affordance. */
+  onRemove?: (e: React.MouseEvent) => void;
+  children?: React.ReactNode;
+}
+
+/** Rounded chip for filters, categories, and removable selections. */
+export function Tag(props: TagProps): JSX.Element;

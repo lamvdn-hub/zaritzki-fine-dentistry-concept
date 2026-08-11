@@ -1,0 +1,51 @@
+// Team screen — practice intro + clinician cards. Portraits are placeholders (no photos supplied).
+function TeamScreen({ onNav }) {
+  const NS = window.ZaritzkiFineDentistryDesignSystem_dfee56;
+  const { Button, Badge } = NS;
+  const I = window.ZKIcons;
+  const eyebrow = { fontFamily:'var(--font-sans)',fontSize:11,fontWeight:600,letterSpacing:'.22em',textTransform:'uppercase',color:'var(--text-gold)' };
+  const team = [
+    ['FZ','Dr. Felix F. Zaritzki','Founder · Implantology','Prosthodontics & implant surgery, trained in Berlin and Zürich.'],
+    ['MK','Dr. Marie Kessler','Prophylaxis & prevention','Leads our recall and preventive programme with a gentle touch.'],
+    ['LH','Dr. Lukas Hoffmann','Aesthetic dentistry','Veneers, whitening, and composite artistry.'],
+    ['SR','Sophie Reuter','Practice manager','The calm hand behind every smooth appointment.'],
+  ];
+  return (
+    <div>
+      <section style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'84px var(--gutter) 40px'}}>
+        <div style={{maxWidth:720}}>
+          <div style={eyebrow}>Our team</div>
+          <h1 style={{fontFamily:'var(--font-display)',fontWeight:400,fontSize:'clamp(40px,5vw,68px)',letterSpacing:'-.01em',color:'var(--text-strong)',margin:'16px 0 18px',maxWidth:'18ch'}}>The people who'll look after you</h1>
+          <p style={{fontFamily:'var(--font-sans)',fontSize:19,fontWeight:300,lineHeight:1.6,color:'var(--text-muted)',maxWidth:'52ch',margin:0}}>A small, dedicated team who take the time to know you — and remember you between visits.</p>
+        </div>
+      </section>
+
+      <section style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'20px var(--gutter) var(--section-y)'}}>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:24}}>
+          {team.map(([initials,name,role,bio],i)=>(
+            <div key={i}>
+              <div style={{position:'relative',aspectRatio:'4/5',borderRadius:'var(--radius-lg)',overflow:'hidden',background:'linear-gradient(160deg,var(--cocoa),var(--espresso))',display:'flex',alignItems:'center',justifyContent:'center',border:'1px solid var(--border-dark)'}}>
+                <span style={{fontFamily:'var(--font-display)',fontSize:56,fontWeight:400,color:'var(--gold-light)',letterSpacing:'.02em'}}>{initials}</span>
+                <span style={{position:'absolute',bottom:12,left:0,right:0,textAlign:'center',fontFamily:'var(--font-sans)',fontSize:10,letterSpacing:'.14em',textTransform:'uppercase',color:'rgba(245,240,230,.4)'}}>Portrait</span>
+              </div>
+              <h3 style={{fontFamily:'var(--font-display)',fontWeight:500,fontSize:23,color:'var(--text-strong)',margin:'18px 0 2px'}}>{name}</h3>
+              <div style={{fontFamily:'var(--font-sans)',fontSize:12,fontWeight:600,letterSpacing:'.12em',textTransform:'uppercase',color:'var(--gold-deep)',marginBottom:10}}>{role}</div>
+              <p style={{fontFamily:'var(--font-sans)',fontSize:14.5,lineHeight:1.6,color:'var(--text-muted)',margin:0}}>{bio}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section style={{position:'relative',overflow:'hidden'}}>
+        <img src="../../assets/images/library-lounge.webp" alt="" style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'}}/>
+        <div style={{position:'absolute',inset:0,background:'rgba(20,12,7,.68)'}}/>
+        <div style={{position:'relative',maxWidth:820,margin:'0 auto',padding:'84px var(--gutter)',textAlign:'center',color:'var(--ivory)'}}>
+          <div style={{...eyebrow,color:'var(--gold-light)'}}>Come and see us</div>
+          <h2 style={{fontFamily:'var(--font-display)',fontWeight:400,fontStyle:'italic',fontSize:'clamp(28px,3.4vw,40px)',lineHeight:1.3,color:'var(--ivory)',margin:'16px 0 30px'}}>"We'd rather know one patient well than a thousand in passing."</h2>
+          <Button variant="primary" size="lg" onClick={()=>onNav('book')}>Book a visit</Button>
+        </div>
+      </section>
+    </div>
+  );
+}
+window.TeamScreen = TeamScreen;

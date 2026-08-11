@@ -1,0 +1,9 @@
+import * as React from 'react';
+
+export interface SwitchProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  label?: React.ReactNode;
+  disabled?: boolean;
+}
+
+/** On/off toggle; the track turns brass and the thumb slides right when on. */
+export function Switch(props: SwitchProps): JSX.Element;

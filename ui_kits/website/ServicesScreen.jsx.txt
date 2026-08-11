@@ -1,0 +1,65 @@
+// Services screen — page header, service detail cards, insurance note, FAQ accordion.
+function ServicesScreen({ onNav }) {
+  const NS = window.ZaritzkiFineDentistryDesignSystem_dfee56;
+  const { Button, Badge, Card, CardTitle, CardBody, Accordion, Tabs } = NS;
+  const I = window.ZKIcons;
+  const eyebrow = { fontFamily:'var(--font-sans)',fontSize:11,fontWeight:600,letterSpacing:'.22em',textTransform:'uppercase',color:'var(--text-gold)' };
+  const detail = [
+    [I.Sparkle,'Prophylaxis & prevention',['Professional cleaning (PZR)','Fluoride & sealants','Individual recall schedule'],'from €90'],
+    [I.Chair,'Implantology',['Single & multiple implants','Bone augmentation','Full-arch restoration'],'on consultation'],
+    [I.Star,'Aesthetic dentistry',['In-practice whitening','Ceramic veneers','Composite bonding'],'from €340'],
+    [I.Shield,'Periodontics',['Gum health assessment','Non-surgical therapy','Maintenance programme'],'from €120'],
+    [I.Tooth,'Restorative care',['Tooth-coloured fillings','Ceramic inlays & crowns','Root canal treatment'],'from €160'],
+    [I.Leaf,'Anxiety-friendly care',['Extended gentle appointments','Sedation options','Step-by-step consent'],'included'],
+  ];
+  const faqs = [
+    {title:'Do you treat statutory (GKV) patients?',content:<p style={{margin:0}}>Yes. We welcome both statutory and privately insured patients, and we'll always explain any co-payments clearly before treatment begins.</p>},
+    {title:'How long is a first appointment?',content:<p style={{margin:0}}>Your first visit is scheduled for a full 60 minutes, so we have time to listen, examine thoroughly, and agree a plan without rushing.</p>},
+    {title:'Do you offer treatment for nervous patients?',content:<p style={{margin:0}}>Absolutely — anxiety-friendly care is core to how we work. We offer longer appointments, clear step-by-step explanations, and sedation where helpful.</p>},
+    {title:'Can I park nearby?',content:<p style={{margin:0}}>There is street parking on Kurfürstendamm and a public garage two minutes' walk from the practice.</p>},
+  ];
+  return (
+    <div>
+      <section style={{background:'var(--espresso)',color:'var(--ivory)'}}>
+        <div style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'84px var(--gutter) 72px'}}>
+          <div style={{...eyebrow,color:'var(--gold-light)'}}>Our services</div>
+          <h1 style={{fontFamily:'var(--font-display)',fontWeight:400,fontSize:'clamp(40px,5vw,68px)',letterSpacing:'-.01em',color:'var(--ivory)',margin:'16px 0 18px',maxWidth:'18ch'}}>Everything your smile needs, in one place</h1>
+          <p style={{fontFamily:'var(--font-sans)',fontSize:19,fontWeight:300,lineHeight:1.6,color:'rgba(245,240,230,.82)',maxWidth:'52ch',margin:0}}>From routine prevention to advanced implantology — delivered with the same unhurried care, whatever brings you in.</p>
+        </div>
+      </section>
+
+      <section style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'var(--section-y) var(--gutter)'}}>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:22}}>
+          {detail.map(([Icon,title,items,price],i)=>(
+            <Card key={i} variant="raised" style={{display:'flex',flexDirection:'column'}}>
+              <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:18}}>
+                <div style={{width:48,height:48,borderRadius:'var(--radius-md)',background:'var(--gold-wash)',color:'var(--gold-deep)',display:'flex',alignItems:'center',justifyContent:'center'}}><Icon size={24}/></div>
+                <Badge variant="gold">{price}</Badge>
+              </div>
+              <CardTitle as="h3" style={{fontSize:24}}>{title}</CardTitle>
+              <ul style={{listStyle:'none',padding:0,margin:'8px 0 0',display:'flex',flexDirection:'column',gap:10}}>
+                {items.map((it,j)=>(<li key={j} style={{display:'flex',gap:10,alignItems:'center',fontFamily:'var(--font-sans)',fontSize:14.5,color:'var(--text-muted)'}}><span style={{color:'var(--gold)',display:'flex'}}><I.Check size={16}/></span>{it}</li>))}
+              </ul>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section style={{background:'var(--surface-sunken)',borderTop:'1px solid var(--border-soft)',borderBottom:'1px solid var(--border-soft)'}}>
+        <div style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'var(--section-y) var(--gutter)',display:'grid',gridTemplateColumns:'0.8fr 1.2fr',gap:72,alignItems:'start'}}>
+          <div>
+            <div style={eyebrow}>Good to know</div>
+            <h2 style={{fontFamily:'var(--font-display)',fontWeight:400,fontSize:42,letterSpacing:'-.01em',color:'var(--text-strong)',margin:'14px 0 0',maxWidth:'12ch'}}>Questions, answered</h2>
+          </div>
+          <Accordion defaultOpen={[0]} items={faqs}/>
+        </div>
+      </section>
+
+      <section style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'72px var(--gutter)',textAlign:'center'}}>
+        <h2 style={{fontFamily:'var(--font-display)',fontWeight:400,fontSize:40,letterSpacing:'-.01em',color:'var(--text-strong)',margin:'0 0 24px'}}>Not sure what you need?</h2>
+        <Button variant="primary" size="lg" onClick={()=>onNav('book')}>Book a consultation</Button>
+      </section>
+    </div>
+  );
+}
+window.ServicesScreen = ServicesScreen;

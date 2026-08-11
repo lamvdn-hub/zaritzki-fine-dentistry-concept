@@ -1,0 +1,9 @@
+import * as React from 'react';
+
+export interface RadioProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  label?: React.ReactNode;
+  disabled?: boolean;
+}
+
+/** Radio control; a brass dot scales in when selected. Group with a shared `name`. */
+export function Radio(props: RadioProps): JSX.Element;

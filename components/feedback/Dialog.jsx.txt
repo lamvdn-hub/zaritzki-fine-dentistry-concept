@@ -1,0 +1,60 @@
+import React from 'react';
+
+let injected = false;
+function inject() {
+  if (injected || typeof document === 'undefined') return;
+  injected = true;
+  const css = `
+.zk-dialog__overlay{position:fixed;inset:0;background:rgba(26,15,8,0.55);backdrop-filter:blur(3px);
+  display:flex;align-items:center;justify-content:center;padding:var(--space-5);z-index:1000;
+  animation:zk-fade var(--duration-base) var(--ease-standard);}
+.zk-dialog{background:var(--cream);border:1px solid var(--border-soft);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);width:100%;max-width:var(--_mw,520px);max-height:calc(100vh - 4rem);overflow:auto;
+  animation:zk-rise var(--duration-base) var(--ease-out);}
+.zk-dialog__head{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-4);
+  padding:var(--space-6) var(--space-6) 0;}
+.zk-dialog__title{font-family:var(--font-display);font-size:var(--text-display-md);font-weight:var(--fw-display-regular);
+  color:var(--text-strong);letter-spacing:var(--tracking-display);line-height:var(--lh-snug);margin:0;}
+.zk-dialog__close{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;
+  margin:-4px -4px 0 0;border:none;background:none;color:var(--text-muted);cursor:pointer;border-radius:var(--radius-sm);
+  transition:background var(--duration-fast) var(--ease-standard),color var(--duration-fast) var(--ease-standard);}
+.zk-dialog__close:hover{background:var(--parchment);color:var(--text-strong);}
+.zk-dialog__close svg{width:20px;height:20px;stroke-width:2;}
+.zk-dialog__body{padding:var(--space-4) var(--space-6);font-family:var(--font-sans);font-size:var(--text-md);
+  color:var(--text-muted);line-height:var(--lh-relaxed);}
+.zk-dialog__foot{display:flex;justify-content:flex-end;gap:var(--space-3);padding:var(--space-4) var(--space-6) var(--space-6);}
+@keyframes zk-fade{from{opacity:0}to{opacity:1}}
+@keyframes zk-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+`;
+  const el = document.createElement('style');
+  el.setAttribute('data-zk', 'dialog');
+  el.textContent = css;
+  document.head.appendChild(el);
+}
+
+const X = () => (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>);
+
+export function Dialog({ open, onClose, title, footer, maxWidth, className = '', children }) {
+  inject();
+  React.useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => { if (e.key === 'Escape' && onClose) onClose(); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [open, onClose]);
+  if (!open) return null;
+  return (
+    <div className="zk-dialog__overlay" onClick={(e) => { if (e.target === e.currentTarget && onClose) onClose(); }}>
+      <div className={['zk-dialog', className].filter(Boolean).join(' ')} role="dialog" aria-modal="true" style={maxWidth ? { '--_mw': typeof maxWidth === 'number' ? maxWidth + 'px' : maxWidth } : undefined}>
+        {(title || onClose) && (
+          <div className="zk-dialog__head">
+            {title && <h2 className="zk-dialog__title">{title}</h2>}
+            {onClose && <button className="zk-dialog__close" aria-label="Close" onClick={onClose}><X /></button>}
+          </div>
+        )}
+        <div className="zk-dialog__body">{children}</div>
+        {footer && <div className="zk-dialog__foot">{footer}</div>}
+      </div>
+    </div>
+  );
+}

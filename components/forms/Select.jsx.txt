@@ -1,0 +1,50 @@
+import React from 'react';
+
+let injected = false;
+function inject() {
+  if (injected || typeof document === 'undefined') return;
+  injected = true;
+  const css = `
+.zk-select__wrap{position:relative;display:flex;align-items:center;}
+.zk-select{appearance:none;-webkit-appearance:none;font-family:var(--font-sans);font-size:var(--text-md);color:var(--text-body);
+  background:var(--cream);border:1px solid var(--border-strong);border-radius:var(--radius-sm);
+  padding:0 40px 0 14px;height:46px;width:100%;cursor:pointer;
+  transition:border-color var(--duration-fast) var(--ease-standard),box-shadow var(--duration-fast) var(--ease-standard);}
+.zk-select:hover{border-color:var(--umber);}
+.zk-select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--focus-ring);}
+.zk-select[disabled]{opacity:0.55;cursor:not-allowed;background:var(--parchment);}
+.zk-select__caret{position:absolute;right:14px;pointer-events:none;color:var(--umber);display:inline-flex;}
+.zk-select__caret svg{width:1.1rem;height:1.1rem;}
+`;
+  const el = document.createElement('style');
+  el.setAttribute('data-zk', 'select');
+  el.textContent = css;
+  document.head.appendChild(el);
+}
+
+const Caret = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+);
+
+export function Select({ label, hint, error, required, id, className = '', disabled = false, options, children, ...rest }) {
+  inject();
+  const invalid = !!error;
+  const select = (
+    <div className="zk-select__wrap">
+      <select id={id} disabled={disabled} className={['zk-select', className].filter(Boolean).join(' ')} style={invalid ? { borderColor: 'var(--danger)' } : undefined} aria-invalid={invalid || undefined} {...rest}>
+        {options ? options.map((o) => {
+          const opt = typeof o === 'string' ? { value: o, label: o } : o;
+          return <option key={opt.value} value={opt.value}>{opt.label}</option>;
+        }) : children}
+      </select>
+      <span className="zk-select__caret"><Caret /></span>
+    </div>
+  );
+  return (
+    <div className="zk-field">
+      {label && <label className="zk-field__label" htmlFor={id}>{label}{required && <span className="zk-field__req">*</span>}</label>}
+      {select}
+      {error ? <span className="zk-field__err">{error}</span> : hint ? <span className="zk-field__hint">{hint}</span> : null}
+    </div>
+  );
+}

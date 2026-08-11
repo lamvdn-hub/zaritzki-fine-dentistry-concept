@@ -1,0 +1,68 @@
+// Book screen — appointment request form (left) + practice info (right) with confirmation dialog.
+function BookScreen({ onNav }) {
+  const NS = window.ZaritzkiFineDentistryDesignSystem_dfee56;
+  const { Button, Input, Textarea, Select, Radio, Checkbox, Card, Badge, Dialog } = NS;
+  const I = window.ZKIcons;
+  const [done, setDone] = React.useState(false);
+  const eyebrow = { fontFamily:'var(--font-sans)',fontSize:11,fontWeight:600,letterSpacing:'.22em',textTransform:'uppercase',color:'var(--text-gold)' };
+  const info = { display:'flex',gap:14,alignItems:'flex-start',fontFamily:'var(--font-sans)',fontSize:14.5,color:'var(--text-on-dark-muted)',lineHeight:1.55 };
+  return (
+    <div style={{background:'var(--surface-sunken)',minHeight:'100%'}}>
+      <section style={{maxWidth:1100,margin:'0 auto',padding:'72px var(--gutter)'}}>
+        <div style={{textAlign:'center',marginBottom:44}}>
+          <div style={eyebrow}>Book a visit</div>
+          <h1 style={{fontFamily:'var(--font-display)',fontWeight:400,fontSize:'clamp(38px,4.6vw,60px)',letterSpacing:'-.01em',color:'var(--text-strong)',margin:'14px 0 12px'}}>Request an appointment</h1>
+          <p style={{fontFamily:'var(--font-sans)',fontSize:17,fontWeight:300,color:'var(--text-muted)',maxWidth:'46ch',margin:'0 auto'}}>Tell us a little about what you need and we'll confirm your time within one business day.</p>
+        </div>
+
+        <div style={{display:'grid',gridTemplateColumns:'1.4fr 0.9fr',gap:28,alignItems:'start'}}>
+          <Card variant="raised" style={{padding:'34px'}}>
+            <form onSubmit={(e)=>{e.preventDefault();setDone(true);}} style={{display:'flex',flexDirection:'column',gap:20}}>
+              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}}>
+                <Input label="First name" placeholder="Anna" required/>
+                <Input label="Last name" placeholder="Berger" required/>
+              </div>
+              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}}>
+                <Input label="Email" type="email" iconLeft={<I.Phone size={17}/>} placeholder="you@email.com" required/>
+                <Input label="Phone" placeholder="030 …" required/>
+              </div>
+              <Select label="What do you need?" required options={['Routine check-up & cleaning','New patient consultation','Aesthetic / whitening','Implant consultation','Something is bothering me']}/>
+              <div>
+                <div style={{fontFamily:'var(--font-sans)',fontSize:14,fontWeight:600,color:'var(--text-strong)',marginBottom:10}}>Preferred time</div>
+                <div style={{display:'flex',gap:24,flexWrap:'wrap'}}>
+                  <Radio name="time" label="Morning" defaultChecked/>
+                  <Radio name="time" label="Afternoon"/>
+                  <Radio name="time" label="No preference"/>
+                </div>
+              </div>
+              <Textarea label="Anything we should know?" hint="Optional — e.g. anxiety, past treatment, timing." rows={3}/>
+              <Checkbox label="I consent to Zaritzki Fine Dentistry contacting me about this request." required/>
+              <Button type="submit" variant="primary" size="lg" fullWidth iconRight={<I.ArrowRight size={18}/>}>Request appointment</Button>
+            </form>
+          </Card>
+
+          <Card variant="inverse" style={{padding:'32px'}}>
+            <div style={{fontFamily:'var(--font-sans)',fontSize:11,fontWeight:700,letterSpacing:'.2em',textTransform:'uppercase',color:'var(--gold-light)',marginBottom:22}}>The practice</div>
+            <div style={{display:'flex',flexDirection:'column',gap:20}}>
+              <div style={info}><span style={{color:'var(--gold-light)',display:'flex',marginTop:1}}><I.MapPin size={18}/></span><span>Kurfürstendamm 000<br/>10709 Berlin-Charlottenburg</span></div>
+              <div style={info}><span style={{color:'var(--gold-light)',display:'flex',marginTop:1}}><I.Phone size={18}/></span><span>030 88 62 40<br/><span style={{fontSize:12.5,opacity:.75}}>Mon–Fri</span></span></div>
+              <div style={info}><span style={{color:'var(--gold-light)',display:'flex',marginTop:1}}><I.Clock size={18}/></span><span>Mon–Thu · 8:00–18:00<br/>Fri · 8:00–14:00</span></div>
+            </div>
+            <div style={{height:1,background:'rgba(255,255,255,.12)',margin:'26px 0'}}/>
+            <div style={{display:'flex',flexWrap:'wrap',gap:8}}>
+              <Badge variant="success" dot>Accepting new patients</Badge>
+              <Badge variant="gold">Private &amp; statutory</Badge>
+            </div>
+            <p style={{fontFamily:'var(--font-sans)',fontSize:13.5,lineHeight:1.6,color:'var(--text-on-dark-muted)',margin:'22px 0 0'}}>In pain today? Call us — we keep same-day emergency slots open every weekday.</p>
+          </Card>
+        </div>
+      </section>
+
+      <Dialog open={done} onClose={()=>setDone(false)} title="Request received"
+        footer={<><Button variant="ghost" onClick={()=>setDone(false)}>Close</Button><Button onClick={()=>{setDone(false);onNav('home');}}>Back to home</Button></>}>
+        <p style={{margin:0}}>Thank you — we've received your request and will confirm your appointment within one business day. If it's urgent, please call the practice on <strong style={{color:'var(--text-strong)'}}>030 88 62 40</strong>.</p>
+      </Dialog>
+    </div>
+  );
+}
+window.BookScreen = BookScreen;

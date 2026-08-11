@@ -1,0 +1,38 @@
+import React from 'react';
+
+let injected = false;
+function inject() {
+  if (injected || typeof document === 'undefined') return;
+  injected = true;
+  const css = `
+.zk-tag{display:inline-flex;align-items:center;gap:0.4em;font-family:var(--font-sans);font-size:var(--text-sm);
+  font-weight:var(--fw-medium);color:var(--text-body);background:var(--cream);border:1px solid var(--border-strong);
+  border-radius:var(--radius-pill);padding:5px 12px;line-height:1.2;transition:background var(--duration-fast) var(--ease-standard),border-color var(--duration-fast) var(--ease-standard);}
+.zk-tag--selected{background:var(--espresso);border-color:var(--espresso);color:var(--ivory);}
+.zk-tag--clickable{cursor:pointer;}
+.zk-tag--clickable:hover{border-color:var(--umber);background:var(--parchment);}
+.zk-tag--selected.zk-tag--clickable:hover{background:var(--cocoa);}
+.zk-tag__x{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-right:-4px;
+  border-radius:50%;cursor:pointer;color:inherit;opacity:0.6;transition:opacity var(--duration-fast) var(--ease-standard);}
+.zk-tag__x:hover{opacity:1;}
+.zk-tag__x svg{width:12px;height:12px;stroke-width:2.5;}
+`;
+  const el = document.createElement('style');
+  el.setAttribute('data-zk', 'tag');
+  el.textContent = css;
+  document.head.appendChild(el);
+}
+
+const X = () => (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>);
+
+export function Tag({ selected = false, onRemove, onClick, className = '', children, ...rest }) {
+  inject();
+  const clickable = !!onClick;
+  const classes = ['zk-tag', selected ? 'zk-tag--selected' : '', clickable ? 'zk-tag--clickable' : '', className].filter(Boolean).join(' ');
+  return (
+    <span className={classes} onClick={onClick} {...rest}>
+      {children}
+      {onRemove && <span className="zk-tag__x" role="button" aria-label="Remove" onClick={(e) => { e.stopPropagation(); onRemove(e); }}><X /></span>}
+    </span>
+  );
+}

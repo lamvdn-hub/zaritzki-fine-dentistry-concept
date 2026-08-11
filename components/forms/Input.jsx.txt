@@ -1,0 +1,73 @@
+import React from 'react';
+
+let injected = false;
+function inject() {
+  if (injected || typeof document === 'undefined') return;
+  injected = true;
+  const css = `
+.zk-field{display:flex;flex-direction:column;gap:0.4rem;font-family:var(--font-sans);}
+.zk-field__label{font-size:var(--text-sm);font-weight:var(--fw-semibold);color:var(--text-strong);letter-spacing:0.01em;}
+.zk-field__req{color:var(--danger);margin-left:2px;}
+.zk-field__hint{font-size:var(--text-xs);color:var(--text-subtle);}
+.zk-field__err{font-size:var(--text-xs);color:var(--danger);}
+.zk-input,.zk-textarea{font-family:var(--font-sans);font-size:var(--text-md);color:var(--text-body);background:var(--cream);
+  border:1px solid var(--border-strong);border-radius:var(--radius-sm);padding:0 14px;height:46px;width:100%;
+  transition:border-color var(--duration-fast) var(--ease-standard),box-shadow var(--duration-fast) var(--ease-standard),background var(--duration-fast) var(--ease-standard);}
+.zk-textarea{padding:12px 14px;height:auto;min-height:110px;line-height:var(--lh-normal);resize:vertical;}
+.zk-input::placeholder,.zk-textarea::placeholder{color:var(--clay);}
+.zk-input:hover,.zk-textarea:hover{border-color:var(--umber);}
+.zk-input:focus,.zk-textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--focus-ring);background:var(--cream);}
+.zk-input[disabled],.zk-textarea[disabled]{opacity:0.55;cursor:not-allowed;background:var(--parchment);}
+.zk-input--invalid,.zk-textarea--invalid{border-color:var(--danger);}
+.zk-input--invalid:focus,.zk-textarea--invalid:focus{box-shadow:0 0 0 3px rgba(158,59,46,0.25);}
+.zk-input__wrap{position:relative;display:flex;align-items:center;}
+.zk-input__wrap .zk-input{padding-left:var(--_pl,14px);padding-right:var(--_pr,14px);}
+.zk-input__adorn{position:absolute;display:inline-flex;color:var(--clay);pointer-events:none;}
+.zk-input__adorn svg{width:1.15rem;height:1.15rem;}
+.zk-input__adorn--l{left:13px;}
+.zk-input__adorn--r{right:13px;}
+`;
+  const el = document.createElement('style');
+  el.setAttribute('data-zk', 'input');
+  el.textContent = css;
+  document.head.appendChild(el);
+}
+
+function Field({ label, required, hint, error, htmlFor, children }) {
+  return (
+    <div className="zk-field">
+      {label && <label className="zk-field__label" htmlFor={htmlFor}>{label}{required && <span className="zk-field__req">*</span>}</label>}
+      {children}
+      {error ? <span className="zk-field__err">{error}</span> : hint ? <span className="zk-field__hint">{hint}</span> : null}
+    </div>
+  );
+}
+
+export function Input({ label, hint, error, required, iconLeft, iconRight, id, className = '', disabled = false, ...rest }) {
+  inject();
+  const invalid = !!error;
+  const style = {};
+  if (iconLeft) style['--_pl'] = '40px';
+  if (iconRight) style['--_pr'] = '40px';
+  const input = (
+    <input id={id} disabled={disabled} className={['zk-input', invalid ? 'zk-input--invalid' : '', className].filter(Boolean).join(' ')} style={style} aria-invalid={invalid || undefined} {...rest} />
+  );
+  const control = (iconLeft || iconRight) ? (
+    <div className="zk-input__wrap">
+      {iconLeft && <span className="zk-input__adorn zk-input__adorn--l">{iconLeft}</span>}
+      {input}
+      {iconRight && <span className="zk-input__adorn zk-input__adorn--r">{iconRight}</span>}
+    </div>
+  ) : input;
+  return <Field label={label} required={required} hint={hint} error={error} htmlFor={id}>{control}</Field>;
+}
+
+export function Textarea({ label, hint, error, required, id, className = '', disabled = false, ...rest }) {
+  inject();
+  const invalid = !!error;
+  return (
+    <Field label={label} required={required} hint={hint} error={error} htmlFor={id}>
+      <textarea id={id} disabled={disabled} className={['zk-textarea', invalid ? 'zk-textarea--invalid' : '', className].filter(Boolean).join(' ')} aria-invalid={invalid || undefined} {...rest} />
+    </Field>
+  );
+}

@@ -1,0 +1,49 @@
+import React from 'react';
+
+let injected = false;
+function inject() {
+  if (injected || typeof document === 'undefined') return;
+  injected = true;
+  const css = `
+.zk-card{background:var(--surface-raised);border:1px solid var(--border-soft);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm);overflow:hidden;transition:box-shadow var(--duration-base) var(--ease-standard),
+  transform var(--duration-base) var(--ease-out),border-color var(--duration-base) var(--ease-standard);}
+.zk-card--pad{padding:var(--space-6);}
+.zk-card--flat{box-shadow:none;}
+.zk-card--raised{box-shadow:var(--shadow-md);}
+.zk-card--inverse{background:var(--espresso);border-color:var(--border-dark);color:var(--text-on-dark);}
+.zk-card--inverse .zk-card__title{color:var(--ivory);}
+.zk-card--interactive{cursor:pointer;}
+.zk-card--interactive:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--hairline-gold);}
+.zk-card__eyebrow{font-family:var(--font-sans);font-size:var(--text-2xs);font-weight:var(--fw-semibold);
+  text-transform:uppercase;letter-spacing:var(--tracking-eyebrow);color:var(--text-gold);margin-bottom:var(--space-3);}
+.zk-card--inverse .zk-card__eyebrow{color:var(--gold-light);}
+.zk-card__title{font-family:var(--font-display);font-size:var(--text-display-sm);font-weight:var(--fw-display-regular);
+  color:var(--text-strong);line-height:var(--lh-snug);letter-spacing:var(--tracking-display);margin:0 0 var(--space-3);}
+.zk-card__body{font-family:var(--font-sans);font-size:var(--text-md);color:inherit;line-height:var(--lh-normal);}
+.zk-card--inverse .zk-card__body{color:var(--text-on-dark-muted);}
+`;
+  const el = document.createElement('style');
+  el.setAttribute('data-zk', 'card');
+  el.textContent = css;
+  document.head.appendChild(el);
+}
+
+export function Card({ variant = 'default', padded = true, interactive = false, as = 'div', className = '', children, ...rest }) {
+  inject();
+  const Tag = as;
+  const classes = [
+    'zk-card',
+    variant === 'flat' ? 'zk-card--flat' : '',
+    variant === 'raised' ? 'zk-card--raised' : '',
+    variant === 'inverse' ? 'zk-card--inverse' : '',
+    padded ? 'zk-card--pad' : '',
+    interactive ? 'zk-card--interactive' : '',
+    className,
+  ].filter(Boolean).join(' ');
+  return <Tag className={classes} {...rest}>{children}</Tag>;
+}
+
+export function CardEyebrow({ children, className = '' }) { inject(); return <div className={['zk-card__eyebrow', className].filter(Boolean).join(' ')}>{children}</div>; }
+export function CardTitle({ children, as = 'h3', className = '' }) { inject(); const T = as; return <T className={['zk-card__title', className].filter(Boolean).join(' ')}>{children}</T>; }
+export function CardBody({ children, className = '' }) { inject(); return <div className={['zk-card__body', className].filter(Boolean).join(' ')}>{children}</div>; }

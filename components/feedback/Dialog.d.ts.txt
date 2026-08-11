@@ -1,0 +1,17 @@
+import * as React from 'react';
+
+export interface DialogProps {
+  open: boolean;
+  onClose?: () => void;
+  /** Serif title in the header. */
+  title?: React.ReactNode;
+  /** Footer node — typically the action buttons. */
+  footer?: React.ReactNode;
+  /** Max width of the panel (number = px). Default 520. */
+  maxWidth?: number | string;
+  className?: string;
+  children?: React.ReactNode;
+}
+
+/** Centred modal over a warm-tinted, blurred scrim. Closes on Esc, overlay click, or the × button. */
+export function Dialog(props: DialogProps): JSX.Element | null;

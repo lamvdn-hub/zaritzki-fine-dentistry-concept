@@ -1,0 +1,36 @@
+import React from 'react';
+
+let injected = false;
+function inject() {
+  if (injected || typeof document === 'undefined') return;
+  injected = true;
+  const css = `
+.zk-switch{display:inline-flex;align-items:center;gap:0.65rem;font-family:var(--font-sans);font-size:var(--text-md);
+  color:var(--text-body);cursor:pointer;}
+.zk-switch input{position:absolute;opacity:0;width:0;height:0;}
+.zk-switch__track{flex:0 0 auto;width:44px;height:24px;border-radius:var(--radius-pill);background:var(--stone);
+  border:1px solid var(--border-strong);position:relative;transition:background var(--duration-base) var(--ease-standard),border-color var(--duration-base) var(--ease-standard);}
+.zk-switch__thumb{position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:var(--cream);
+  box-shadow:var(--shadow-xs);transition:transform var(--duration-base) var(--ease-out);}
+.zk-switch input:checked + .zk-switch__track{background:var(--gold);border-color:var(--gold);}
+.zk-switch input:checked + .zk-switch__track .zk-switch__thumb{transform:translateX(20px);}
+.zk-switch input:focus-visible + .zk-switch__track{outline:2px solid var(--focus-ring);outline-offset:2px;}
+.zk-switch input:disabled ~ *{opacity:0.5;}
+.zk-switch--disabled{cursor:not-allowed;}
+`;
+  const el = document.createElement('style');
+  el.setAttribute('data-zk', 'switch');
+  el.textContent = css;
+  document.head.appendChild(el);
+}
+
+export function Switch({ label, checked, defaultChecked, disabled = false, className = '', ...rest }) {
+  inject();
+  return (
+    <label className={['zk-switch', disabled ? 'zk-switch--disabled' : '', className].filter(Boolean).join(' ')}>
+      <input type="checkbox" role="switch" checked={checked} defaultChecked={defaultChecked} disabled={disabled} {...rest} />
+      <span className="zk-switch__track"><span className="zk-switch__thumb" /></span>
+      {label && <span>{label}</span>}
+    </label>
+  );
+}

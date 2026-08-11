@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { margin: 0; padding: 28px; background: var(--surface-page); }
+  .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+  .lbl { font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 12px; }
+  .row { display: flex; gap: 12px; align-items: center; }
+</style>
+</head>
+<body>
+<div id="root" class="wrap"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Tabs, Accordion, Dialog, Tooltip, Button, IconButton } = window.ZaritzkiFineDentistryDesignSystem_dfee56;
+const Info = () => (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>);
+function Demo(){
+  const [open, setOpen] = React.useState(false);
+  return (<>
+    <div>
+      <div className="lbl">Tabs</div>
+      <Tabs items={[
+        {id:'a',label:'General care',content:<p style={{margin:0,color:'var(--text-muted)'}}>Check-ups, cleaning, and preventive care.</p>},
+        {id:'b',label:'Implantology',content:<p style={{margin:0,color:'var(--text-muted)'}}>Titanium and ceramic implant restorations.</p>},
+        {id:'c',label:'Aesthetics',content:<p style={{margin:0,color:'var(--text-muted)'}}>Whitening, veneers, and smile design.</p>},
+      ]} />
+      <div className="lbl" style={{marginTop:'28px'}}>Dialog &amp; Tooltip</div>
+      <div className="row">
+        <Button onClick={()=>setOpen(true)}>Request a callback</Button>
+        <Tooltip label="We reply within a day"><IconButton label="Info" variant="outline"><Info/></IconButton></Tooltip>
+      </div>
+      <Dialog open={open} onClose={()=>setOpen(false)} title="Request a callback"
+        footer={<><Button variant="ghost" onClick={()=>setOpen(false)}>Cancel</Button><Button onClick={()=>setOpen(false)}>Send</Button></>}>
+        <p style={{margin:0}}>Leave your number and we'll call within one business day.</p>
+      </Dialog>
+    </div>
+    <div>
+      <div className="lbl">Accordion</div>
+      <Accordion defaultOpen={[0]} items={[
+        {title:'Do you accept statutory insurance?',content:<p style={{margin:0}}>Yes — we treat both statutory and privately insured patients.</p>},
+        {title:'How do I prepare for my first visit?',content:<p style={{margin:0}}>Bring your insurance card and any prior records.</p>},
+        {title:'Is parking available?',content:<p style={{margin:0}}>Street parking and a nearby garage are both close by.</p>},
+      ]} />
+    </div>
+  </>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body>
+</html>

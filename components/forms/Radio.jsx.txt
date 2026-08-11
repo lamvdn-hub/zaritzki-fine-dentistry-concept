@@ -1,0 +1,38 @@
+import React from 'react';
+
+let injected = false;
+function inject() {
+  if (injected || typeof document === 'undefined') return;
+  injected = true;
+  const css = `
+.zk-radio{display:inline-flex;align-items:flex-start;gap:0.6rem;font-family:var(--font-sans);font-size:var(--text-md);
+  color:var(--text-body);cursor:pointer;line-height:1.35;}
+.zk-radio input{position:absolute;opacity:0;width:0;height:0;}
+.zk-radio__dot{flex:0 0 auto;width:20px;height:20px;margin-top:1px;border:1.5px solid var(--border-strong);border-radius:50%;
+  background:var(--cream);display:inline-flex;align-items:center;justify-content:center;
+  transition:border-color var(--duration-fast) var(--ease-standard);}
+.zk-radio__dot::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--gold);transform:scale(0);
+  transition:transform var(--duration-fast) var(--ease-out);}
+.zk-radio:hover .zk-radio__dot{border-color:var(--umber);}
+.zk-radio input:checked + .zk-radio__dot{border-color:var(--gold);}
+.zk-radio input:checked + .zk-radio__dot::after{transform:scale(1);}
+.zk-radio input:focus-visible + .zk-radio__dot{outline:2px solid var(--focus-ring);outline-offset:2px;}
+.zk-radio input:disabled ~ *{opacity:0.5;}
+.zk-radio--disabled{cursor:not-allowed;}
+`;
+  const el = document.createElement('style');
+  el.setAttribute('data-zk', 'radio');
+  el.textContent = css;
+  document.head.appendChild(el);
+}
+
+export function Radio({ label, disabled = false, className = '', children, ...rest }) {
+  inject();
+  return (
+    <label className={['zk-radio', disabled ? 'zk-radio--disabled' : '', className].filter(Boolean).join(' ')}>
+      <input type="radio" disabled={disabled} {...rest} />
+      <span className="zk-radio__dot" />
+      {(label || children) && <span>{label || children}</span>}
+    </label>
+  );
+}

@@ -1,0 +1,24 @@
+import * as React from 'react';
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /** Visual style. primary = brass fill, secondary = espresso solid, ghost = hairline, link = quiet text. */
+  variant?: 'primary' | 'secondary' | 'ghost' | 'link';
+  /** Control height / padding / font-size. */
+  size?: 'sm' | 'md' | 'lg';
+  /** Stretch to fill the container width. */
+  fullWidth?: boolean;
+  /** Icon element rendered before the label. */
+  iconLeft?: React.ReactNode;
+  /** Icon element rendered after the label. */
+  iconRight?: React.ReactNode;
+  disabled?: boolean;
+  /** Render as a different element/component (e.g. 'a'). */
+  as?: any;
+  children?: React.ReactNode;
+}
+
+/**
+ * Primary action control for Zaritzki interfaces.
+ * @startingPoint section="Forms" subtitle="Brass, espresso, ghost & link buttons" viewport="700x200"
+ */
+export function Button(props: ButtonProps): JSX.Element;

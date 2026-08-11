@@ -1,0 +1,27 @@
+import * as React from 'react';
+
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  /** Field label rendered above the control. */
+  label?: string;
+  /** Helper text below the field. */
+  hint?: string;
+  /** Error message; when set, the field renders in the danger state. */
+  error?: string;
+  required?: boolean;
+  /** Icon adornment inside the field, left side. */
+  iconLeft?: React.ReactNode;
+  /** Icon adornment inside the field, right side. */
+  iconRight?: React.ReactNode;
+}
+
+export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  label?: string;
+  hint?: string;
+  error?: string;
+  required?: boolean;
+}
+
+/** Single-line text field with label, hint, error, and optional icon adornments. */
+export function Input(props: InputProps): JSX.Element;
+/** Multi-line text field sharing the Input styling. */
+export function Textarea(props: TextareaProps): JSX.Element;

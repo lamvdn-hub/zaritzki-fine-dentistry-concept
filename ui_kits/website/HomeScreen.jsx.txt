@@ -1,0 +1,116 @@
+// Home screen — hero, trust strip, services preview, approach, testimonial, CTA.
+function HomeScreen({ onNav }) {
+  const NS = window.ZaritzkiFineDentistryDesignSystem_dfee56;
+  const { Button, Badge, Card, CardEyebrow, CardTitle, CardBody } = NS;
+  const I = window.ZKIcons;
+  const eyebrow = { fontFamily:'var(--font-sans)',fontSize:11,fontWeight:600,letterSpacing:'.22em',textTransform:'uppercase',color:'var(--gold-light)' };
+  const services = [
+    [I.Sparkle,'Prophylaxis','Professional cleaning and preventive care, on a schedule that suits you.'],
+    [I.Chair,'Implantology','Titanium and ceramic implants, planned in-house and placed with precision.'],
+    [I.Star,'Aesthetic dentistry','Whitening, veneers, and smile design that stays true to your face.'],
+    [I.Shield,'Periodontics','Gentle, evidence-led treatment to keep gums healthy for the long term.'],
+  ];
+  const values = [
+    [I.Clock,'Unhurried appointments','Generous time set aside for every visit — nothing rushed, nothing missed.'],
+    [I.Leaf,'A calming space','Warm interiors, soft light, and quiet — designed to settle the nerves.'],
+    [I.Shield,'Precision & care','German-trained clinicians and modern technique, applied with restraint.'],
+  ];
+  return (
+    <div>
+      {/* Hero */}
+      <section style={{position:'relative',minHeight:620,display:'flex',alignItems:'center',overflow:'hidden'}}>
+        <img src="../../assets/images/treatment-room.webp" alt="" style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'}}/>
+        <div style={{position:'absolute',inset:0,background:'linear-gradient(90deg,rgba(20,12,7,.86) 0%,rgba(20,12,7,.66) 42%,rgba(20,12,7,.28) 100%)'}}/>
+        <div style={{position:'relative',maxWidth:'var(--container-max)',margin:'0 auto',padding:'0 var(--gutter)',width:'100%'}}>
+          <div style={{maxWidth:620,color:'var(--ivory)'}}>
+            <div style={eyebrow}>Zahnarztpraxis · Berlin-Charlottenburg</div>
+            <h1 style={{fontFamily:'var(--font-display)',fontWeight:400,fontSize:'clamp(44px,5.4vw,80px)',lineHeight:1.02,letterSpacing:'-.01em',color:'var(--ivory)',margin:'20px 0 0'}}>A calmer kind of<br/>dental visit</h1>
+            <p style={{fontFamily:'var(--font-sans)',fontSize:20,fontWeight:300,lineHeight:1.6,color:'rgba(245,240,230,.86)',maxWidth:'46ch',margin:'22px 0 34px'}}>Considered, unhurried care in surroundings designed to put you at ease. Fine dentistry, the way it should feel.</p>
+            <div style={{display:'flex',gap:14,flexWrap:'wrap'}}>
+              <Button variant="primary" size="lg" onClick={()=>onNav('book')} iconRight={<I.ArrowRight size={18}/>}>Book a consultation</Button>
+              <Button variant="ghost" size="lg" onClick={()=>onNav('services')} className="zk-onhero">Explore our care</Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust strip */}
+      <section style={{background:'var(--espresso)',borderTop:'1px solid var(--hairline-gold)'}}>
+        <div style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'22px var(--gutter)',display:'flex',flexWrap:'wrap',gap:'18px 44px',alignItems:'center',color:'var(--text-on-dark-muted)',fontFamily:'var(--font-sans)',fontSize:14}}>
+          <span style={{display:'flex',alignItems:'center',gap:9}}><I.Star size={17}/><b style={{color:'var(--ivory)',fontWeight:600}}>4.9</b> · 380+ patient reviews</span>
+          <span style={{display:'flex',alignItems:'center',gap:9}}><I.Shield size={17}/> Private &amp; statutory insurance</span>
+          <span style={{display:'flex',alignItems:'center',gap:9}}><I.Clock size={17}/> Same-day emergency care</span>
+          <span style={{marginLeft:'auto',display:'flex',alignItems:'center',gap:9}}><I.MapPin size={17}/> Kurfürstendamm, 10709 Berlin</span>
+        </div>
+      </section>
+
+      {/* Services preview */}
+      <section style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'var(--section-y) var(--gutter)'}}>
+        <div style={{display:'flex',alignItems:'flex-end',justifyContent:'space-between',gap:24,marginBottom:44}}>
+          <div>
+            <div style={{...eyebrow,color:'var(--text-gold)'}}>What we do</div>
+            <h2 style={{fontFamily:'var(--font-display)',fontWeight:400,fontSize:44,letterSpacing:'-.01em',color:'var(--text-strong)',margin:'14px 0 0',maxWidth:'16ch'}}>Complete care, under one calm roof</h2>
+          </div>
+          <Button variant="link" onClick={()=>onNav('services')} iconRight={<I.ArrowRight size={16}/>}>All services</Button>
+        </div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:20}}>
+          {services.map(([Icon,title,body],i)=>(
+            <Card key={i} interactive onClick={()=>onNav('services')}>
+              <div style={{width:48,height:48,borderRadius:'var(--radius-md)',background:'var(--gold-wash)',color:'var(--gold-deep)',display:'flex',alignItems:'center',justifyContent:'center',marginBottom:20}}><Icon size={24}/></div>
+              <CardTitle as="h3" style={{fontSize:24}}>{title}</CardTitle>
+              <CardBody>{body}</CardBody>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Approach — split image + values */}
+      <section style={{background:'var(--surface-sunken)',borderTop:'1px solid var(--border-soft)',borderBottom:'1px solid var(--border-soft)'}}>
+        <div style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'var(--section-y) var(--gutter)',display:'grid',gridTemplateColumns:'0.9fr 1.1fr',gap:64,alignItems:'center'}}>
+          <div style={{borderRadius:'var(--radius-lg)',overflow:'hidden',boxShadow:'var(--shadow-lg)',aspectRatio:'4/5'}}>
+            <img src="../../assets/images/interior-lounge.webp" alt="" style={{width:'100%',height:'100%',objectFit:'cover'}}/>
+          </div>
+          <div>
+            <div style={{...eyebrow,color:'var(--text-gold)'}}>Our approach</div>
+            <h2 style={{fontFamily:'var(--font-display)',fontWeight:400,fontSize:46,letterSpacing:'-.01em',color:'var(--text-strong)',margin:'14px 0 40px',maxWidth:'18ch'}}>Dentistry that feels unhurried</h2>
+            <div style={{display:'flex',flexDirection:'column',gap:28}}>
+              {values.map(([Icon,title,body],i)=>(
+                <div key={i} style={{display:'flex',gap:18}}>
+                  <div style={{flex:'0 0 auto',width:44,height:44,borderRadius:'50%',border:'1px solid var(--hairline-gold)',color:'var(--gold-deep)',display:'flex',alignItems:'center',justifyContent:'center'}}><Icon size={20}/></div>
+                  <div>
+                    <h3 style={{fontFamily:'var(--font-sans)',fontSize:18,fontWeight:700,color:'var(--text-strong)',margin:'6px 0 6px'}}>{title}</h3>
+                    <p style={{fontFamily:'var(--font-sans)',fontSize:15,lineHeight:1.6,color:'var(--text-muted)',margin:0,maxWidth:'46ch'}}>{body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial */}
+      <section style={{maxWidth:900,margin:'0 auto',padding:'var(--section-y) var(--gutter)',textAlign:'center'}}>
+        <div style={{color:'var(--gold)',display:'flex',justifyContent:'center',marginBottom:20}}><I.Quote size={44}/></div>
+        <blockquote style={{fontFamily:'var(--font-display)',fontWeight:400,fontStyle:'italic',fontSize:'clamp(28px,3.4vw,40px)',lineHeight:1.3,letterSpacing:'-.01em',color:'var(--text-strong)',margin:0}}>
+          "The first dentist I've been to that doesn't feel like a dentist. Calm, precise, and genuinely kind — I actually look forward to my check-ups now."
+        </blockquote>
+        <div style={{marginTop:28,fontFamily:'var(--font-sans)'}}>
+          <div style={{fontWeight:700,color:'var(--text-strong)'}}>Katharina M.</div>
+          <div style={{fontSize:14,color:'var(--text-subtle)'}}>Patient since 2019</div>
+        </div>
+      </section>
+
+      {/* CTA band */}
+      <section style={{position:'relative',overflow:'hidden'}}>
+        <img src="../../assets/images/powder-room.webp" alt="" style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'}}/>
+        <div style={{position:'absolute',inset:0,background:'rgba(20,12,7,.72)'}}/>
+        <div style={{position:'relative',maxWidth:'var(--container-max)',margin:'0 auto',padding:'84px var(--gutter)',textAlign:'center',color:'var(--ivory)'}}>
+          <h2 style={{fontFamily:'var(--font-display)',fontWeight:400,fontSize:48,letterSpacing:'-.01em',color:'var(--ivory)',margin:'0 0 16px'}}>Ready when you are</h2>
+          <p style={{fontFamily:'var(--font-sans)',fontSize:18,fontWeight:300,color:'rgba(245,240,230,.82)',maxWidth:'42ch',margin:'0 auto 30px'}}>New patients are always welcome. Book online in under a minute, or call the practice directly.</p>
+          <Button variant="primary" size="lg" onClick={()=>onNav('book')}>Book a consultation</Button>
+        </div>
+      </section>
+    </div>
+  );
+}
+window.HomeScreen = HomeScreen;

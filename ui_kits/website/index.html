@@ -1,0 +1,48 @@
+<!-- @startingPoint section="Website" subtitle="Full clinic marketing site — click through home, services, team, booking" viewport="1280x820" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zaritzki Fine Dentistry</title>
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  html, body { margin: 0; background: var(--surface-page); }
+  a { color: inherit; }
+  a:hover { color: inherit; }
+  /* ghost button placed on the dark hero */
+  .zk-onhero.zk-btn--ghost { color: var(--ivory); border-color: rgba(245,240,230,.5); }
+  .zk-onhero.zk-btn--ghost:hover { background: rgba(245,240,230,.12); border-color: var(--ivory); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel" src="Icons.jsx"></script>
+<script type="text/babel" src="SiteHeader.jsx"></script>
+<script type="text/babel" src="SiteFooter.jsx"></script>
+<script type="text/babel" src="HomeScreen.jsx"></script>
+<script type="text/babel" src="ServicesScreen.jsx"></script>
+<script type="text/babel" src="TeamScreen.jsx"></script>
+<script type="text/babel" src="BookScreen.jsx"></script>
+<script type="text/babel">
+function App() {
+  const [page, setPage] = React.useState('home');
+  const onNav = (p) => { setPage(p); window.scrollTo({ top: 0 }); };
+  const dark = page === 'home';
+  const Screen = { home: window.HomeScreen, services: window.ServicesScreen, team: window.TeamScreen, book: window.BookScreen, approach: window.ServicesScreen }[page] || window.HomeScreen;
+  return (
+    <div>
+      <window.SiteHeader page={page} onNav={onNav} dark={dark} />
+      <Screen onNav={onNav} />
+      <window.SiteFooter onNav={onNav} />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+import * as React from 'react';
+
+export interface CardProps extends React.HTMLAttributes<HTMLElement> {
+  /** default = hairline + soft shadow; flat = no shadow; raised = deeper shadow; inverse = espresso ground. */
+  variant?: 'default' | 'flat' | 'raised' | 'inverse';
+  /** Apply the standard internal padding. Set false when the card holds a full-bleed image. */
+  padded?: boolean;
+  /** Adds a hover lift + brass hairline for clickable cards. */
+  interactive?: boolean;
+  as?: any;
+  children?: React.ReactNode;
+}
+
+/**
+ * Surface container for grouped content — services, team members, editorial blocks.
+ * @startingPoint section="Content" subtitle="Cards: default, raised, inverse, interactive" viewport="700x260"
+ */
+export function Card(props: CardProps): JSX.Element;
+/** Uppercase brass kicker for the top of a card. */
+export function CardEyebrow(props: { children?: React.ReactNode; className?: string }): JSX.Element;
+/** Serif card title. */
+export function CardTitle(props: { children?: React.ReactNode; as?: any; className?: string }): JSX.Element;
+/** Body copy region of a card. */
+export function CardBody(props: { children?: React.ReactNode; className?: string }): JSX.Element;

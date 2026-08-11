@@ -1,0 +1,15 @@
+import * as React from 'react';
+
+export interface AccordionItem { title: React.ReactNode; content: React.ReactNode; }
+
+export interface AccordionProps {
+  items: AccordionItem[];
+  /** Allow more than one panel open at once. */
+  allowMultiple?: boolean;
+  /** Indices open on first render. */
+  defaultOpen?: number[];
+  className?: string;
+}
+
+/** Serif-headed disclosure list for FAQs and long-form detail; a brass + rotates to ×. */
+export function Accordion(props: AccordionProps): JSX.Element;

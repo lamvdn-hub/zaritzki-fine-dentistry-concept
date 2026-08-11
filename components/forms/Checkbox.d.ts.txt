@@ -1,0 +1,10 @@
+import * as React from 'react';
+
+export interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  /** Text label beside the box. */
+  label?: React.ReactNode;
+  disabled?: boolean;
+}
+
+/** Checkbox with a brass-filled checkmark when selected. */
+export function Checkbox(props: CheckboxProps): JSX.Element;

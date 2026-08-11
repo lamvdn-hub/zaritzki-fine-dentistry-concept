@@ -1,0 +1,31 @@
+import React from 'react';
+
+let injected = false;
+function inject() {
+  if (injected || typeof document === 'undefined') return;
+  injected = true;
+  const css = `
+.zk-badge{display:inline-flex;align-items:center;gap:0.35em;font-family:var(--font-sans);font-weight:var(--fw-semibold);
+  font-size:var(--text-2xs);letter-spacing:var(--tracking-wide);text-transform:uppercase;line-height:1;
+  padding:5px 9px;border-radius:var(--radius-sm);border:1px solid transparent;white-space:nowrap;}
+.zk-badge--md{font-size:var(--text-xs);padding:6px 11px;}
+.zk-badge__dot{width:6px;height:6px;border-radius:50%;background:currentColor;}
+.zk-badge--neutral{background:var(--parchment);color:var(--umber);border-color:var(--stone);}
+.zk-badge--gold{background:var(--gold-wash);color:var(--gold-deep);border-color:var(--hairline-gold);}
+.zk-badge--solid{background:var(--gold);color:var(--brand-contrast);}
+.zk-badge--success{background:#EAECD9;color:#525C33;border-color:#CDD3AE;}
+.zk-badge--warning{background:#F6E4CF;color:#8A430F;border-color:#EAC59B;}
+.zk-badge--danger{background:#F3DDD7;color:#8A3327;border-color:#E3B8AE;}
+.zk-badge--info{background:#DFE6EE;color:#213448;border-color:#BECBD9;}
+`;
+  const el = document.createElement('style');
+  el.setAttribute('data-zk', 'badge');
+  el.textContent = css;
+  document.head.appendChild(el);
+}
+
+export function Badge({ variant = 'neutral', size = 'sm', dot = false, className = '', children, ...rest }) {
+  inject();
+  const classes = ['zk-badge', `zk-badge--${variant}`, size === 'md' ? 'zk-badge--md' : '', className].filter(Boolean).join(' ');
+  return <span className={classes} {...rest}>{dot && <span className="zk-badge__dot" />}{children}</span>;
+}

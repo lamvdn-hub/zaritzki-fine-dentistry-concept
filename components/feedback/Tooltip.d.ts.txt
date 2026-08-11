@@ -1,0 +1,13 @@
+import * as React from 'react';
+
+export interface TooltipProps {
+  /** Text shown in the bubble. */
+  label: React.ReactNode;
+  placement?: 'top' | 'bottom';
+  className?: string;
+  /** The trigger element the tooltip wraps. */
+  children: React.ReactNode;
+}
+
+/** Espresso tooltip bubble shown on hover/focus of its trigger. */
+export function Tooltip(props: TooltipProps): JSX.Element;

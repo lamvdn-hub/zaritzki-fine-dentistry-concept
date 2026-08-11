@@ -1,0 +1,38 @@
+import React from 'react';
+
+let injected = false;
+function inject() {
+  if (injected || typeof document === 'undefined') return;
+  injected = true;
+  const css = `
+.zk-check{display:inline-flex;align-items:flex-start;gap:0.6rem;font-family:var(--font-sans);font-size:var(--text-md);
+  color:var(--text-body);cursor:pointer;line-height:1.35;}
+.zk-check input{position:absolute;opacity:0;width:0;height:0;}
+.zk-check__box{flex:0 0 auto;width:20px;height:20px;margin-top:1px;border:1.5px solid var(--border-strong);border-radius:var(--radius-xs);
+  background:var(--cream);display:inline-flex;align-items:center;justify-content:center;color:transparent;
+  transition:background var(--duration-fast) var(--ease-standard),border-color var(--duration-fast) var(--ease-standard),color var(--duration-fast) var(--ease-standard);}
+.zk-check__box svg{width:13px;height:13px;stroke-width:3;}
+.zk-check:hover .zk-check__box{border-color:var(--umber);}
+.zk-check input:checked + .zk-check__box{background:var(--gold);border-color:var(--gold);color:var(--brand-contrast);}
+.zk-check input:focus-visible + .zk-check__box{outline:2px solid var(--focus-ring);outline-offset:2px;}
+.zk-check input:disabled ~ *{opacity:0.5;}
+.zk-check--disabled{cursor:not-allowed;}
+`;
+  const el = document.createElement('style');
+  el.setAttribute('data-zk', 'checkbox');
+  el.textContent = css;
+  document.head.appendChild(el);
+}
+
+const Check = () => (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>);
+
+export function Checkbox({ label, checked, defaultChecked, disabled = false, className = '', children, ...rest }) {
+  inject();
+  return (
+    <label className={['zk-check', disabled ? 'zk-check--disabled' : '', className].filter(Boolean).join(' ')}>
+      <input type="checkbox" checked={checked} defaultChecked={defaultChecked} disabled={disabled} {...rest} />
+      <span className="zk-check__box"><Check /></span>
+      {(label || children) && <span>{label || children}</span>}
+    </label>
+  );
+}
