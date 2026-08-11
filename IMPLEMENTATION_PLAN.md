@@ -1158,7 +1158,7 @@ git commit -m "feat: add typed practice data with unforgeable pending facts"
   - `<LocationProvider initialLocation?: LocationId>` — client component
   - `useLocation(): { practice: Practice; locationId: LocationId; setLocation: (id: LocationId) => void }`
 
-- [ ] **Step 1: Write the failing booking test**
+- [x] **Step 1: Write the failing booking test**
 
 Create `site/tests/unit/booking.test.ts`:
 
@@ -1194,12 +1194,12 @@ describe('booking href', () => {
 });
 ```
 
-- [ ] **Step 2: Run it and confirm it fails**
+- [x] **Step 2: Run it and confirm it fails**
 
 Run: `pnpm test:unit booking`
 Expected: FAIL — `Cannot find module '@/lib/booking'`.
 
-- [ ] **Step 3: Create `site/lib/booking.ts`**
+- [x] **Step 3: Create `site/lib/booking.ts`**
 
 ```ts
 import { isKnown } from '@/lib/pending';
@@ -1218,12 +1218,12 @@ export function bookingIsFallback(practice: Practice): boolean {
 }
 ```
 
-- [ ] **Step 4: Run the booking test and confirm it passes**
+- [x] **Step 4: Run the booking test and confirm it passes**
 
 Run: `pnpm test:unit booking`
 Expected: PASS, 3 tests.
 
-- [ ] **Step 5: Write the failing provider test**
+- [x] **Step 5: Write the failing provider test**
 
 Create `site/tests/unit/LocationProvider.test.tsx`:
 
@@ -1276,12 +1276,12 @@ describe('LocationProvider', () => {
 });
 ```
 
-- [ ] **Step 6: Run it and confirm it fails**
+- [x] **Step 6: Run it and confirm it fails**
 
 Run: `pnpm test:unit LocationProvider`
 Expected: FAIL — `Cannot find module '@/lib/LocationProvider'`.
 
-- [ ] **Step 7: Create `site/lib/LocationProvider.tsx`**
+- [x] **Step 7: Create `site/lib/LocationProvider.tsx`**
 
 ```tsx
 'use client';
@@ -1349,12 +1349,12 @@ export function useLocation(): LocationContextValue {
 }
 ```
 
-- [ ] **Step 8: Run the provider test and confirm it passes**
+- [x] **Step 8: Run the provider test and confirm it passes**
 
 Run: `pnpm test:unit LocationProvider`
 Expected: PASS, 5 tests.
 
-- [ ] **Step 9: Commit**
+- [x] **Step 9: Commit**
 
 ```bash
 git add -A
