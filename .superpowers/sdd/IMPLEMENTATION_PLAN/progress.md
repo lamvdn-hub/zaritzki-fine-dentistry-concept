@@ -48,3 +48,5 @@
 - Task 15: minor (deferred): strengthen ProofBand regression coverage for the displayed 5.0 values and non-blockquote testimonial-like text.
 - Task 15: minor (deferred): lock exact map destinations and telephone links in PracticesSection tests; production output is correct.
 - Task 15: complete (commits e678e39..4049a04, review approved; three RED/GREEN cycles, focused 3/3 + 3/3 + 2/2, full unit 93/93, TypeScript clean)
+- Task 16: minor (deferred): page order E2E locks direct `section[id]` nodes but not the relative positions of ProofBand and ClosingCta, which currently have no IDs.
+- Task 16: complete (commits dce38df..4e9359c, review approved; focused E2E 3/3, full unit 93/93, full desktop/mobile E2E 12/12, lint/TypeScript/build clean)

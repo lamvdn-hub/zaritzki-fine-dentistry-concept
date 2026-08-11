@@ -3786,7 +3786,7 @@ git commit -m "feat: add proof band, practices section, and closing CTA"
 - Consumes: everything built so far.
 - Produces: the assembled landing page at `/en`, with `?praxis=` seeding the initial practice.
 
-- [ ] **Step 1: Create `site/components/PageShell.tsx`**
+- [x] **Step 1: Create `site/components/PageShell.tsx`**
 
 The provider, header, and sticky bar are client components; the page's content is composed inside them.
 
@@ -3820,7 +3820,7 @@ export function PageShell({
 }
 ```
 
-- [ ] **Step 2: Replace `site/app/[locale]/page.tsx`**
+- [x] **Step 2: Replace `site/app/[locale]/page.tsx`**
 
 ```tsx
 import { notFound } from 'next/navigation';
@@ -3877,7 +3877,7 @@ function TalkSection({ t }: { t: (key: string, values?: Record<string, string | 
 import { TalkSectionClient } from '@/components/walk/StepSections';
 ```
 
-- [ ] **Step 3: Create `site/components/walk/StepSections.tsx`**
+- [x] **Step 3: Create `site/components/walk/StepSections.tsx`**
 
 These wrap `StepSection` so each one reads the currently selected practice's imagery.
 
@@ -3942,12 +3942,12 @@ export function RoomSection({ t }: { t: T }) {
 
 Then simplify `page.tsx` — delete the `TalkSection` wrapper function and the trailing import, and use `<TalkSectionClient t={t} />` directly in the tree, importing it alongside `LoungeSection` and `RoomSection` at the top.
 
-- [ ] **Step 4: Run the whole unit suite**
+- [x] **Step 4: Run the whole unit suite**
 
 Run: `pnpm test:unit`
 Expected: PASS, all tests.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add -A
