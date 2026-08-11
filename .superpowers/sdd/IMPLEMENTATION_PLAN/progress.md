@@ -50,3 +50,8 @@
 - Task 15: complete (commits e678e39..4049a04, review approved; three RED/GREEN cycles, focused 3/3 + 3/3 + 2/2, full unit 93/93, TypeScript clean)
 - Task 16: minor (deferred): page order E2E locks direct `section[id]` nodes but not the relative positions of ProofBand and ClosingCta, which currently have no IDs.
 - Task 16: complete (commits dce38df..4e9359c, review approved; focused E2E 3/3, full unit 93/93, full desktop/mobile E2E 12/12, lint/TypeScript/build clean)
+- Task 16 visual-fix: anchored desktop walk content and mobile direct-hash content were measured beneath sticky/fixed chrome; added responsive document scroll clearance with real-link/direct-hash RED/GREEN coverage (commit 275e906, re-review approved).
+- Task 16 visual-fix minor (deferred): anchor-clearance E2E asserts the lower bound but does not also bound the target within the viewport; captured RED proves current native scrolling is exercised.
+- Phase 5: verification complete after the anchor fix (unit 93/93; pending CLI exactly 4; lint clean; TypeScript clean; production build clean; desktop/mobile E2E 16/16; direction seed preserved in built server artifact; responsive scroll clearance present in emitted CSS; port 3000 clear; worktree clean).
+- Phase 5: visual inspection complete on the live dev server at desktop and mobile widths. Composed typography, content rhythm, cost/proof/practices/closing sections, location seeding, and anchor visibility were inspected; the only expected visual gaps are missing Task 17 photography assets. In-app browser connection was unavailable, so the project Playwright browser captured the live server views.
+- Phase 5: paused at the required user review gate before Phase 6.

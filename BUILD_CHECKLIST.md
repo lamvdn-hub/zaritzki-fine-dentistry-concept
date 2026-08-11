@@ -48,7 +48,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 - [x] Task 14 — Cost and insurance panel
 - [x] Task 15 — Proof, practices, and closing CTA
 - [x] Task 16 — Compose the page
-- [ ] Phase 5 verification complete
+- [x] Phase 5 verification complete
 - [ ] User approved Phase 5
 
 ## Phase 6 — Assets, search, and verification
