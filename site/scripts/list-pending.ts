@@ -1,20 +1,12 @@
-import { PRACTICES, PRACTICE_ORDER } from '../lib/locations';
-import { isKnown } from '../lib/pending';
+import { OPEN_FACTS } from '../lib/openFacts';
 
 const rows: string[] = [];
 
-for (const id of PRACTICE_ORDER) {
-  const p = PRACTICES[id];
-  if (!isKnown(p.bookingUrl)) {
-    rows.push(`${p.shortName.padEnd(16)} bookingUrl        ${p.bookingUrl.note}`);
+for (const [name, fact] of Object.entries(OPEN_FACTS)) {
+  if (!fact.known) {
+    rows.push(`${'both'.padEnd(16)} ${name.padEnd(18)} ${fact.note}`);
   }
 }
-
-// Facts held outside the practice data, tracked here so one command lists everything.
-rows.push('both             clinicians         Names and credentials beyond Dr. Zaritzki not supplied');
-rows.push('both             sharedTeam         Whether both addresses share clinicians is unknown');
-rows.push('both             selfPayWording     Estimate wording awaiting practice confirmation');
-rows.push('both             photography        All 12 images are licensed stock awaiting approval or replacement');
 
 console.log(`\n${rows.length} facts awaiting the practice:\n`);
 for (const r of rows) console.log(`  ${r}`);
