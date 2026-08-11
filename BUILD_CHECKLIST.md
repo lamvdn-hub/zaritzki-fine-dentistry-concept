@@ -40,7 +40,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 - [x] Task 11 — Step-rail navigation
 - [x] Task 12 — Reveal primitive and split section
 - [x] Phase 4 verification complete
-- [ ] User approved Phase 4
+- [x] User approved Phase 4
 
 ## Phase 5 — Content sections
 

@@ -3026,6 +3026,24 @@ git commit -m "feat: add reveal primitive and reusable split step section"
 
 # Phase 5 — Content sections
 
+> **Approved Phase 5 implementation correction (2026-08-11):** all four
+> unresolved client facts move from hardcoded CLI strings into one typed
+> `OPEN_FACTS` registry. Task 14 is the first consumer: confirmed private/GOZ
+> copy renders normally, while the exact self-pay wording renders only when its
+> `Pending<string>` is known; otherwise the typed note renders through
+> `PendingFact`. The pending CLI enumerates this registry and must remain at
+> exactly four facts. Task 15 gives `ClosingCta` its own failing behavior test
+> before production code.
+>
+> Task 16 never passes a server-created translator closure or server-composed
+> children through a client boundary. The server route passes the serializable
+> message object, locale, and validated location ID to `PageShell`; `PageShell`
+> creates `t` on the client and owns the complete location-dependent page tree.
+> The server may create a separate translator for the server-rendered footer.
+> Query validation uses an own-property check so `?praxis=constructor` cannot
+> seed an inherited key. Write and run the focused page E2E test RED before
+> changing composition code.
+
 ## Task 13: Treatment schedule
 
 **Files:**
@@ -3033,7 +3051,7 @@ git commit -m "feat: add reveal primitive and reusable split step section"
 - Test: `site/tests/unit/TreatmentSchedule.test.tsx`
 
 **Interfaces:**
-- Consumes: `useLocation`, `PendingFact`, `isKnown`.
+- Consumes: `TREATMENTS`.
 - Produces: `<TreatmentSchedule t={t} />` — a real `<table>`, because it is tabular data.
 
 - [ ] **Step 1: Write the failing test**
@@ -3213,7 +3231,7 @@ export function TreatmentSchedule({
 - [ ] **Step 5: Run the test and confirm it passes**
 
 Run: `pnpm test:unit TreatmentSchedule`
-Expected: PASS, 5 tests.
+Expected: PASS, 6 tests.
 
 - [ ] **Step 6: Commit**
 
@@ -3226,8 +3244,19 @@ git commit -m "feat: add treatment schedule with unforgeable pricing"
 
 ## Task 14: Cost and insurance panel
 
+> **Binding correction:** also create `site/lib/openFacts.ts` and modify
+> `site/scripts/list-pending.ts`. Type clinicians, shared-team status,
+> self-pay wording, and photography approval with `Pending<T>`; do not leave
+> any unresolved fact as a hardcoded CLI-only string. The CostPanel test is the
+> RED gate for the first UI consumer and must prove the unconfirmed self-pay
+> sentence is absent while its typed pending marker is present. Run
+> `npm.cmd run pending` after GREEN and confirm exactly four facts. Do not add a
+> pending marker to the confirmed private/GOZ copy.
+
 **Files:**
 - Create: `site/components/content/CostPanel.tsx` + `.module.css`
+- Create: `site/lib/openFacts.ts`
+- Modify: `site/scripts/list-pending.ts`
 - Test: `site/tests/unit/CostPanel.test.tsx`
 
 **Interfaces:**
@@ -3391,11 +3420,18 @@ git commit -m "feat: add cost and insurance panel stating the GKV exclusion plai
 
 ## Task 15: Proof band, practices section, and closing CTA
 
+> **Binding correction:** use three separate RED/GREEN cycles in dependency
+> order: ProofBand, PracticesSection, then ClosingCta. Add
+> `site/tests/unit/ClosingCta.test.tsx` and watch it fail for the missing
+> component before creating either ClosingCta production file. Its behavior
+> test must exercise the real location-aware booking destination and decorative
+> empty-alt image, not a mocked component.
+
 **Files:**
 - Create: `site/components/content/ProofBand.tsx` + `.module.css`
 - Create: `site/components/content/PracticesSection.tsx` + `.module.css`
 - Create: `site/components/content/ClosingCta.tsx` + `.module.css`
-- Test: `site/tests/unit/ProofBand.test.tsx`, `site/tests/unit/PracticesSection.test.tsx`
+- Test: `site/tests/unit/ProofBand.test.tsx`, `site/tests/unit/PracticesSection.test.tsx`, `site/tests/unit/ClosingCta.test.tsx`
 
 **Interfaces:**
 - Consumes: `PRACTICE_ORDER`, `getPractice`, `useLocation`, `bookingHref`, `Button`, `Reveal`.
@@ -3730,6 +3766,16 @@ git commit -m "feat: add proof band, practices section, and closing CTA"
 ---
 
 ## Task 16: Compose the page
+
+> **Binding correction:** write the focused page E2E test first and capture RED
+> against the current empty `<main>`. `PageShell` accepts only serializable
+> `messages`, `locale`, and optional `initialLocation`; it constructs the
+> translator inside the client boundary and renders the complete provider,
+> chrome, Hero, walk, content sections, and sticky bar itself. The server route
+> passes no function prop and no server-created children into `PageShell`.
+> Keep `SiteFooter` server-rendered with a server-local translator. Validate
+> `praxis` with an own-property check and cover both a real location seed and
+> the inherited-key rejection in E2E behavior.
 
 **Files:**
 - Modify: `site/app/[locale]/page.tsx`
