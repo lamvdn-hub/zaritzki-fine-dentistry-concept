@@ -38,7 +38,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 
 - [x] Task 10 — Hero and past-hero sentinel
 - [x] Task 11 — Step-rail navigation
-- [ ] Task 12 — Reveal primitive and split section
+- [x] Task 12 — Reveal primitive and split section
 - [ ] Phase 4 verification complete
 - [ ] User approved Phase 4
 
@@ -63,6 +63,6 @@ This checklist is updated after every task and phase. Phase transitions require 
 ## Pre-flight findings queued for their owning phases
 
 - [x] Phase 3: preserve phone access on mobile and externalize footer copy.
-- [ ] Phase 4: create `StepRail` before consumers; keep no-JavaScript content visible; implement rail release behavior.
+- [x] Phase 4: create `StepRail` before consumers; keep no-JavaScript content visible; implement rail release behavior.
 - [ ] Phase 5: keep translation data serializable across the server/client boundary; type every unresolved fact.
 - [ ] Phase 6: strengthen interaction/reduced-motion/contrast verification; replace the Unicode star; use safe temporary image outputs; pass the complete finish-review packet.

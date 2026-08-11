@@ -2770,7 +2770,7 @@ git commit -m "feat: add step rail navigation with scroll-spy"
   - `<Reveal delay?={number}>` — one orchestrated entrance, used everywhere; no other component writes its own scroll animation.
   - `<StepSection id anchor eyebrow headline body note? image imageSide="left"|"right" tone="dark"|"light" />`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Create `site/tests/unit/StepSection.test.tsx`:
 
@@ -2815,12 +2815,12 @@ describe('StepSection', () => {
 });
 ```
 
-- [ ] **Step 2: Run it and confirm it fails**
+- [x] **Step 2: Run it and confirm it fails**
 
 Run: `pnpm test:unit StepSection`
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Create `site/components/motion/Reveal.module.css`**
+- [x] **Step 3: Create `site/components/motion/Reveal.module.css`**
 
 ```css
 .reveal {
@@ -2839,7 +2839,7 @@ Expected: FAIL — module not found.
 }
 ```
 
-- [ ] **Step 4: Create `site/components/motion/Reveal.tsx`**
+- [x] **Step 4: Create `site/components/motion/Reveal.tsx`**
 
 ```tsx
 'use client';
@@ -2897,7 +2897,7 @@ export function Reveal({
 }
 ```
 
-- [ ] **Step 5: Create `site/components/walk/StepSection.module.css`**
+- [x] **Step 5: Create `site/components/walk/StepSection.module.css`**
 
 ```css
 .section { display: grid; grid-template-columns: 1fr 1fr; min-height: 34rem; }
@@ -2954,7 +2954,7 @@ export function Reveal({
 }
 ```
 
-- [ ] **Step 6: Create `site/components/walk/StepSection.tsx`**
+- [x] **Step 6: Create `site/components/walk/StepSection.tsx`**
 
 ```tsx
 import Image from 'next/image';
@@ -3010,12 +3010,12 @@ export function StepSection({
 }
 ```
 
-- [ ] **Step 7: Run the test and confirm it passes**
+- [x] **Step 7: Run the test and confirm it passes**
 
 Run: `pnpm test:unit StepSection`
 Expected: PASS, 3 tests.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add -A
