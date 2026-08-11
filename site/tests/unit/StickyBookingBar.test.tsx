@@ -126,4 +126,12 @@ describe('StickyBookingBar', () => {
       expect(text.toLowerCase()).not.toContain(banned.toLowerCase());
     }
   });
+
+  it('allows its booking controls to wrap on narrow screens', () => {
+    setup();
+    const actions = screen.getByText('Hide this bar').parentElement;
+
+    expect(actions).not.toBeNull();
+    expect(window.getComputedStyle(actions!).flexWrap).toBe('wrap');
+  });
 });
