@@ -32,7 +32,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 - [x] Task 8 — Sticky booking bar
 - [x] Task 9 — Footer
 - [x] Phase 3 verification complete
-- [ ] User approved Phase 3
+- [x] User approved Phase 3
 
 ## Phase 4 — The walk
 

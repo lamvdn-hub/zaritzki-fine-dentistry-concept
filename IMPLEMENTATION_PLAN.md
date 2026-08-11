@@ -2280,6 +2280,24 @@ git commit -m "feat: add espresso site footer with both practices"
 
 # Phase 4 — The walk
 
+> **Approved Phase 4 implementation correction (2026-08-11):** execute this
+> phase as Task 11, then Task 10, then Task 12 so `StepRail` exists before the
+> hero consumes it. The rail remains one authored navigation at the bottom of
+> the hero: it is static and readable by default, becomes fixed beneath the
+> desktop header only while `body[data-past-hero='true']` and the walk is still
+> active, and releases when the top of `#practices` reaches the rail position.
+> It never fixes on mobile. Cover both the stuck and released states with
+> behavior tests; do not duplicate the rail. Task 10 must separately prove the
+> hero sentinel toggles and cleans up `data-past-hero`.
+>
+> `Reveal` also stays fully visible in server-rendered/no-JavaScript markup.
+> Only a mounted, motion-enabled client with `IntersectionObserver` may opt it
+> into the pre-reveal opacity/12px transform; reduced-motion and unsupported
+> clients remain visible with no transform. Give `Reveal` its own failing
+> behavior test before implementation. Its needed public API is `children`,
+> optional `delay`, and optional `className`; the unused `as?` notation below
+> is removed rather than implementing an unneeded polymorphic surface.
+
 ## Task 10: Hero and the past-hero sentinel
 
 **Files:**
@@ -2730,7 +2748,7 @@ git commit -m "feat: add step rail navigation with scroll-spy"
 **Interfaces:**
 - Consumes: `Reveal`.
 - Produces:
-  - `<Reveal as?="div" delay?={number}>` — one orchestrated entrance, used everywhere; no other component writes its own scroll animation.
+  - `<Reveal delay?={number}>` — one orchestrated entrance, used everywhere; no other component writes its own scroll animation.
   - `<StepSection id anchor eyebrow headline body note? image imageSide="left"|"right" tone="dark"|"light" />`
 
 - [ ] **Step 1: Write the failing test**
