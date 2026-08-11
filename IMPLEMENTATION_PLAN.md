@@ -1935,7 +1935,7 @@ git commit -m "feat: add site header with location and locale switches"
 - Consumes: `useLocation`, `bookingHref`, `Button`.
 - Produces: `<StickyBookingBar t={t} />` — hidden until `data-visible="true"` is set by the hero sentinel.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Create `site/tests/unit/StickyBookingBar.test.tsx`:
 
@@ -1981,12 +1981,12 @@ describe('StickyBookingBar', () => {
 });
 ```
 
-- [ ] **Step 2: Run it and confirm it fails**
+- [x] **Step 2: Run it and confirm it fails**
 
 Run: `pnpm test:unit StickyBookingBar`
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Create `site/components/chrome/StickyBookingBar.module.css`**
+- [x] **Step 3: Create `site/components/chrome/StickyBookingBar.module.css`**
 
 ```css
 .bar {
@@ -2045,7 +2045,7 @@ Expected: FAIL — module not found.
 }
 ```
 
-- [ ] **Step 4: Create `site/components/chrome/StickyBookingBar.tsx`**
+- [x] **Step 4: Create `site/components/chrome/StickyBookingBar.tsx`**
 
 ```tsx
 'use client';
@@ -2106,12 +2106,12 @@ export function StickyBookingBar({
 }
 ```
 
-- [ ] **Step 5: Run the test and confirm it passes**
+- [x] **Step 5: Run the test and confirm it passes**
 
 Run: `pnpm test:unit StickyBookingBar`
 Expected: PASS, 4 tests.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add -A

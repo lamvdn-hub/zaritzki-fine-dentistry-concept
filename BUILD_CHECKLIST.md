@@ -29,7 +29,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 
 - [x] Task 6 — Button and pending-fact marker
 - [x] Task 7 — Header and switches
-- [ ] Task 8 — Sticky booking bar
+- [x] Task 8 — Sticky booking bar
 - [ ] Task 9 — Footer
 - [ ] Phase 3 verification complete
 - [ ] User approved Phase 3
