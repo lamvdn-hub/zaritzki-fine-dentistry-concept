@@ -1,0 +1,61 @@
+/* Zaritzki Fine Dentistry — Base element styling
+   Light, opinionated defaults so raw HTML already feels on-brand.
+   Non-invasive: no CSS resets beyond box-sizing + margin normalisation. */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: var(--lh-normal);
+  color: var(--text-body);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-display-regular);
+  color: var(--text-strong);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+h1 { font-size: var(--text-display-xl); }
+h2 { font-size: var(--text-display-lg); }
+h3 { font-size: var(--text-display-md); }
+h4 { font-size: var(--text-display-sm); }
+
+h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  color: var(--text-strong);
+  margin: 0 0 0.5em;
+}
+
+p { margin: 0 0 1em; text-wrap: pretty; }
+p.lead { font-size: var(--text-xl); line-height: var(--lh-relaxed); color: var(--text-muted); font-weight: var(--fw-light); }
+
+/* Editorial eyebrow / kicker */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--text-gold);
+}
+
+a { color: var(--gold-deep); text-decoration: none; transition: color var(--duration-fast) var(--ease-standard); }
+a:hover { color: var(--cognac); }
+
+hr { border: none; border-top: var(--border-hairline); margin: var(--space-6) 0; }
+
+::selection { background: var(--gold-wash); color: var(--espresso); }
+
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+
+small { font-size: var(--text-sm); color: var(--text-subtle); }
+strong { font-weight: var(--fw-semibold); }

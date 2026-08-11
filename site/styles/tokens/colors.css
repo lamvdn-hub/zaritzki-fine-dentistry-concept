@@ -1,0 +1,74 @@
+/* Zaritzki Fine Dentistry — Color System
+   A warm, boutique-hotel palette drawn from the clinic interiors:
+   ivory walls, espresso wood, brass mosaic, cognac leather, midnight velvet.
+   Brass/gold is the signature primary — deliberately unlike clinical dental blues. */
+:root {
+  /* ---- Warm neutrals (the "walls & plaster") ---- */
+  --ivory:      #F5F0E6; /* primary light ground */
+  --cream:      #FBF8F1; /* elevated surface / card */
+  --parchment:  #EFE7D6; /* subtle fill, hover on light */
+  --stone:      #E0D5C0; /* borders, dividers on light */
+  --sand:       #C7B695; /* mid taupe — muted fills */
+  --clay:       #9A8663; /* muted warm text / captions */
+
+  /* ---- Browns (the "wood & leather") ---- */
+  --espresso:   #241A12; /* near-black brown — primary dark ground */
+  --cocoa:      #3A2A1D; /* dark surface, secondary ground */
+  --walnut:     #5C4128; /* rich mid-brown */
+  --umber:      #7A5638; /* warm brown text on light */
+
+  /* ---- Brass / gold (SIGNATURE ACCENT — the mosaic & hardware) ---- */
+  --gold:       #B58A3E; /* primary brand accent */
+  --gold-light: #CDA75E; /* hover / highlight */
+  --gold-deep:  #8F6C2C; /* pressed / on-light text */
+  --gold-wash:  #EDE3CC; /* faint gold tint fill */
+
+  /* ---- Secondary accents ---- */
+  --cognac:     #A45A2A; /* leather — warm secondary */
+  --cognac-deep:#7E4320;
+  --midnight:   #27394F; /* velvet navy — cool counterweight */
+  --midnight-deep:#1A2635;
+  --amber:      #C4611C; /* lamp glow — reserved highlight, sparse use */
+
+  /* ---- Semantic (kept warm to sit in the palette) ---- */
+  --success:    #6E7A47; /* olive / sage */
+  --success-fg: #EEF0E2;
+  --warning:    #C4611C; /* amber */
+  --warning-fg: #2B1A0C;
+  --danger:     #9E3B2E; /* muted brick red (the gerbera flowers) */
+  --danger-fg:  #F6E9E4;
+  --info:       #27394F; /* midnight */
+  --info-fg:    #E6EBF1;
+
+  /* ================= SEMANTIC ALIASES ================= */
+  /* Surfaces */
+  --surface-page:      var(--ivory);
+  --surface-raised:    var(--cream);
+  --surface-sunken:    var(--parchment);
+  --surface-inverse:   var(--espresso);
+  --surface-inverse-2: var(--cocoa);
+
+  /* Text */
+  --text-strong:   var(--espresso);   /* headings on light */
+  --text-body:     #33261A;           /* body on light */
+  --text-muted:    var(--umber);      /* secondary on light */
+  --text-subtle:   var(--clay);       /* captions / meta */
+  --text-on-dark:  var(--ivory);      /* body on dark */
+  --text-on-dark-muted: #C2B49A;      /* secondary on dark */
+  --text-gold:     var(--gold-deep);  /* gold text that stays legible on light */
+
+  /* Lines */
+  --border-soft:   var(--stone);
+  --border-strong: #C3B291;
+  --border-dark:   #4A3826;
+  --hairline-gold: rgba(181,138,62,0.38);
+
+  /* Brand */
+  --brand:         var(--gold);
+  --brand-hover:   var(--gold-light);
+  --brand-active:  var(--gold-deep);
+  --brand-contrast:#2A1E10; /* text/icon color on a gold fill */
+
+  /* Focus */
+  --focus-ring:    rgba(181,138,62,0.55);
+}
