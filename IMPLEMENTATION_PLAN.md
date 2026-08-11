@@ -1380,11 +1380,11 @@ git commit -m "feat: add location context, persistence, and booking href resolut
   - `<Button variant="primary" | "secondary" | "ghost" | "link" size="sm" | "md" | "lg" href? onClick? iconRight?>`
   - `<PendingFact note="…" />` — renders the placeholder marker
 
-- [ ] **Step 1: Read the design system's Button contract before writing anything**
+- [x] **Step 1: Read the design system's Button contract before writing anything**
 
 Read `../components/forms/Button.jsx.txt` and `../components/forms/Button.prompt.md`. The port must preserve variants, sizes, hover and press behaviour exactly. **Primary lightens to `--gold-light` on hover and gains `--shadow-gold`; press nudges `translateY(1px)`; nothing scales down.**
 
-- [ ] **Step 2: Write the failing test**
+- [x] **Step 2: Write the failing test**
 
 Create `site/tests/unit/Button.test.tsx`:
 
@@ -1423,12 +1423,12 @@ describe('Button', () => {
 });
 ```
 
-- [ ] **Step 3: Run it and confirm it fails**
+- [x] **Step 3: Run it and confirm it fails**
 
 Run: `pnpm test:unit Button`
 Expected: FAIL — module not found.
 
-- [ ] **Step 4: Create `site/components/system/Button.module.css`**
+- [x] **Step 4: Create `site/components/system/Button.module.css`**
 
 ```css
 .button {
@@ -1480,7 +1480,7 @@ Expected: FAIL — module not found.
 .icon { display: inline-flex; line-height: 0; opacity: 0.8; }
 ```
 
-- [ ] **Step 5: Create `site/components/system/Button.tsx`**
+- [x] **Step 5: Create `site/components/system/Button.tsx`**
 
 ```tsx
 import Link from 'next/link';
@@ -1531,12 +1531,12 @@ export function Button({
 }
 ```
 
-- [ ] **Step 6: Run the test and confirm it passes**
+- [x] **Step 6: Run the test and confirm it passes**
 
 Run: `pnpm test:unit Button`
 Expected: PASS, 4 tests.
 
-- [ ] **Step 7: Create `site/components/dev/PendingFact.module.css`**
+- [x] **Step 7: Create `site/components/dev/PendingFact.module.css`**
 
 ```css
 .pending {
@@ -1560,7 +1560,7 @@ Expected: PASS, 4 tests.
 }
 ```
 
-- [ ] **Step 8: Create `site/components/dev/PendingFact.tsx`**
+- [x] **Step 8: Create `site/components/dev/PendingFact.tsx`**
 
 ```tsx
 import styles from './PendingFact.module.css';
@@ -1580,7 +1580,7 @@ export function PendingFact({ note, dash }: { note: string; dash?: string }) {
 }
 ```
 
-- [ ] **Step 9: Commit**
+- [x] **Step 9: Commit**
 
 ```bash
 git add -A

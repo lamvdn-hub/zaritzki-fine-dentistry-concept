@@ -27,7 +27,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 
 ## Phase 3 — Chrome
 
-- [ ] Task 6 — Button and pending-fact marker
+- [x] Task 6 — Button and pending-fact marker
 - [ ] Task 7 — Header and switches
 - [ ] Task 8 — Sticky booking bar
 - [ ] Task 9 — Footer
