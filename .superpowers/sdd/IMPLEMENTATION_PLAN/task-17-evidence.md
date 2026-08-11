@@ -22,18 +22,36 @@ verbatim as **"Free to use under the Unsplash License"**.
 
 | Slot | Photo page | Photographer (per WebFetch) | Profile (per WebFetch) | `dl=` slug cross-check | HTTP |
 |---|---|---|---|---|---|
-| entrance | https://unsplash.com/photos/bIMZSjz3KKI | Declan Sun | https://unsplash.com/@declansun | `declan-sun-bIMZSjz3KKI-unsplash.jpg` | 200 |
+| entrance | https://unsplash.com/photos/VitXrx5ajeQ | Daniel Romero | https://unsplash.com/@rmrdnl | `daniel-romero-VitXrx5ajeQ-unsplash.jpg` | 200 |
 | lounge | https://unsplash.com/photos/-mzlFS5KuN8 | Grace Estrada | https://unsplash.com/@usermcleod1 | `grace-estrada--mzlFS5KuN8-unsplash.jpg` | 200 |
 | consultation | https://unsplash.com/photos/YISEqk2Zbq4 | Elist Nguyen | https://unsplash.com/@hieuanhcauam | `elist-nguyen-YISEqk2Zbq4-unsplash.jpg` | 200 |
 | treatment-room | https://unsplash.com/photos/vtiQZJ1Ljx0 | 绎安 贺 | https://unsplash.com/@niceheyian | `niceheyian-vtiQZJ1Ljx0-unsplash.jpg` | 200 |
 | detail | https://unsplash.com/photos/EfNvmWDR7us | Clio Di Giovanni | https://unsplash.com/@catherinedaho | `clio-di-giovanni-EfNvmWDR7us-unsplash.jpg` | 200 |
 | closing | https://unsplash.com/photos/EyF0iLIzLW0 | Michael D Beckwith | https://unsplash.com/@mdbeckwith | `michael-d-beckwith-EyF0iLIzLW0-unsplash.jpg` | 200 |
 
-The `entrance` and `detail` rows were re-sourced in fix round 1. Both names were
-read from a fresh `WebFetch` of the photo page listed, and both agree with the
-`dl=` slug their own download redirect returned. The photo pages that were
-superseded — `HB6JThnuCC4` (ANASTASIIA BUCHINSKAIA) and `0HVm2nOc7OM`
-(Nicolai Plenk) — are no longer used by any file in the repository.
+The `detail` row was re-sourced in fix round 1 and the `entrance` row has now
+been re-sourced twice — once in fix round 1 and again in fix round 2. Each name
+was read from a fresh `WebFetch` of the photo page listed in the same row, and
+each agrees with the `dl=` slug its own download redirect returned. The photo
+pages that were superseded — `HB6JThnuCC4` (ANASTASIIA BUCHINSKAIA) and
+`bIMZSjz3KKI` (Declan Sun) for `entrance`, `0HVm2nOc7OM` (Nicolai Plenk) for
+`detail` — are no longer used by any file in the repository.
+
+Fix round 2 evidence for the `entrance` row, captured in this session:
+
+- `WebFetch https://unsplash.com/photos/VitXrx5ajeQ` returned display name
+  **Daniel Romero**, profile **https://unsplash.com/@rmrdnl**, licence string
+  **"Free to use under the Unsplash License"**, description **"Elegant double
+  doors with ornate gold trim."**, camera "Canon, EOS M6 Mark II", and no stated
+  location.
+- `curl.exe -s -o NUL -w "code=%{http_code} url=%{url_effective}" -L
+  "https://unsplash.com/photos/VitXrx5ajeQ/download?force=true&w=2400"` returned
+  `code=200` with `dl=daniel-romero-VitXrx5ajeQ-unsplash.jpg`. The slug and the
+  WebFetch name agree.
+- The file downloaded to `site/public/images/mitte/entrance.jpg` was `md5sum`
+  compared against the staging copy that was visually inspected; the digests are
+  identical (`7e38d2b0069ea8e43cdde39dcc1817c0`), so the file that shipped is
+  the file that was looked at.
 
 Note on the treatment-room row: the display name is rendered in Chinese
 characters (绎安 贺). Unsplash's own download slug uses the account handle
@@ -62,28 +80,36 @@ repository, and the `asd asd` display-name question is therefore moot.
 published, with the handles `@herrzett` and `@paris_interieurs` alongside so
 each credit resolves.
 
+Provenance note on the `closing` row, verified in fix round 2 by a fresh
+`WebFetch` of `https://unsplash.com/photos/VnHVY1lTiVM`: that page states the
+location as **"Ludwigskirche, Am Ludwigsplatz, Saarbrücken, Germany"** and the
+description as **"a hallway with a window"**. The building is a Baroque church.
+Nothing religious appears in the frame and the file was not swapped, but the
+provenance is now disclosed in `CREDITS.md` rather than left silent.
+
 ## Delivered dimensions
 
 Unsplash honoured `w=2400` on every download, so no `ffmpeg` rescale was needed
 and no `.tmp.jpg` intermediates were created. Heights vary because aspect ratios
 vary; the acceptance criterion is width.
 
-Dimensions below are as they stand after fix round 1; changed files are marked.
+Dimensions below are as they stand after fix round 2; files changed in either
+round are marked.
 
 | File | Dimensions | |
 |---|---|---|
-| `mitte/entrance.jpg` | 2400 × 3146 | re-sourced |
+| `mitte/entrance.jpg` | 2400 × 3600 | re-sourced in round 2 |
 | `mitte/lounge.jpg` | 2400 × 1679 | |
 | `mitte/consultation.jpg` | 2400 × 1600 | |
 | `mitte/treatment-room.jpg` | 2400 × 3600 | |
-| `mitte/detail.jpg` | 2400 × 1600 | re-sourced |
+| `mitte/detail.jpg` | 2400 × 1600 | re-sourced in round 1 |
 | `mitte/closing.jpg` | 2400 × 1600 | |
 | `charlottenburg/entrance.jpg` | 2400 × 1600 | |
-| `charlottenburg/lounge.jpg` | 2400 × 3600 | re-sourced |
-| `charlottenburg/consultation.jpg` | 2400 × 1600 | re-sourced |
+| `charlottenburg/lounge.jpg` | 2400 × 3600 | re-sourced in round 1 |
+| `charlottenburg/consultation.jpg` | 2400 × 1600 | re-sourced in round 1 |
 | `charlottenburg/treatment-room.jpg` | 2400 × 1600 | |
 | `charlottenburg/detail.jpg` | 2400 × 1609 | |
-| `charlottenburg/closing.jpg` | 2400 × 3600 | re-sourced |
+| `charlottenburg/closing.jpg` | 2400 × 3600 | re-sourced in round 1 |
 
 ## Visual inspection
 
@@ -91,3 +117,11 @@ Every one of the twelve files above was opened and looked at at full size after
 download, not merely read about. Four candidates that had passed the description
 check were rejected only once viewed; see `task-17-report.md` for the rejection
 list and reasons.
+
+In fix round 2 the `entrance` file was additionally inspected with the shadows
+lifted (`eq=brightness=0.34:contrast=1.15`), zoomed at 3× on the transom strip,
+the door furniture and the threshold, cropped with `ffmpeg` to both shipped hero
+aspect ratios (1.818:1 desktop from `min-height:88svh` at 1440 wide, 0.462:1
+mobile at 390×844) about its centre, and re-rendered with the hero's own
+`linear-gradient(90deg, .9 → .66@46% → .2)` espresso scrim simulated over each
+crop. Both crops were viewed in that state before the file was accepted.

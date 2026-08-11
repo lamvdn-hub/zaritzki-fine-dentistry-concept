@@ -18,7 +18,7 @@ chrome around them does not change — only the photography and the address do.
 
 | Slot | File | Source URL | Photographer | Licence |
 |---|---|---|---|---|
-| Mitte · entrance | `mitte/entrance.jpg` | https://unsplash.com/photos/bIMZSjz3KKI | Declan Sun (https://unsplash.com/@declansun) | Unsplash |
+| Mitte · entrance | `mitte/entrance.jpg` | https://unsplash.com/photos/VitXrx5ajeQ | Daniel Romero (https://unsplash.com/@rmrdnl) | Unsplash |
 | Mitte · lounge | `mitte/lounge.jpg` | https://unsplash.com/photos/-mzlFS5KuN8 | Grace Estrada (https://unsplash.com/@usermcleod1) | Unsplash |
 | Mitte · consultation | `mitte/consultation.jpg` | https://unsplash.com/photos/YISEqk2Zbq4 | Elist Nguyen (https://unsplash.com/@hieuanhcauam) | Unsplash |
 | Mitte · treatmentRoom | `mitte/treatment-room.jpg` | https://unsplash.com/photos/vtiQZJ1Ljx0 | 绎安 贺 (https://unsplash.com/@niceheyian) | Unsplash |
@@ -50,14 +50,25 @@ third-party brand mark or shop sign.**
 
 ### Mitte
 
-- **`entrance.jpg`** — an empty stairwell in an old building: mottled,
-  patinated plaster walls, terrazzo steps and landing, a plain black tubular
-  handrail, one small black ceiling spotlight, and one lit wall recess. Inside
-  that recess is a small square cast-metal ventilation grille with a lattice
-  and an abstract central motif; it is ornamental ironwork, not a symbol,
-  monogram of a known organisation, or legible text. The warm glow sits upper
-  right and the left half falls to near-black, which is the way round the hero
-  scrim needs. No people, no signage, no daylight, no windows.
+- **`entrance.jpg`** — a threshold: a pair of dark-stained hardwood doors set
+  in a panelled dark-wood surround, photographed square on at eye level in a
+  dim, warm interior. Each leaf carries two reeded panels in gilt mouldings
+  that catch the light; the hardware is brass — lever handles, rectangular
+  escutcheon plates with a round cylinder aperture, and exposed hinge knuckles
+  on both jambs. Two recessed ceiling downlights above. A marble threshold slab
+  in front of the doors, and a chevron-patterned carpet in front of that. A
+  narrow mirrored transom strip above the architrave reflects the warm ceiling
+  fittings as abstract orange shapes and one small cyan sliver about fifteen
+  pixels tall; magnified, it carries no word, letter or mark. A slack black
+  floor cable lies on the marble at the left of the threshold — the one untidy
+  object in the frame; it falls below the desktop crop entirely and sits under
+  the 0.9 end of the hero scrim on mobile. Nothing else is in the frame: no
+  people, no artwork, no signage, no brand name on the door furniture, no
+  religious symbol, no daylight, no window, no cool-white anywhere. The warm
+  mass is the two lit gilt panels, which sit between roughly 27% and 70% across
+  the desktop crop with the brighter right-hand panel closest to the comp's
+  amber glow at 72%; the left quarter of that crop measures a mean luma of 36
+  before the scrim and falls to near-black under it.
 - **`lounge.jpg`** — a hotel lounge seen through a wide opening: two pairs of
   pale armchairs, a low dark table, a bronze balustrade, marble piers, an
   arched glazed screen, and a hanging lantern with a foliate crown finial —
@@ -123,7 +134,14 @@ third-party brand mark or shop sign.**
   frames and carved plaster cartouches, a tall window and a round oeil-de-boeuf
   window, a small ventilation grille, and daylight pooling on a pale
   terracotta-and-cream chequered stone floor. Nothing else is in the room. No
-  people, no furniture, no artwork, no signage.
+  people, no furniture, no artwork, no signage. **Provenance disclosure:** its
+  Unsplash photo page states the location as *Ludwigskirche, Am Ludwigsplatz,
+  Saarbrücken, Germany* — a Baroque church. Nothing religious appears in the
+  frame: no cross, no figure, no altar, no inscription, no devotional object,
+  and the room reads as a secular stucco vestibule. No swap is warranted, and
+  the building is at least German rather than foreign to the address. But
+  `mitte/closing.jpg` is disclosed above on exactly these grounds, and this
+  file was silent, so it is stated here too and the decision is knowing.
 
 ## Why five files changed in fix round 1
 
@@ -136,6 +154,19 @@ previous Mitte hero cropped its lantern in half and put a cool-white blowout
 where the hero scrim is lightest, and the previous Charlottenburg closing and
 consultation were an English country house and a North American new-build
 rather than Berlin Altbau.
+
+## Why the Mitte hero changed again in fix round 2
+
+Round 1 replaced the Mitte hero to remove a cool-white daylight blowout that sat
+exactly where the hero scrim is lightest. That defect is fixed and has not come
+back. But the replacement was a worn interior service stairwell — stained and
+peeling plaster, a bare black pipe handrail, plain concrete steps — and it
+failed the slot on two other grounds: it is not a threshold (step 01 is "the
+street", and the approved comp captions the slot "the entrance at dusk"), and
+worn, faintly derelict surfaces read as intimidating rather than calming, which
+is Anti-goal 3. It has been replaced with a handsome panelled door at eye
+level. The full reasoning is in
+`.superpowers/sdd/IMPLEMENTATION_PLAN/task-17-report.md`.
 
 ## Sourcing this set is not the same as resolving the photography fact
 

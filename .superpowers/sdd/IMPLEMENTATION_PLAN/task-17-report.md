@@ -416,3 +416,272 @@ of the rule.
 5. **Sourcing these does not resolve the `photography` open fact.** All twelve
    remain placeholder stock awaiting the practice's approval or replacement.
    `site/lib/open-facts.ts` was not touched and nothing was marked resolved.
+
+---
+
+# Task 17 — fix round 2
+
+Status: **DONE_WITH_CONCERNS** (concerns are disclosures, not failures — see the
+last section).
+
+Exactly one image file changed. Nothing else was touched except the
+documentation that records it.
+
+| Slot | Old | New |
+|---|---|---|
+| `mitte/entrance.jpg` | Declan Sun · `bIMZSjz3KKI` | **Daniel Romero · `VitXrx5ajeQ`** |
+
+No application code, test, or data file was edited. `site/lib/locations.ts` and
+`site/lib/open-facts.ts` were not touched. Nothing in `tokens/`, `components/`,
+`guidelines/`, `ui_kits/` or `assets/` was touched. The other eleven images are
+byte-identical to their round-1 state.
+
+One deferred Minor was also cleared in `CREDITS.md` — see "Ludwigskirche
+disclosure" below.
+
+## What was wrong with the round-1 hero
+
+Round 1 replaced this slot to remove a cool-white daylight blowout sitting
+exactly where the hero scrim is lightest. That defect is genuinely fixed and it
+has not come back: the new file contains no daylight, no window and no
+cool-white area at all.
+
+But the round-1 replacement introduced a different problem the round-1 finding
+did not cover. Opened at full size, `bIMZSjz3KKI` is a **worn interior service
+stairwell**: mottled and stained plaster with peeling patches, a bare
+utilitarian black pipe handrail, plain concrete and terrazzo steps, lit like a
+basement at night. Two failures:
+
+1. **It is not a threshold.** Step 01 is "the street", the approved comp
+   captions the slot *"photograph · the entrance at dusk"*, and HANDOFF §5.9's
+   commission note defines it as "the street door at dusk, brass numerals
+   legible, shot from outside at eye level". An interior service stair reads as
+   already deep inside a building, not as arriving at one.
+2. **It reads as intimidating rather than calming.** Anti-goal 3 forbids
+   "anything so cold or austere it reads as intimidating rather than calming".
+   The page exists to reassure anxious dental patients; stained, faintly
+   derelict surfaces do the opposite of that in the first thing a visitor sees.
+
+## The replacement
+
+`VitXrx5ajeQ` — **Daniel Romero**, https://unsplash.com/@rmrdnl, "Free to use
+under the Unsplash License", described on its own page as "Elegant double doors
+with ornate gold trim." Delivered at 2400 × 3600.
+
+A pair of dark-stained hardwood doors in a panelled dark-wood surround,
+photographed square on at eye level in a dim, warm interior. Each leaf carries
+two reeded panels in gilt mouldings that catch the light. The hardware is brass
+— lever handles, rectangular escutcheon plates with a round cylinder aperture,
+exposed hinge knuckles on both jambs. Two recessed downlights above, a marble
+threshold slab in front, a chevron-patterned carpet in front of that.
+
+### Evidence against each acceptance criterion
+
+**Register — pass.** Espresso-stained wood, gilt, brass, deep shadow, lamplight
+only. The whole frame sits in the amber/brown band; there is no blue-white
+anywhere and no clinical note. Mean luma of the desktop crop is 44.5 out of 255
+— it is genuinely a low-lit frame, not a bright one darkened by a scrim. It sits
+in the same Mitte register as the lounge, treatment room and detail.
+
+**Subject — pass, with one caveat stated.** It is a portal seen at eye level: a
+closed pair of handsome doors with brass furniture, which is what "the door"
+means. The caveat is that it is an interior door rather than a street door seen
+from outside, so it satisfies "a handsome … portal seen at eye level" rather
+than the literal street-door reading. Every genuine street-door candidate found
+in this round carried a legible hotel name cast or painted above it (see
+rejections); this was the closest available frame that is unambiguously a
+threshold and carries no text at all.
+
+**Condition — pass.** Polished, pristine, cared for. No peeling paint, no
+staining, no crumbling plaster, no exposed conduit or pipework, no dereliction.
+The one untidy object is a slack black floor cable lying on the marble at the
+left of the threshold; it is disclosed in `CREDITS.md`, it falls entirely below
+the desktop crop, and on mobile it sits under the 0.9 end of the scrim where it
+is not legible. It was checked at 2× zoom to confirm it is a loose cable rather
+than fixed conduit.
+
+**Crop survival — verified, not assumed.** The source was cropped with `ffmpeg`
+about its centre to both shipped ratios and both crops were viewed, then viewed
+again with the hero's own scrim gradient simulated over them.
+
+- *Desktop, 1.818:1* (2400 × 1320 taken from y=1140): the two lit gilt panels,
+  the meeting stile and both brass lever handles with their escutcheons are dead
+  centre and fully intact. The warm focal mass is unmistakable and legible. It
+  still reads as a door — two leaves, a central joint, brass furniture at hand
+  height.
+- *Mobile, 0.462:1* (1663 × 3600 taken from x=368): the entire doorway survives
+  — architrave, both leaves, all four gilt panels, the threshold slab and the
+  carpet. It reads as an entrance more plainly than the desktop crop does.
+
+**No cool-white blowout on the right — pass, measured.** Mean luma by band
+across the desktop crop: 0–25% = **36.2**, 25–46% = **60.6**, 46–73% = **51.3**,
+73–100% = **33.1**. The right quarter is the *darkest* band in the frame, so the
+0.2 end of the scrim has nothing bright to fail to veil. The warm mass sits
+between roughly 27% and 70% across, with the brighter right-hand gilt panel
+closest to the comp's `rgba(196,97,28,.30)` glow at 72%/36%; rendering the scrim
+over the crop confirms the glow lands centre-right and the left third falls to
+near-black.
+
+**Type legibility — pass, computed and then seen.** Compositing the scrim
+(rgba(20,12,7) at 0.9→0.66 across the headline zone) over the measured
+90th-percentile luma of the left 46% gives an effective background of ~37/255,
+and over the mean gives ~22/255. Against the ivory headline that is 7.7:1 in the
+worst case and 16:1 typical — WCAG AA is 4.5:1. The 0.6-alpha qualifier line,
+the weakest text on the block, computes at 6.4:1. The rendered simulation agrees:
+the left third of the scrimmed hero is effectively black.
+
+**Nothing disqualifying — checked deliberately at zoom.** The file was opened at
+full size, again with the shadows lifted (`eq=brightness=0.34:contrast=1.15`),
+and then zoomed 3× on every small or dark feature. Findings: no person, no face,
+no reflection of a person, no religious symbol, no artwork, no dental or
+clinical content, no legible signage. The door furniture carries no brand mark.
+The only thing that looked like text at first glance is a narrow mirrored
+transom strip above the architrave, about fifteen pixels tall in the 2400-wide
+file; magnified 3× with the shadows lifted it resolves into abstract orange
+reflections of warm ceiling fittings plus one small cyan sliver, with no word,
+letter or mark in it. That strip is outside the desktop crop entirely. Fittings
+are European/international brass mortice hardware; there are no US-pattern
+outlets or switch plates in frame.
+
+## Rejected in this round, and why
+
+Roughly seventy candidates were screened as `ffmpeg` contact sheets across ten
+Unsplash search pages; twenty were pulled at 1600px and looked at individually.
+None of these repeats anything the two earlier rounds rejected.
+
+Rejected only after being viewed at full size:
+
+- **`nkO5LSTg8as` (Cristian Pineda)** — the single best *subject* found: a
+  carved wooden street door at night, warm, at eye level, exactly the commission
+  note's frame. It carries **"VIESNICA KRISTOFS BOUTIQUE HOTEL"** in cut metal
+  letters on a lit fascia directly above the door. Same class of defect as the
+  Marriott entrance rejected in the first round. Rejected.
+- **`cMT-u75jwAs` (atelierbyvineeth)** — a beautiful green-and-brass vestibule
+  with globe sconces and hex tile, and behind the glass a **framed genre
+  painting of a man, face clearly legible**, plus what appears to be a person
+  reflected in the right-hand leaf. Exactly the F1 class of defect. Rejected.
+- **`86v1tTlhCGM` (Mario Verduzco)** — dark oak panelled hall, lantern,
+  opaline lamps; perfect register. A **mounted taxidermy bighorn sheep head** is
+  the focal point of the panelling. The set already carries one taxidermy
+  disclosure; putting one in the hero is not a trade worth making. Rejected.
+- **`NUz8Bmjhi2s` (mk. s)** — dark wood panelling with a lit brass twin sconce,
+  and the single most on-palette frame found all round. It is a **wall**, not a
+  threshold: no door, no opening, no arrival. It would make an excellent
+  `detail` image and a dishonest hero. Rejected.
+- **`2RIo5wQJ4FI` (Adrian Hernandez)** — a grand exterior stair at night between
+  two lit lantern-on-plinth standards, warm sepia stone, wrought-iron
+  balustrade, no people, no text. The best *arrival* found. It is 1.78:1
+  landscape, so the 0.462:1 mobile crop keeps only 28% of its width: **both
+  lanterns fall outside the crop and it becomes a strip of bare steps.** Failed
+  crop survival on the criterion's own terms. Rejected, reluctantly.
+- **`1k9mx0R_KJY` (Caleb Hernandez Belmonte)** — carved timber double doors
+  uplit against volcanic tuff jambs. Warm and genuinely a threshold, but the
+  carving and stone read Spanish-colonial rather than European, the diamond
+  cartouches contain unresolved heraldic motifs, and the mullioned surround has
+  an ecclesiastical cast. Too many unresolved risks for a hero. Rejected.
+- **`g3bA1nq9d38` (5010)** — Art Deco marble vestibule, very dark and very warm.
+  A **dark human figure stands behind the glass** at mid-left, there is small
+  legible lettering on the left-hand pier, and the floor carries a printed mat.
+  Rejected.
+- **`VY-BV4QyYkI` (Jemima Whyles)** — sodium-lit stone building at night with a
+  wrought-iron lantern over an arched door. A **hanging bracket sign with
+  legible letters** intrudes at upper left and the door carries two small
+  plaques and a bronze wall tablet. Rejected.
+- **`LfVZD5mtQ0I` (Jonathan Ching)** — warm arched brick entryway with ornate
+  wooden doors, and **"CAMPDEN HILL COURT"** cut into the stone at the right.
+  Rejected.
+- **`d_qcnd3CB20` (Albert Stoynov)**, **`LT2lNIS_sO4` (leannk.)**,
+  **`pD0WjZ1nvhk` (Britt Fowler)** — three handsome hotel entrances at night
+  carrying, respectively, "EXCHANGE HOTEL" plus a Lindt shopfront, "MANNER
+  HOTEL" plus poster frames containing faces, and "PALACE HOTEL" plus flags.
+  Rejected.
+- **`Glzj5O1g9EA` (Franco Debartolo)** — Romanesque arch, red carpet and velvet
+  ropes. Reads as a gala rope line, not a practice, and the sky is blue dusk.
+  Rejected.
+- **`bett6tQ-KqQ` (Umar Farooq)** — dark panelled corridor whose far end is a
+  cool grey window onto a construction site. The exact failure mode round 1
+  fixed. Rejected.
+- **`9r69oXL52Mk` (Emma)** and **`PppptGPlDw4` (Oleksii Piekhov)** — two
+  genuinely Central-European lit passages. The first is a plain terracotta
+  service passage with the glow on the left; the second is shot through a
+  peephole and its walls are cracked with paper notices taped up. Condition
+  fails. Rejected.
+- **`CBWwawOHX_g` (Iris Yan)** — "dimly lit apartment hotel entrance": a
+  legible "KALAKAPI APT. HOTEL" sign under cool blue-green light. Rejected.
+- **`Yc356MPH1rA`, `vaK-2VCZ1_E`, `ql3FgkW1rB8`** — Gothic arched doorways with
+  lanterns. Correct mood, ecclesiastical architecture, and the set already
+  carries one Gothic Revival disclosure. Rejected.
+
+Rejected at screening without a full-size download: every Getty Images and
+Unsplash+ asset, on licence grounds; 3D renders of hotel lobbies; suburban and
+North American porches, brownstones and cabins; entrances with cars, taxis,
+doormen or families in them; anything under fluorescent or neon light; red
+Chinese-lantern and Japanese *noren* entrances, on geography; and pale cloisters
+and courtyards shot toward daylight, on register. About one download in five
+returned 403 (Unsplash+ or otherwise gated) and was dropped rather than worked
+around.
+
+## Ludwigskirche disclosure
+
+The known deferred Minor was cleared. `charlottenburg/closing.jpg`
+(`VnHVY1lTiVM`) was re-checked with a fresh `WebFetch` of its own photo page,
+which states the location as **"Ludwigskirche, Am Ludwigsplatz, Saarbrücken,
+Germany"** — a Baroque church — and the description as "a hallway with a
+window". Nothing religious is visible in the frame: no cross, no figure, no
+altar, no inscription, no devotional object. No swap is warranted. But
+`CREDITS.md` discusses provenance at length for `mitte/closing` on exactly these
+grounds and was silent here, so the disclosure has been added to that file's
+frame audit.
+
+## Method
+
+The protocol in the brief was followed exactly and behaved as described.
+`WebSearch` restricted to `unsplash.com` and `WebFetch` on Unsplash search pages
+were both used; the search pages remain far more productive. `curl.exe` on
+`/photos/<ID>/download?force=true&w=2400` returned 200 and a `dl=` slug that
+matched the name `WebFetch` reported. Unsplash honoured `w=2400`, so no rescale
+was needed, nothing was re-encoded, and no `.tmp.jpg` intermediate was created —
+`find site/public/images -name "*.tmp.jpg"` returns zero. The file that shipped
+was `md5sum`-compared against the staging copy that was inspected; the digests
+match.
+
+## Verification
+
+| Check | Result |
+|---|---|
+| Exactly one image file changed | Yes — `git status` shows `mitte/entrance.jpg` plus three documentation files |
+| All twelve files exist at the exact paths `locations.ts` references | Yes |
+| New file is a valid JPEG, 2400px wide | Yes — 2400 × 3600 per `ffprobe` |
+| No `.tmp.jpg` survivors | Zero |
+| Shipped file identical to the inspected file | Yes — `md5sum` match |
+| Name / `dl=` slug agreement | Yes — Daniel Romero / `daniel-romero-VitXrx5ajeQ-unsplash.jpg` |
+| Desktop 1.818:1 crop viewed, scrim simulated | Yes — warm focal mass intact and centre-right |
+| Mobile 0.462:1 crop viewed, scrim simulated | Yes — reads as a doorway end to end |
+| Inspected at full size and with shadows lifted, plus 3× zoom on small features | Yes |
+| `npm.cmd run test:unit` | **93 passed / 93**, 18 files |
+| `npm.cmd run build` | Clean, no warnings |
+| Port 3000 | No listener |
+
+## Concerns for the reviewer
+
+1. **The hero is an interior door, not a street door photographed from
+   outside.** It is a threshold at eye level and it reads as "the way in", which
+   is what the acceptance criteria asked for, but it is not literally the
+   commission note's "street door at dusk, shot from outside". Every candidate
+   that *was* literally that carried a legible hotel name above it. If a
+   reviewer would rather have the exterior reading at the cost of accepting a
+   building name in frame, that is a different trade and should be decided
+   deliberately rather than assumed.
+2. **A slack black floor cable is in the frame**, at the left of the marble
+   threshold. It is below the desktop crop and unreadable under the scrim on
+   mobile. Disclosed in `CREDITS.md` rather than glossed.
+3. **The three disclosures carried forward from round 1 are unchanged**:
+   taxidermy outside the crop in `mitte/treatment-room.jpg`, Gothic Revival
+   architecture in `mitte/closing.jpg`, and the quiet Charlottenburg closing
+   strip. The Ludwigskirche note above is a fourth, now stated.
+4. **The `detail` slot is still not rendered by anything.** No component reads
+   `practice.images.detail`. Unchanged from both earlier rounds; still a Task 16
+   composition gap, not a Task 17 one.
+5. **Sourcing these does not resolve the `photography` open fact.** All twelve
+   remain placeholder stock awaiting the practice's approval or replacement.
+   `site/lib/open-facts.ts` was not touched and nothing was marked resolved.
