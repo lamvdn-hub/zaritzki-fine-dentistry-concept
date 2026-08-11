@@ -1,0 +1,58 @@
+.table { width: 100%; border-collapse: collapse; margin-top: var(--space-5); }
+
+.head th {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  text-align: left;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border-soft);
+}
+.row td { padding-block: var(--space-2); border-bottom: 1px solid var(--border-soft); vertical-align: baseline; }
+
+.name {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: var(--fw-display-regular);
+  color: var(--text-strong);
+}
+
+.focus {
+  display: inline-block;
+  margin-left: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--text-2xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-gold);
+  vertical-align: middle;
+}
+
+.gloss { font-family: var(--font-sans); font-size: var(--text-sm); color: var(--text-muted); }
+
+.noPrices {
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-relaxed);
+  color: var(--text-muted);
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--hairline-gold);
+  max-width: 56ch;
+}
+
+@media (max-width: 600px) {
+  /* The gloss moves under the name rather than disappearing â€” it is the only
+     thing telling an English speaker what Funktionstherapie means. */
+  .table, .row, .row td { display: block; width: 100%; }
+  .head { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .row td { border-bottom: 0; padding-block: 0; }
+  .row { border-bottom: 1px solid var(--border-soft); padding-block: var(--space-3); }
+  .name { font-size: var(--text-xl); }
+  .focus { display: block; margin-left: 0; margin-top: var(--space-1); }
+}
