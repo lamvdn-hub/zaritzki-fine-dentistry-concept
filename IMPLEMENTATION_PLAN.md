@@ -863,7 +863,7 @@ git commit -m "feat: add locale routing, message layer, and direction contract"
   - `PRACTICES: Record<LocationId, Practice>`, `PRACTICE_ORDER: LocationId[]`, `DEFAULT_LOCATION: LocationId`
   - `getPractice(id: LocationId): Practice`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Create `site/tests/unit/locations.test.ts`:
 
@@ -927,12 +927,12 @@ describe('practice data', () => {
 });
 ```
 
-- [ ] **Step 2: Run it and confirm it fails**
+- [x] **Step 2: Run it and confirm it fails**
 
 Run: `pnpm test:unit locations`
 Expected: FAIL — `Cannot find module '@/lib/pending'`.
 
-- [ ] **Step 3: Create `site/lib/pending.ts`**
+- [x] **Step 3: Create `site/lib/pending.ts`**
 
 ```ts
 /**
@@ -958,7 +958,7 @@ export function isKnown<T>(p: Pending<T>): p is { known: true; value: T } {
 }
 ```
 
-- [ ] **Step 4: Create `site/lib/locations.ts`**
+- [x] **Step 4: Create `site/lib/locations.ts`**
 
 ```ts
 import { known, type Pending } from '@/lib/pending';
@@ -1097,12 +1097,12 @@ export function getPractice(id: LocationId): Practice {
 export const PRICES_ARE_NOT_PUBLISHED = true;
 ```
 
-- [ ] **Step 5: Run the test and confirm it passes**
+- [x] **Step 5: Run the test and confirm it passes**
 
 Run: `pnpm test:unit locations`
 Expected: PASS, 7 tests.
 
-- [ ] **Step 6: Create `site/scripts/list-pending.ts`**
+- [x] **Step 6: Create `site/scripts/list-pending.ts`**
 
 ```ts
 import { PRACTICES, PRACTICE_ORDER } from '../lib/locations';
@@ -1130,12 +1130,12 @@ console.log('Prices are NOT on this list: the practice publishes none, by design
 process.exit(0);
 ```
 
-- [ ] **Step 7: Run it**
+- [x] **Step 7: Run it**
 
 Run: `pnpm pending`
 Expected: 4 rows. Both booking URLs are now known, so neither appears; prices are deliberately absent from the list. If a treatment price shows up here, someone has reintroduced a field that was removed on purpose.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add -A
