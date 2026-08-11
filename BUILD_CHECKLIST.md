@@ -39,7 +39,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 - [x] Task 10 — Hero and past-hero sentinel
 - [x] Task 11 — Step-rail navigation
 - [x] Task 12 — Reveal primitive and split section
-- [ ] Phase 4 verification complete
+- [x] Phase 4 verification complete
 - [ ] User approved Phase 4
 
 ## Phase 5 — Content sections
