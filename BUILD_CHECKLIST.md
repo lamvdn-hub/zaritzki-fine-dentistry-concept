@@ -30,7 +30,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 - [x] Task 6 — Button and pending-fact marker
 - [x] Task 7 — Header and switches
 - [x] Task 8 — Sticky booking bar
-- [ ] Task 9 — Footer
+- [x] Task 9 — Footer
 - [ ] Phase 3 verification complete
 - [ ] User approved Phase 3
 
@@ -62,7 +62,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 
 ## Pre-flight findings queued for their owning phases
 
-- [ ] Phase 3: preserve phone access on mobile and externalize footer copy.
+- [x] Phase 3: preserve phone access on mobile and externalize footer copy.
 - [ ] Phase 4: create `StepRail` before consumers; keep no-JavaScript content visible; implement rail release behavior.
 - [ ] Phase 5: keep translation data serializable across the server/client boundary; type every unresolved fact.
 - [ ] Phase 6: strengthen interaction/reduced-motion/contrast verification; replace the Unicode star; use safe temporary image outputs; pass the complete finish-review packet.

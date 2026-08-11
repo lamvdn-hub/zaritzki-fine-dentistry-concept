@@ -2132,7 +2132,7 @@ git commit -m "feat: add sticky booking bar with session-scoped dismissal"
 - Consumes: `PRACTICE_ORDER`, `getPractice`, `translator`.
 - Produces: `<SiteFooter t={t} />` — a server component; it lists both practices unconditionally.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Create `site/tests/unit/SiteFooter.test.tsx`:
 
@@ -2165,12 +2165,12 @@ describe('SiteFooter', () => {
 });
 ```
 
-- [ ] **Step 2: Run it and confirm it fails**
+- [x] **Step 2: Run it and confirm it fails**
 
 Run: `pnpm test:unit SiteFooter`
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Create `site/components/chrome/SiteFooter.module.css`**
+- [x] **Step 3: Create `site/components/chrome/SiteFooter.module.css`**
 
 ```css
 .footer {
@@ -2220,7 +2220,7 @@ Expected: FAIL — module not found.
 }
 ```
 
-- [ ] **Step 4: Create `site/components/chrome/SiteFooter.tsx`**
+- [x] **Step 4: Create `site/components/chrome/SiteFooter.tsx`**
 
 ```tsx
 import { PRACTICE_ORDER, getPractice } from '@/lib/locations';
@@ -2264,12 +2264,12 @@ export function SiteFooter({ t }: { t: (key: string) => string }) {
 
 The obligation is real the moment this is published as the practice's own site. It is recorded on the handoff checklist in Task 20, not here.
 
-- [ ] **Step 5: Run the test and confirm it passes**
+- [x] **Step 5: Run the test and confirm it passes**
 
 Run: `pnpm test:unit SiteFooter`
 Expected: PASS, 3 tests.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add -A
