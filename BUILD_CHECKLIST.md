@@ -22,7 +22,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 
 - [x] Task 4 — Pending facts and practice data
 - [x] Task 5 — Location context and booking resolution
-- [ ] Phase 2 verification complete
+- [x] Phase 2 verification complete
 - [ ] User approved Phase 2
 
 ## Phase 3 — Chrome
