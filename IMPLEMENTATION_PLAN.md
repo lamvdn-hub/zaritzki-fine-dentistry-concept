@@ -3263,7 +3263,7 @@ git commit -m "feat: add treatment schedule with unforgeable pricing"
 - Consumes: `translator`, `PendingFact`, `Reveal`.
 - Produces: `<CostPanel t={t} />` — step 05, on the parchment ground.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Create `site/tests/unit/CostPanel.test.tsx`:
 
@@ -3300,12 +3300,12 @@ describe('CostPanel', () => {
 });
 ```
 
-- [ ] **Step 2: Run it and confirm it fails**
+- [x] **Step 2: Run it and confirm it fails**
 
 Run: `pnpm test:unit CostPanel`
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Create `site/components/content/CostPanel.module.css`**
+- [x] **Step 3: Create `site/components/content/CostPanel.module.css`**
 
 ```css
 .section { background: var(--surface-sunken); border-block: 1px solid var(--border-soft); }
@@ -3362,7 +3362,7 @@ Expected: FAIL — module not found.
 @media (max-width: 860px) { .columns { grid-template-columns: 1fr; gap: var(--space-5); } }
 ```
 
-- [ ] **Step 4: Create `site/components/content/CostPanel.tsx`**
+- [x] **Step 4: Create `site/components/content/CostPanel.tsx`**
 
 ```tsx
 import { Reveal } from '@/components/motion/Reveal';
@@ -3404,12 +3404,12 @@ export function CostPanel({ t }: { t: (key: string) => string }) {
 }
 ```
 
-- [ ] **Step 5: Run the test and confirm it passes**
+- [x] **Step 5: Run the test and confirm it passes**
 
 Run: `pnpm test:unit CostPanel`
 Expected: PASS, 4 tests.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add -A

@@ -1,0 +1,47 @@
+# SDD ledger — plan: IMPLEMENTATION_PLAN.md
+
+- Baseline commit: c33a539
+- Working branch: feat/zaritzki-landing-page
+- User review gate: stop after every phase and wait for confirmation.
+- Approved correction: pin Next.js 15 and use npm consistently.
+- Approved correction: behavioral tests use genuine RED/GREEN ordering.
+- Approved correction: insurer reimbursement and signature-gated treatment claims remain unasserted; only confirmed neutral estimate wording may render.
+- Verified correction: locale layout is the root layout; `/` redirects via Next.js 15 middleware.
+- Verified correction: no price column; stale contrary handoff sentence removed.
+- Task 1: fix round 1/5 (2 addressed, 0 open — E2E command and dev-server evidence; commits 3bf9882..da2e3e8)
+- Task 1: complete (commits c33a539..da2e3e8, review clean)
+- Task 2: minor (deferred): font E2E checks registered families but not each FontFace status.
+- Task 2: minor (deferred): RED chronology is preserved in the report rather than reconstructable from separate commits.
+- Task 2: complete (commits e12ff94..c4329a1, review clean)
+- Task 3: fix round 1/5 (direct Playwright-managed Next process still hung after assertions; no commit)
+- Task 3: fix round 2/5 (Windows Playwright lifecycle moved in-process; focused/full E2E exited cleanly; commit 337b8ee)
+- Task 3: complete (commits 8295b98..337b8ee, rereview clean)
+- Phase 1: verification complete (unit 6/6; E2E 6/6 with natural teardown; lint clean; production build clean; direction seed preserved; all five token files byte-identical)
+- Phase 1: paused at the required user review gate before Phase 2.
+- Phase 1: user approved; Phase 2 authorized (2026-08-11).
+- Task 4: complete (commits 8cbef9a..81617c3, review clean)
+- Task 5: minor (deferred): `useLocation` outside its provider throws clearly, but that guard lacks an observable regression test.
+- Task 5: fix round 1/5 (2 addressed, 0 open — persisted LocationId own-property validation and prototype-key regression coverage; commits 37d891d..e0bf8ce)
+- Task 5: complete (commits ffcb834..e0bf8ce, review clean with 1 deferred minor)
+- Phase 2: verification complete (unit 25/25; pending CLI exactly 4; lint clean; production build clean; E2E 6/6 with natural teardown; direction seed preserved)
+- Phase 2: paused at the required user review gate before Phase 3.
+- Phase 2: user approved; Phase 3 authorized (2026-08-11).
+- Task 6: complete (commits 7274aeb..32c75af, review clean)
+- Task 7: complete (commits 3ef8a88..45fe34f, review clean)
+- Task 8: fix round 1/5 (1 addressed, 0 open — narrow action-row overflow; commits 356fc4b..e5c112f)
+- Task 8: complete (commits ea54628..e5c112f, review clean)
+- Task 9: complete (commits f021416..2eddc1a, review clean)
+- Phase 3: verification complete (unit 53/53; pending CLI exactly 4; lint clean; TypeScript clean; production build clean; E2E 6/6 with natural teardown; direction seed preserved)
+- Phase 3: paused at the required user review gate before Phase 4.
+- Phase 3: user approved; Phase 4 authorized (2026-08-11).
+- Phase 4 correction: execute Tasks 11, 10, 12; keep the single rail static without JavaScript, fix it only during the desktop walk, and release it at `#practices`; keep Reveal content visible until client enhancement is available.
+- Task 11: minor (deferred): the IntersectionObserver scroll-spy callback is not directly behavior-tested; initial `aria-current` and all dock/fix/release transitions are covered.
+- Task 11: complete (commits 0b8abb0..c7d07c4, review clean with 1 deferred minor)
+- Task 10: complete (commits 5f3c53f..de152e3, review clean)
+- Task 12: complete (commits bd9ccd3..09dbda8, review clean)
+- Phase 4: verification complete (unit 74/74; pending CLI exactly 4; lint clean; TypeScript clean; production build clean; E2E 6/6 with natural teardown; direction seed preserved in 5 built artifacts; port 3000 clear; worktree clean before phase-status update)
+- Phase 4: paused at the required user review gate before Phase 5.
+- Phase 4: user approved; Phase 5 authorized (2026-08-11).
+- Phase 5 correction: move all four open facts into a typed registry; render self-pay wording only when known; give ClosingCta its own RED cycle; pass serializable messages into a client-owned page composition and validate query seeds with an own-property check.
+- Task 13: complete (commits e80ac53..90cf297, review clean)
+- Task 14: complete (commits 3af3b5c..1245607, review clean; focused 5/5, full unit 85/85, typed pending registry exactly 4, TypeScript clean)
