@@ -2313,7 +2313,7 @@ git commit -m "feat: add espresso site footer with both practices"
 - Consumes: `useLocation`, `bookingHref`, `Button`, `StepRail` (Task 11 — build Task 11 first if working out of order).
 - Produces: `<Hero t={t} />`. Sets `document.body[data-past-hero]` to `"true"` once the hero's bottom sentinel leaves the viewport, which is what `StickyBookingBar` observes.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Create `site/tests/unit/Hero.test.tsx`:
 
@@ -2359,12 +2359,12 @@ describe('Hero', () => {
 });
 ```
 
-- [ ] **Step 2: Run it and confirm it fails**
+- [x] **Step 2: Run it and confirm it fails**
 
 Run: `pnpm test:unit Hero`
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Create `site/components/walk/Hero.module.css`**
+- [x] **Step 3: Create `site/components/walk/Hero.module.css`**
 
 ```css
 .hero { position: relative; min-height: 88svh; display: flex; flex-direction: column; overflow: hidden; }
@@ -2431,7 +2431,7 @@ Expected: FAIL — module not found.
 }
 ```
 
-- [ ] **Step 4: Create `site/components/walk/Hero.tsx`**
+- [x] **Step 4: Create `site/components/walk/Hero.tsx`**
 
 ```tsx
 'use client';
@@ -2513,12 +2513,12 @@ function Arrow() {
 
 The arrow is drawn inline at the design system's specified 1.75 stroke with round caps. **Do not add an icon library for one glyph.**
 
-- [ ] **Step 5: Run the test and confirm it passes**
+- [x] **Step 5: Run the test and confirm it passes**
 
 Run: `pnpm test:unit Hero`
 Expected: PASS, 5 tests. (Requires Task 11's `StepRail` to exist — build it first if this fails on import.)
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add -A
