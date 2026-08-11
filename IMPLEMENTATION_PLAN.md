@@ -133,7 +133,7 @@ The one trap: `npm start` and `npm test` work bare, but every other script needs
 - Consumes: nothing.
 - Produces: `pnpm test:unit`, `pnpm test:e2e`, `pnpm dev`, `pnpm build` available to every later task.
 
-- [ ] **Step 1: Create `.gitignore` at the repository root before the first commit**
+- [x] **Step 1: Create `.gitignore` at the repository root before the first commit**
 
 ```gitignore
 node_modules/
@@ -149,7 +149,7 @@ test-results/
 .env*.local
 ```
 
-- [ ] **Step 2: Initialise git at the repository root**
+- [x] **Step 2: Initialise git at the repository root**
 
 ```bash
 cd "Zaritzki Fine Dentistry Design System/zaritzki_handoff"
@@ -160,16 +160,16 @@ git commit -m "chore: import Zaritzki design system handoff, product truth, and 
 
 `.superpowers/` is ignored because it is scratch. The three design screens worth keeping were already copied out to `docs/design/` — do not ignore that directory.
 
-- [ ] **Step 3: Scaffold the Next.js app**
+- [x] **Step 3: Scaffold the Next.js app**
 
 ```bash
 npx create-next-app@15 site --typescript --app --eslint --no-tailwind --no-src-dir --import-alias "@/*" --use-npm
 cd site
 npm install -D vitest @vitejs/plugin-react jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event @playwright/test @axe-core/playwright
-npx playwright install chromium
+npx playwright install chromium webkit
 ```
 
-- [ ] **Step 4: Replace `site/vitest.config.ts`**
+- [x] **Step 4: Replace `site/vitest.config.ts`**
 
 ```ts
 import { defineConfig } from 'vitest/config';
@@ -190,7 +190,7 @@ export default defineConfig({
 });
 ```
 
-- [ ] **Step 5: Create `site/vitest.setup.ts`**
+- [x] **Step 5: Create `site/vitest.setup.ts`**
 
 ```ts
 import '@testing-library/jest-dom/vitest';
@@ -231,7 +231,7 @@ if (!window.IntersectionObserver) {
 }
 ```
 
-- [ ] **Step 6: Create `site/playwright.config.ts`**
+- [x] **Step 6: Create `site/playwright.config.ts`**
 
 ```ts
 import { defineConfig, devices } from '@playwright/test';
@@ -254,7 +254,7 @@ export default defineConfig({
 });
 ```
 
-- [ ] **Step 7: Add scripts to `site/package.json`**
+- [x] **Step 7: Add scripts to `site/package.json`**
 
 ```json
 {
@@ -273,7 +273,7 @@ export default defineConfig({
 
 Also `npm install -D tsx`.
 
-- [ ] **Step 8: Write the harness test**
+- [x] **Step 8: Write the harness test**
 
 Create `site/tests/unit/harness.test.ts`:
 
@@ -289,12 +289,12 @@ describe('test harness', () => {
 });
 ```
 
-- [ ] **Step 9: Run the unit suite**
+- [x] **Step 9: Run the unit suite**
 
 Run: `pnpm test:unit`
 Expected: PASS, 1 test.
 
-- [ ] **Step 10: Commit**
+- [x] **Step 10: Commit**
 
 ```bash
 git add -A

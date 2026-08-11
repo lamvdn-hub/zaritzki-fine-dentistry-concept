@@ -12,7 +12,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 
 ## Phase 1 — Foundation
 
-- [ ] Task 1 — Repository, scaffold, and test harness
+- [x] Task 1 — Repository, scaffold, and test harness
 - [ ] Task 2 — Port design tokens and load fonts
 - [ ] Task 3 — Locale routing and message layer
 - [ ] Phase 1 verification complete
