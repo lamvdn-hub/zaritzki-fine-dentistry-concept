@@ -1,0 +1,138 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--hairline-gold);
+  background: rgba(36, 26, 18, 0.86);
+  backdrop-filter: blur(12px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+  padding: var(--space-3) var(--gutter);
+  gap: var(--space-5);
+}
+
+.mark {
+  flex: 0 0 auto;
+  color: var(--text-on-dark);
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: var(--fw-display-medium);
+  line-height: 1;
+  text-decoration: none;
+}
+
+.mark:hover {
+  color: var(--text-on-dark);
+}
+
+.mark em {
+  color: var(--gold-light);
+  font-style: italic;
+  font-weight: var(--fw-display-light);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+  gap: var(--space-5);
+}
+
+.desktopPhone,
+.compactPhone {
+  align-items: center;
+  min-height: 40px;
+  color: var(--text-on-dark-muted);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.desktopPhone {
+  display: inline-flex;
+}
+
+.compactPhone {
+  display: none;
+}
+
+.desktopPhone:hover,
+.compactPhone:hover {
+  color: var(--gold-light);
+}
+
+.book {
+  min-height: 40px;
+}
+
+.skip {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: 1;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--brand);
+  color: var(--brand-contrast);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+}
+
+.skip:focus {
+  top: var(--space-2);
+}
+
+@media (max-width: 860px) {
+  .inner {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .mark {
+    font-size: var(--text-lg);
+  }
+
+  .actions {
+    flex: 1 1 100%;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+
+  .desktopPhone {
+    display: none;
+  }
+
+  .compactPhone {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    padding-inline: var(--space-3);
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    width: 100%;
+    gap: var(--space-2);
+  }
+
+  .actions > [role='radiogroup'] {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}
