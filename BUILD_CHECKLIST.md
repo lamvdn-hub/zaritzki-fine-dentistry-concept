@@ -49,11 +49,11 @@ This checklist is updated after every task and phase. Phase transitions require 
 - [x] Task 15 — Proof, practices, and closing CTA
 - [x] Task 16 — Compose the page
 - [x] Phase 5 verification complete
-- [ ] User approved Phase 5
+- [x] User approved Phase 5 (2026-08-11, explicit)
 
 ## Phase 6 — Assets, search, and verification
 
-- [ ] Phase 5 explicitly approved and execution budget confirmed before starting
+- [x] Phase 5 explicitly approved and execution budget confirmed before starting (2026-08-11)
 - [ ] Task 17 — Source and verify photography
 - [ ] Task 18 — Structured data and metadata
 - [ ] Task 19 — End-to-end behavior, accessibility, and guards
