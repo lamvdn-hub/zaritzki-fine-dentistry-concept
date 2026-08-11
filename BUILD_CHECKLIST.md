@@ -37,7 +37,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 ## Phase 4 — The walk
 
 - [ ] Task 10 — Hero and past-hero sentinel
-- [ ] Task 11 — Step-rail navigation
+- [x] Task 11 — Step-rail navigation
 - [ ] Task 12 — Reveal primitive and split section
 - [ ] Phase 4 verification complete
 - [ ] User approved Phase 4

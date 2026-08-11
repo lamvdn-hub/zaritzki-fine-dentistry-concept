@@ -2546,7 +2546,7 @@ git commit -m "feat: add hero with past-hero sentinel"
   - `STEPS: readonly { id: string; anchor: string; labelKey: string; number: string }[]` from `@/lib/steps`
   - `<StepRail t={t} />`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Create `site/tests/unit/StepRail.test.tsx`:
 
@@ -2585,12 +2585,12 @@ describe('StepRail', () => {
 });
 ```
 
-- [ ] **Step 2: Run it and confirm it fails**
+- [x] **Step 2: Run it and confirm it fails**
 
 Run: `pnpm test:unit StepRail`
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Create `site/lib/steps.ts`**
+- [x] **Step 3: Create `site/lib/steps.ts`**
 
 ```ts
 /**
@@ -2608,7 +2608,7 @@ export const STEPS = [
 export type Step = (typeof STEPS)[number];
 ```
 
-- [ ] **Step 4: Create `site/components/walk/StepRail.module.css`**
+- [x] **Step 4: Create `site/components/walk/StepRail.module.css`**
 
 ```css
 .rail {
@@ -2680,7 +2680,7 @@ export type Step = (typeof STEPS)[number];
 }
 ```
 
-- [ ] **Step 5: Create `site/components/walk/StepRail.tsx`**
+- [x] **Step 5: Create `site/components/walk/StepRail.tsx`**
 
 ```tsx
 'use client';
@@ -2736,12 +2736,12 @@ export function StepRail({ t }: { t: (key: string) => string }) {
 }
 ```
 
-- [ ] **Step 6: Run the test and confirm it passes**
+- [x] **Step 6: Run the test and confirm it passes**
 
 Run: `pnpm test:unit StepRail`
 Expected: PASS, 3 tests.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add -A
