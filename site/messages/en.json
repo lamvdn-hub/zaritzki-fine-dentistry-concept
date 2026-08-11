@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "title": "Zaritzki Fine Dentistry — private dental practice in Berlin",
+    "description": "A private dental practice in Berlin Mitte and Charlottenburg. Unhurried appointments, Monday to Friday 08:00–20:00, for privately insured and self-paying patients."
+  },
+  "nav": {
+    "book": "Book",
+    "bookFirst": "Book a first consultation",
+    "bookAt": "Book at {practice}",
+    "call": "Call the practice",
+    "language": "Language",
+    "practice": "Practice",
+    "skipToContent": "Skip to content"
+  },
+  "hero": {
+    "eyebrow": "Private Zahnarztpraxis · {district}",
+    "headline": "A calmer kind of dental visit",
+    "lede": "Walk the whole appointment before you book it — the door, the lounge, the conversation, the room, and what it costs when you leave.",
+    "qualifier": "Privately insured and self-paying patients · Monday to Friday, 08:00–20:00"
+  },
+  "steps": {
+    "street": "The street",
+    "lounge": "The lounge",
+    "talk": "The talk",
+    "room": "The room",
+    "leaving": "Leaving",
+    "railLabel": "The visit, step by step"
+  },
+  "lounge": {
+    "eyebrow": "02 — The lounge",
+    "headline": "You will not be kept waiting in a queue",
+    "body": "Appointments are spaced so that yours starts when it says it will. The room you wait in was furnished, not fitted out.",
+    "hours": "08:00–20:00, Monday to Friday — appointments before work and after it."
+  },
+  "talk": {
+    "eyebrow": "03 — The talk",
+    "headline": "Nothing happens until we've talked",
+    "body": "Your first appointment is a conversation and an examination. You leave knowing what you need, what it will cost, and what happens if you do nothing.",
+    "columnTreatment": "Treatment",
+    "columnTypical": "What it is",
+    "focusLabel": "Our particular focus",
+    "noPrices": "We do not publish a price list. Private dental fees in Germany are set under the GOZ and depend on the treatment plan, so a fixed figure would be a guess. You get a written estimate before anything is agreed."
+  },
+  "treatments": {
+    "implantologie": "replacing a tooth at the root",
+    "invisalign": "clear aligners, adults and teenagers",
+    "veneers": "porcelain, including no-preparation veneers",
+    "prothetik": "crowns and inlays",
+    "funktionstherapie": "jaw joint and bite (CMD)",
+    "endodontologie": "root canals, under the microscope",
+    "fuellungstherapie": "fillings",
+    "parodontologie": "gum treatment",
+    "prophylaxe": "examination and prevention",
+    "dentalhygiene": "hygiene and periodontal aftercare",
+    "whitening": "supervised, in the practice"
+  },
+  "room": {
+    "eyebrow": "04 — The room",
+    "headline": "Lamplight, not a light in your eyes",
+    "body": "The surgery was designed to look like the rest of the practice. Same wood, same lamps, same quiet — with 3D imaging, microscopes and 3D scanners where the work actually needs them.",
+    "clinician": "Dr. med. dent. Felix Zaritzki, and a team whose experience comes from years in university hospitals."
+  },
+  "leaving": {
+    "eyebrow": "05 — Leaving",
+    "headline": "What it costs, said plainly",
+    "body": "We are a private practice. That is the reason the appointments are long and the rooms are like this — and it means we can only treat you if you are privately insured or paying yourself.",
+    "privateTitle": "Privately insured",
+    "privateBody": "Billed per GOZ. You receive a written estimate before treatment begins.",
+    "selfTitle": "Self-paying",
+    "selfBody": "A written estimate before anything is agreed.",
+    "gkvTitle": "Statutory (GKV)",
+    "gkvBody": "We cannot treat statutory patients. Said here rather than after you have booked."
+  },
+  "proof": {
+    "label": "{count} reviews · {address}",
+    "sourceNote": "Ratings as published on Google."
+  },
+  "practices": {
+    "eyebrow": "Two practices",
+    "headline": "Mitte and Charlottenburg",
+    "directions": "Directions",
+    "hours": "Monday to Friday, 08:00–20:00"
+  },
+  "closing": {
+    "headline": "Ready when you are",
+    "body": "New patients are welcome at both practices."
+  },
+  "sticky": {
+    "summary": "{address} · Mon–Fri 08:00–20:00 · privately insured & self-paying",
+    "dismiss": "Hide this bar"
+  },
+  "footer": {
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "rights": "Zaritzki Fine Dentistry"
+  },
+  "pending": {
+    "label": "Awaiting practice confirmation"
+  }
+}

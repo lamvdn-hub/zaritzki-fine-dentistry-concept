@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
 
 test('design tokens resolve on the document root', async ({ page }) => {
-  await page.goto('/');
+  const response = await page.goto('/en');
+  expect(response?.status()).toBe(200);
+  await expect(page).toHaveURL(/\/en$/);
   const tokens = await page.evaluate(() => {
     const s = getComputedStyle(document.documentElement);
     return {
@@ -22,7 +24,9 @@ test('design tokens resolve on the document root', async ({ page }) => {
 });
 
 test('both brand faces are loaded and self-hosted', async ({ page }) => {
-  await page.goto('/');
+  const response = await page.goto('/en');
+  expect(response?.status()).toBe(200);
+  await expect(page).toHaveURL(/\/en$/);
   const families = await page.evaluate(() =>
     Array.from(document.fonts).map((f) => f.family)
   );

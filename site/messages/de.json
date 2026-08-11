@@ -1,0 +1,3 @@
+{
+  "__note": "German copy is required and not yet written. Every key in en.json must appear here before DEFAULT_LOCALE in lib/i18n.ts is flipped to 'de' and the /de route is linked from the locale switch. Until then this file is intentionally empty and the translator falls back to English."
+}
