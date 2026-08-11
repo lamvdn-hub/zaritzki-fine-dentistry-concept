@@ -1367,7 +1367,7 @@ git commit -m "feat: add location context, persistence, and booking href resolut
 
 ## Task 6: Button and the pending-fact marker
 
-> **Approved Phase 3 TDD/copy correction (2026-08-11):** the “never stretches” test must assert the loaded CSS behavior (`display: inline-flex` and `width: auto`) rather than merely checking that a generated class name contains `button`. The pending marker must not mention or imply a from-price column; the binding no-price decision remains in force.
+> **Approved Phase 3 TDD/copy correction (2026-08-11):** the “never stretches” test must assert the loaded CSS behavior (`display: inline-flex` and `width: auto`) rather than merely checking that a generated class name contains `button`. After Button reaches GREEN, add a separate failing `PendingFact` behavior test before creating that component; no production component bypasses RED. The pending marker must not mention or imply a from-price column; the binding no-price decision remains in force.
 
 **Files:**
 - Create: `site/components/system/Button.tsx`, `Button.module.css`
