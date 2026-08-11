@@ -518,7 +518,7 @@ git commit -m "feat: port design tokens verbatim and self-host brand fonts"
   - `getMessages(locale: Locale): Promise<Messages>`
   - `translator(messages: Messages): (key: string) => string`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Create `site/tests/unit/i18n.test.ts`:
 
@@ -555,12 +555,12 @@ describe('i18n', () => {
 });
 ```
 
-- [ ] **Step 2: Run it and confirm it fails**
+- [x] **Step 2: Run it and confirm it fails**
 
 Run: `pnpm test:unit i18n`
 Expected: FAIL — `Cannot find module '@/lib/i18n'`.
 
-- [ ] **Step 3: Create `site/messages/en.json`**
+- [x] **Step 3: Create `site/messages/en.json`**
 
 ```json
 {
@@ -665,7 +665,7 @@ Expected: FAIL — `Cannot find module '@/lib/i18n'`.
 }
 ```
 
-- [ ] **Step 4: Create `site/messages/de.json`**
+- [x] **Step 4: Create `site/messages/de.json`**
 
 ```json
 {
@@ -673,7 +673,7 @@ Expected: FAIL — `Cannot find module '@/lib/i18n'`.
 }
 ```
 
-- [ ] **Step 5: Create `site/lib/i18n.ts`**
+- [x] **Step 5: Create `site/lib/i18n.ts`**
 
 ```ts
 import enMessages from '@/messages/en.json';
@@ -725,12 +725,12 @@ export function translator(messages: Messages) {
 }
 ```
 
-- [ ] **Step 6: Run the test and confirm it passes**
+- [x] **Step 6: Run the test and confirm it passes**
 
 Run: `pnpm test:unit i18n`
 Expected: PASS, 5 tests.
 
-- [ ] **Step 7: Create `site/app/[locale]/layout.tsx`**
+- [x] **Step 7: Create `site/app/[locale]/layout.tsx`**
 
 The direction contract must be the **first child of `<body>`** and must survive the production build.
 
@@ -794,7 +794,7 @@ export default async function LocaleLayout({
 }
 ```
 
-- [ ] **Step 8: Create `site/app/[locale]/page.tsx` as a temporary shell**
+- [x] **Step 8: Create `site/app/[locale]/page.tsx` as a temporary shell**
 
 ```tsx
 export default function Page() {
@@ -802,7 +802,7 @@ export default function Page() {
 }
 ```
 
-- [ ] **Step 9: Add `site/middleware.ts` and remove the scaffold root files**
+- [x] **Step 9: Add `site/middleware.ts` and remove the scaffold root files**
 
 ```ts
 import { NextResponse, type NextRequest } from 'next/server';
@@ -818,12 +818,12 @@ export const config = { matcher: ['/'] };
 
 Delete `site/app/layout.tsx` and `site/app/page.tsx` so the locale layout is the root layout. Before implementing this step, change both navigations in `tokens.spec.ts` from `/` to `/en` and confirm the test fails because `/en` is not yet routed.
 
-- [ ] **Step 10: Run the token e2e test, which should now pass**
+- [x] **Step 10: Run the token e2e test, which should now pass**
 
 Run: `pnpm test:e2e tokens`
 Expected: PASS, both tests, on both projects.
 
-- [ ] **Step 11: Verify the direction contract survives the production build**
+- [x] **Step 11: Verify the direction contract survives the production build**
 
 ```bash
 pnpm build
@@ -832,7 +832,7 @@ grep -r "2c7cb46c" .next/server/app | head -3
 
 Expected: at least one match. A contract the build erased is a contract nobody can audit.
 
-- [ ] **Step 12: Commit**
+- [x] **Step 12: Commit**
 
 ```bash
 git add -A
