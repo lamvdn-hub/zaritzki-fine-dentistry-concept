@@ -317,7 +317,7 @@ git commit -m "chore: scaffold Next.js app with Vitest and Playwright harness"
 - Consumes: nothing.
 - Produces: every CSS custom property from the design system, resolvable on `:root`. `fonts.ts` exports `cormorant` and `mulish` (`NextFont` objects exposing `.variable`), binding `--font-display` and `--font-sans`.
 
-- [ ] **Step 1: Copy the token files verbatim**
+- [x] **Step 1: Copy the token files verbatim**
 
 ```bash
 cd site
@@ -327,7 +327,7 @@ cp ../tokens/colors.css ../tokens/typography.css ../tokens/spacing.css ../tokens
 
 **Do not copy `../tokens/fonts.css`** — it `@import`s from the Google Fonts CDN, which `next/font` replaces. This resolves the design system's own stated caveat about CDN loading.
 
-- [ ] **Step 2: Verify the copies are byte-identical**
+- [x] **Step 2: Verify the copies are byte-identical**
 
 ```bash
 for f in colors typography spacing effects base; do
@@ -337,7 +337,7 @@ done
 
 Expected: five `OK` lines, no diff output.
 
-- [ ] **Step 3: Create `site/lib/fonts.ts`**
+- [x] **Step 3: Create `site/lib/fonts.ts`**
 
 ```ts
 import { Cormorant_Garamond, Mulish } from 'next/font/google';
@@ -360,7 +360,7 @@ export const mulish = Mulish({
 
 `latin-ext` is required — `Jägerstraße` and `Kurfürstendamm` need it.
 
-- [ ] **Step 4: Create `site/app/globals.css`**
+- [x] **Step 4: Create `site/app/globals.css`**
 
 ```css
 @import url('../styles/tokens/colors.css');
@@ -425,7 +425,7 @@ body {
 }
 ```
 
-- [ ] **Step 5: Keep the scaffolded root layout valid while Task 2 is tested**
+- [x] **Step 5: Keep the scaffolded root layout valid while Task 2 is tested**
 
 ```tsx
 import { cormorant, mulish } from '@/lib/fonts';
@@ -440,7 +440,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 ```
 
-- [ ] **Step 6: Write the failing token test**
+- [x] **Step 6: Write the failing token test**
 
 Create `site/tests/e2e/tokens.spec.ts`:
 
@@ -485,12 +485,12 @@ test('both brand faces are loaded and self-hosted', async ({ page }) => {
 });
 ```
 
-- [ ] **Step 7: Run it and confirm it fails**
+- [x] **Step 7: Run it and confirm it fails**
 
 Run: `pnpm test:e2e tokens`
 Expected: FAIL before implementation because the scaffold does not expose the Zaritzki tokens or brand fonts. After Steps 1–5, rerun it and require PASS on both projects before committing.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add -A
