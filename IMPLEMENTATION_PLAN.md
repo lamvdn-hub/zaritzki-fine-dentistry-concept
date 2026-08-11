@@ -3054,7 +3054,7 @@ git commit -m "feat: add reveal primitive and reusable split step section"
 - Consumes: `TREATMENTS`.
 - Produces: `<TreatmentSchedule t={t} />` — a real `<table>`, because it is tabular data.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Create `site/tests/unit/TreatmentSchedule.test.tsx`:
 
@@ -3113,12 +3113,12 @@ describe('TreatmentSchedule', () => {
 });
 ```
 
-- [ ] **Step 2: Run it and confirm it fails**
+- [x] **Step 2: Run it and confirm it fails**
 
 Run: `pnpm test:unit TreatmentSchedule`
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Create `site/components/content/TreatmentSchedule.module.css`**
+- [x] **Step 3: Create `site/components/content/TreatmentSchedule.module.css`**
 
 ```css
 .table { width: 100%; border-collapse: collapse; margin-top: var(--space-5); }
@@ -3181,7 +3181,7 @@ Expected: FAIL — module not found.
 }
 ```
 
-- [ ] **Step 4: Create `site/components/content/TreatmentSchedule.tsx`**
+- [x] **Step 4: Create `site/components/content/TreatmentSchedule.tsx`**
 
 ```tsx
 import { TREATMENTS } from '@/lib/locations';
@@ -3228,12 +3228,12 @@ export function TreatmentSchedule({
 }
 ```
 
-- [ ] **Step 5: Run the test and confirm it passes**
+- [x] **Step 5: Run the test and confirm it passes**
 
 Run: `pnpm test:unit TreatmentSchedule`
 Expected: PASS, 6 tests.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add -A
