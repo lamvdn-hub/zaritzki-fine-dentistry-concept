@@ -1603,7 +1603,7 @@ git commit -m "feat: port Button and add the pending-fact marker"
 - Consumes: `useLocation`, `Button`, `bookingHref`, `translator`.
 - Produces: `<SiteHeader t={t} locale={locale} />`, `<LocationSwitch t={t} />`, `<LocaleSwitch locale={locale} />`.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 Create `site/tests/unit/SiteHeader.test.tsx`:
 
@@ -1663,12 +1663,12 @@ describe('SiteHeader', () => {
 });
 ```
 
-- [ ] **Step 2: Run it and confirm it fails**
+- [x] **Step 2: Run it and confirm it fails**
 
 Run: `pnpm test:unit SiteHeader`
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Create `site/components/chrome/LocationSwitch.module.css`**
+- [x] **Step 3: Create `site/components/chrome/LocationSwitch.module.css`**
 
 ```css
 .group {
@@ -1703,7 +1703,7 @@ Expected: FAIL — module not found.
 }
 ```
 
-- [ ] **Step 4: Create `site/components/chrome/LocationSwitch.tsx`**
+- [x] **Step 4: Create `site/components/chrome/LocationSwitch.tsx`**
 
 Native radio semantics via `role="radio"` on buttons, with roving arrow-key focus — a segmented control is a radio group, not a set of independent buttons.
 
@@ -1753,7 +1753,7 @@ export function LocationSwitch({ t }: { t: (key: string) => string }) {
 }
 ```
 
-- [ ] **Step 5: Create `site/components/chrome/LocaleSwitch.module.css`**
+- [x] **Step 5: Create `site/components/chrome/LocaleSwitch.module.css`**
 
 ```css
 .switch { display: inline-flex; align-items: center; gap: var(--space-2); }
@@ -1772,7 +1772,7 @@ export function LocationSwitch({ t }: { t: (key: string) => string }) {
 .pending { color: var(--text-on-dark-muted); opacity: 0.4; cursor: not-allowed; }
 ```
 
-- [ ] **Step 6: Create `site/components/chrome/LocaleSwitch.tsx`**
+- [x] **Step 6: Create `site/components/chrome/LocaleSwitch.tsx`**
 
 ```tsx
 import Link from 'next/link';
@@ -1811,7 +1811,7 @@ export function LocaleSwitch({ locale, label }: { locale: Locale; label: string 
 }
 ```
 
-- [ ] **Step 7: Create `site/components/chrome/SiteHeader.module.css`**
+- [x] **Step 7: Create `site/components/chrome/SiteHeader.module.css`**
 
 ```css
 .header {
@@ -1870,7 +1870,7 @@ export function LocaleSwitch({ locale, label }: { locale: Locale; label: string 
 }
 ```
 
-- [ ] **Step 8: Create `site/components/chrome/SiteHeader.tsx`**
+- [x] **Step 8: Create `site/components/chrome/SiteHeader.tsx`**
 
 ```tsx
 'use client';
@@ -1911,12 +1911,12 @@ export function SiteHeader({
 }
 ```
 
-- [ ] **Step 9: Run the test and confirm it passes**
+- [x] **Step 9: Run the test and confirm it passes**
 
 Run: `pnpm test:unit SiteHeader`
 Expected: PASS, 5 tests.
 
-- [ ] **Step 10: Commit**
+- [x] **Step 10: Commit**
 
 ```bash
 git add -A
