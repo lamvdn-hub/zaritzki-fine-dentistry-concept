@@ -18,35 +18,124 @@ chrome around them does not change — only the photography and the address do.
 
 | Slot | File | Source URL | Photographer | Licence |
 |---|---|---|---|---|
-| Mitte · entrance | `mitte/entrance.jpg` | https://unsplash.com/photos/HB6JThnuCC4 | ANASTASIIA BUCHINSKAIA (https://unsplash.com/@anamilanofoto) | Unsplash |
+| Mitte · entrance | `mitte/entrance.jpg` | https://unsplash.com/photos/bIMZSjz3KKI | Declan Sun (https://unsplash.com/@declansun) | Unsplash |
 | Mitte · lounge | `mitte/lounge.jpg` | https://unsplash.com/photos/-mzlFS5KuN8 | Grace Estrada (https://unsplash.com/@usermcleod1) | Unsplash |
 | Mitte · consultation | `mitte/consultation.jpg` | https://unsplash.com/photos/YISEqk2Zbq4 | Elist Nguyen (https://unsplash.com/@hieuanhcauam) | Unsplash |
 | Mitte · treatmentRoom | `mitte/treatment-room.jpg` | https://unsplash.com/photos/vtiQZJ1Ljx0 | 绎安 贺 (https://unsplash.com/@niceheyian) | Unsplash |
-| Mitte · detail | `mitte/detail.jpg` | https://unsplash.com/photos/0HVm2nOc7OM | Nicolai Plenk (https://unsplash.com/@untitledsophisticated) | Unsplash |
+| Mitte · detail | `mitte/detail.jpg` | https://unsplash.com/photos/EfNvmWDR7us | Clio Di Giovanni (https://unsplash.com/@catherinedaho) | Unsplash |
 | Mitte · closing | `mitte/closing.jpg` | https://unsplash.com/photos/EyF0iLIzLW0 | Michael D Beckwith (https://unsplash.com/@mdbeckwith) | Unsplash |
 | Charlottenburg · entrance | `charlottenburg/entrance.jpg` | https://unsplash.com/photos/YReU2FQoG_0 | Maria Shchevelova (https://unsplash.com/@mshhwqq) | Unsplash |
-| Charlottenburg · lounge | `charlottenburg/lounge.jpg` | https://unsplash.com/photos/F9WkNB0v0R8 | Katie Puzatova (https://unsplash.com/@puzatova) | Unsplash |
-| Charlottenburg · consultation | `charlottenburg/consultation.jpg` | https://unsplash.com/photos/M_Xd4ddcyNk | asd asd (https://unsplash.com/@asd32123) | Unsplash |
+| Charlottenburg · lounge | `charlottenburg/lounge.jpg` | https://unsplash.com/photos/plAL61z3D9Y | Alex Rhee (https://unsplash.com/@alexdhrhee) | Unsplash |
+| Charlottenburg · consultation | `charlottenburg/consultation.jpg` | https://unsplash.com/photos/x3BCSWCAtrY | yann maignan (https://unsplash.com/@paris_interieurs) | Unsplash |
 | Charlottenburg · treatmentRoom | `charlottenburg/treatment-room.jpg` | https://unsplash.com/photos/4YhNRgL59Fc | Christian Lue (https://unsplash.com/@christianlue) | Unsplash |
 | Charlottenburg · detail | `charlottenburg/detail.jpg` | https://unsplash.com/photos/_e2Jw79ssKo | Madalozzo (https://unsplash.com/@madalozzo) | Unsplash |
-| Charlottenburg · closing | `charlottenburg/closing.jpg` | https://unsplash.com/photos/BAzT94876hk | Stuart Jenkins (https://unsplash.com/@stu_jenkins) | Unsplash |
+| Charlottenburg · closing | `charlottenburg/closing.jpg` | https://unsplash.com/photos/VnHVY1lTiVM | Tobias (https://unsplash.com/@herrzett) | Unsplash |
 
-`asd asd` is that photographer's literal Unsplash display name, not a
-placeholder. The profile handle is given alongside so the credit resolves.
+Photographer names are printed exactly as Unsplash publishes them, including
+the Chinese-character display name on the Mitte treatment room. Profile handles
+are given alongside so every credit resolves to a real account.
 
-## What is in each frame, and what to watch
+## What is in each frame
 
-- No frame contains a person, a patient, a procedure, a before/after, a tooth
-  diagram, dental equipment, gloved hands, or a dentist's chair. Every interior
-  is empty.
-- No frame contains a legible third-party brand mark. Two strong candidates were
-  discarded during review for exactly that reason.
-- One thing a reviewer should see and decide on deliberately: the
-  Charlottenburg lounge has a small antique oval print above the fireplace, and
-  it contains a face. It is a decorative artwork in a period room, not a
-  depiction of a patient or of anyone connected to the practice, so it does not
-  engage HWG. If the practice would rather have nothing face-like anywhere in
-  the set, that one file is the only swap needed.
+This section is an exhaustive audit, not a highlight list. Every file below was
+opened at full size and also examined with the shadows lifted, specifically
+looking for faces, religious symbols, brand marks, legible signage, and
+non-European fittings. Where something is present it is named here, whether or
+not it survives the crop the page applies.
+
+**Nothing in the twelve contains a person, a patient, a procedure, a
+before/after, a tooth diagram, dental equipment, gloved hands, or a dentist's
+chair. Every interior is empty of people. No frame carries a legible
+third-party brand mark or shop sign.**
+
+### Mitte
+
+- **`entrance.jpg`** — an empty stairwell in an old building: mottled,
+  patinated plaster walls, terrazzo steps and landing, a plain black tubular
+  handrail, one small black ceiling spotlight, and one lit wall recess. Inside
+  that recess is a small square cast-metal ventilation grille with a lattice
+  and an abstract central motif; it is ornamental ironwork, not a symbol,
+  monogram of a known organisation, or legible text. The warm glow sits upper
+  right and the left half falls to near-black, which is the way round the hero
+  scrim needs. No people, no signage, no daylight, no windows.
+- **`lounge.jpg`** — a hotel lounge seen through a wide opening: two pairs of
+  pale armchairs, a low dark table, a bronze balustrade, marble piers, an
+  arched glazed screen, and a hanging lantern with a foliate crown finial —
+  foliage forms only, no figures. Red drapery beyond the arch. Cool daylight
+  behind the arch is the only bright area. No people, no artwork, no signage.
+- **`consultation.jpg`** — a long plank table under two large warm paper
+  drum shades, rough plaster wall, wooden folding chairs, a stoneware pot of
+  blossom branches, a small bookshelf with unreadable book spines, and a
+  window with a metal grille looking onto green foliage. No people, no faces,
+  no legible titles.
+- **`treatment-room.jpg`** — a warm, dark, cluttered hotel lounge. In the
+  crop the page actually renders: tan leather armchairs and settles, tartan
+  cushions, a small Tiffany-style stained-glass table lamp, a tall palm, a
+  console with glassware, cane-backed chairs, and a group of small framed
+  landscape prints on the right-hand wall (no faces in them). **Above the
+  rendered crop, in near-black shadow at the upper left, are two mounted
+  taxidermy animal heads — one antlered — and a hanging chandelier.** They are
+  outside the frame at every viewport the site ships, because the media box is
+  landscape and this source is 2400×3600, but they are in the file and are
+  named here rather than left to be discovered. If the practice objects to
+  taxidermy existing in a source asset at all, this is the file to swap.
+- **`detail.jpg`** — a sawn timber end grain filling the frame, honey brown
+  falling to near-black under raking light. Growth rings and a single split.
+  One material, no pattern, no script, no symbol, no metalwork.
+- **`closing.jpg`** — a **Gothic Revival** library, not a plain panelled
+  reading room: banded sandstone piers with clustered shafts and pointed
+  arches, dark oak bookcases full of bound volumes, a carved oak table and
+  chairs, a plaster ribbed ceiling, parquet floor, and a brass-and-green-glass
+  pendant. The tall windows are leaded roundel glass under cusped floral
+  tracery — no cross, no figure, no inscription anywhere in the frame, but the
+  architecture reads collegiate-ecclesiastical and the window mass is cool
+  blue-white. The closing block covers the image with a flat 0.78 espresso
+  scrim, so almost none of this is visible in use. Named here so the register
+  is a knowing choice rather than an accident.
+
+### Charlottenburg
+
+- **`entrance.jpg`** — a Gründerzeit facade from below in low golden light:
+  stucco cartouches, pedimented windows, red-framed casements, a slate mansard
+  and corner turret, clear blue sky at upper right. A little roof planting at
+  the top left. No people, no house numbers, no shop signs, no legible text.
+- **`lounge.jpg`** — an empty pale room: two tall sash windows in black
+  frames with linen roman blinds, a European panel radiator with a thermostatic
+  valve, a flush European socket and a wall thermostat, a turned wooden floor
+  lamp with a linen shade, chevron-laid oak boards with sunlight pooling on
+  them. Through the glass, brick gables of the building opposite. No people, no
+  artwork, no signage, no foliage, no US fittings.
+- **`consultation.jpg`** — a Central-European apartment room: herringbone
+  parquet, plaster cornice, tall French casement with a linen curtain and a
+  European column radiator, panelled double doors with applied plaster
+  ornament, a black multi-arm chandelier, a dark table with black moulded
+  chairs, and a bouquet of magenta and green flowers. In an arched niche stands
+  a tall abstract driftwood sculpture — twisted timber, not a figure and not a
+  face. A flush European socket sits at the skirting. No people, no artwork on
+  the walls, no signage.
+- **`treatment-room.jpg`** — a genuinely empty Berlin Altbau room: a tall
+  three-light casement, wrought-iron French-balcony rail, the facade opposite,
+  pale plaster walls, a European panel radiator, a plain black wall bracket,
+  and warm boards with daylight across them. No people, no artwork, no signage.
+- **`detail.jpg`** — herringbone parquet close up, honey oak, shallow focus.
+  One material, no pattern beyond the parquet itself, no script, no symbol.
+- **`closing.jpg`** — a pale stucco hall: cream panelled walls with moulded
+  frames and carved plaster cartouches, a tall window and a round oeil-de-boeuf
+  window, a small ventilation grille, and daylight pooling on a pale
+  terracotta-and-cream chequered stone floor. Nothing else is in the room. No
+  people, no furniture, no artwork, no signage.
+
+## Why five files changed in fix round 1
+
+The Mitte entrance, the Mitte detail, and the Charlottenburg lounge,
+consultation and closing were replaced after review. The reasons and the full
+reasoning are in `.superpowers/sdd/IMPLEMENTATION_PLAN/task-17-report.md`. In
+short: the previous Charlottenburg lounge contained a devotional print, the
+previous Mitte detail was a Moorish door carrying Arabic calligraphy, the
+previous Mitte hero cropped its lantern in half and put a cool-white blowout
+where the hero scrim is lightest, and the previous Charlottenburg closing and
+consultation were an English country house and a North American new-build
+rather than Berlin Altbau.
 
 ## Sourcing this set is not the same as resolving the photography fact
 
