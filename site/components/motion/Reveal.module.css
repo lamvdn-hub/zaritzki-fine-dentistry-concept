@@ -1,0 +1,27 @@
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.revealed {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+/* Anxious patients are a named audience. This path is not optional. */
+@media (prefers-reduced-motion: reduce) {
+  .hidden,
+  .revealed {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
