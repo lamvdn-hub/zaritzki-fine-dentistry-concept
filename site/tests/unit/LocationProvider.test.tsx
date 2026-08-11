@@ -39,6 +39,12 @@ describe('LocationProvider', () => {
     expect(screen.getByTestId('street')).toHaveTextContent('Jägerstraße 41');
   });
 
+  it('ignores inherited persisted property names', () => {
+    window.localStorage.setItem('zaritzki.practice', 'constructor');
+    render(<LocationProvider><Probe /></LocationProvider>);
+    expect(screen.getByTestId('street')).toHaveTextContent('Jägerstraße 41');
+  });
+
   it('accepts a server-provided initial location from the query parameter', () => {
     render(<LocationProvider initialLocation="charlottenburg"><Probe /></LocationProvider>);
     expect(screen.getByTestId('street')).toHaveTextContent('Kurfürstendamm 52');

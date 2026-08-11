@@ -20,7 +20,7 @@ type LocationContextValue = {
 const LocationContext = createContext<LocationContextValue | null>(null);
 
 function isLocationId(value: unknown): value is LocationId {
-  return typeof value === 'string' && value in PRACTICES;
+  return typeof value === 'string' && Object.prototype.hasOwnProperty.call(PRACTICES, value);
 }
 
 export function LocationProvider({
