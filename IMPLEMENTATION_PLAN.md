@@ -2300,6 +2300,11 @@ git commit -m "feat: add espresso site footer with both practices"
 
 ## Task 10: Hero and the past-hero sentinel
 
+> **Binding correction:** Task 11 is already complete before this task starts.
+> Add a focused RED/GREEN behavior test proving the sentinel sets
+> `body[data-past-hero]` to `true` when it leaves, returns it to `false` when it
+> re-enters, and removes the attribute on cleanup.
+
 **Files:**
 - Create: `site/components/walk/Hero.tsx` + `.module.css`
 - Test: `site/tests/unit/Hero.test.tsx`
@@ -2524,6 +2529,13 @@ git commit -m "feat: add hero with past-hero sentinel"
 
 ## Task 11: Step rail navigation
 
+> **Binding correction:** this is the first task executed in Phase 4. The
+> single nav is static by default. On desktop only, it becomes fixed beneath
+> the 62px header while `body[data-past-hero='true']`; it returns to its docked
+> state when scrolling back into the hero and enters a released state when the
+> top of `#practices` reaches the rail position. Add behavior tests for the
+> fixed and released transitions. On mobile it never fixes.
+
 **Files:**
 - Create: `site/components/walk/StepRail.tsx` + `.module.css`, `site/lib/steps.ts`
 - Test: `site/tests/unit/StepRail.test.tsx`
@@ -2739,6 +2751,13 @@ git commit -m "feat: add step rail navigation with scroll-spy"
 ---
 
 ## Task 12: Reveal primitive and the split step section
+
+> **Binding correction:** use separate RED/GREEN cycles for `Reveal` and
+> `StepSection`. `Reveal` markup is visible by default. Only after a
+> motion-enabled client mounts with `IntersectionObserver` available may it
+> opt into the hidden 12px pre-reveal state; reduced-motion and unsupported
+> clients stay visible without transforms. The entrance fires once. Its public
+> API is `children`, optional `delay`, and optional `className`.
 
 **Files:**
 - Create: `site/components/motion/Reveal.tsx` + `.module.css`
