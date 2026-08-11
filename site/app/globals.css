@@ -13,7 +13,18 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  /* Measured lower edge of the wrapped mobile header. */
+  scroll-padding-top: 145px;
+}
+
+@media (min-width: 861px) {
+  html {
+    /* Measured lower edge of the fixed step rail beneath the sticky header. */
+    scroll-padding-top: 137px;
+  }
+}
 
 body {
   margin: 0;
