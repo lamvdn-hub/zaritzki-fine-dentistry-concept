@@ -46,7 +46,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 
 - [x] Task 13 — Treatment schedule
 - [x] Task 14 — Cost and insurance panel
-- [ ] Task 15 — Proof, practices, and closing CTA
+- [x] Task 15 — Proof, practices, and closing CTA
 - [ ] Task 16 — Compose the page
 - [ ] Phase 5 verification complete
 - [ ] User approved Phase 5

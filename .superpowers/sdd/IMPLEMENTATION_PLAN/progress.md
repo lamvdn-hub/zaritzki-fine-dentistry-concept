@@ -45,3 +45,6 @@
 - Phase 5 correction: move all four open facts into a typed registry; render self-pay wording only when known; give ClosingCta its own RED cycle; pass serializable messages into a client-owned page composition and validate query seeds with an own-property check.
 - Task 13: complete (commits e80ac53..90cf297, review clean)
 - Task 14: complete (commits 3af3b5c..1245607, review clean; focused 5/5, full unit 85/85, typed pending registry exactly 4, TypeScript clean)
+- Task 15: minor (deferred): strengthen ProofBand regression coverage for the displayed 5.0 values and non-blockquote testimonial-like text.
+- Task 15: minor (deferred): lock exact map destinations and telephone links in PracticesSection tests; production output is correct.
+- Task 15: complete (commits e678e39..4049a04, review approved; three RED/GREEN cycles, focused 3/3 + 3/3 + 2/2, full unit 93/93, TypeScript clean)

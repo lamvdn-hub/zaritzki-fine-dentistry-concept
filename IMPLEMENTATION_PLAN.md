@@ -3437,7 +3437,7 @@ git commit -m "feat: add cost and insurance panel stating the GKV exclusion plai
 - Consumes: `PRACTICE_ORDER`, `getPractice`, `useLocation`, `bookingHref`, `Button`, `Reveal`.
 - Produces: `<ProofBand t={t} />`, `<PracticesSection t={t} />`, `<ClosingCta t={t} />`.
 
-- [ ] **Step 1: Write the failing proof test**
+- [x] **Step 1: Write the failing proof test**
 
 Create `site/tests/unit/ProofBand.test.tsx`:
 
@@ -3470,12 +3470,12 @@ describe('ProofBand', () => {
 });
 ```
 
-- [ ] **Step 2: Run it and confirm it fails**
+- [x] **Step 2: Run it and confirm it fails**
 
 Run: `pnpm test:unit ProofBand`
 Expected: FAIL — module not found.
 
-- [ ] **Step 3: Create `site/components/content/ProofBand.module.css`**
+- [x] **Step 3: Create `site/components/content/ProofBand.module.css`**
 
 ```css
 .band { background: var(--surface-inverse); border-block: 1px solid var(--hairline-gold); }
@@ -3518,7 +3518,7 @@ Expected: FAIL — module not found.
 @media (max-width: 860px) { .inner { grid-template-columns: 1fr; gap: var(--space-5); } }
 ```
 
-- [ ] **Step 4: Create `site/components/content/ProofBand.tsx`**
+- [x] **Step 4: Create `site/components/content/ProofBand.tsx`**
 
 ```tsx
 import { PRACTICE_ORDER, getPractice } from '@/lib/locations';
@@ -3559,12 +3559,12 @@ export function ProofBand({
 }
 ```
 
-- [ ] **Step 5: Run the proof test and confirm it passes**
+- [x] **Step 5: Run the proof test and confirm it passes**
 
 Run: `pnpm test:unit ProofBand`
 Expected: PASS, 3 tests.
 
-- [ ] **Step 6: Write the failing practices test**
+- [x] **Step 6: Write the failing practices test**
 
 Create `site/tests/unit/PracticesSection.test.tsx`:
 
@@ -3598,12 +3598,12 @@ describe('PracticesSection', () => {
 });
 ```
 
-- [ ] **Step 7: Run it and confirm it fails**
+- [x] **Step 7: Run it and confirm it fails**
 
 Run: `pnpm test:unit PracticesSection`
 Expected: FAIL — module not found.
 
-- [ ] **Step 8: Create `site/components/content/PracticesSection.module.css`**
+- [x] **Step 8: Create `site/components/content/PracticesSection.module.css`**
 
 ```css
 .section { background: var(--surface-page); }
@@ -3642,7 +3642,7 @@ Expected: FAIL — module not found.
 @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
 ```
 
-- [ ] **Step 9: Create `site/components/content/PracticesSection.tsx`**
+- [x] **Step 9: Create `site/components/content/PracticesSection.tsx`**
 
 ```tsx
 import { PRACTICE_ORDER, getPractice } from '@/lib/locations';
@@ -3684,12 +3684,12 @@ export function PracticesSection({ t }: { t: (key: string) => string }) {
 }
 ```
 
-- [ ] **Step 10: Run the practices test and confirm it passes**
+- [x] **Step 10: Run the practices test and confirm it passes**
 
 Run: `pnpm test:unit PracticesSection`
 Expected: PASS, 3 tests.
 
-- [ ] **Step 11: Create `site/components/content/ClosingCta.module.css`**
+- [x] **Step 11: Create `site/components/content/ClosingCta.module.css`**
 
 ```css
 .section { position: relative; overflow: hidden; }
@@ -3723,7 +3723,7 @@ Expected: PASS, 3 tests.
 }
 ```
 
-- [ ] **Step 12: Create `site/components/content/ClosingCta.tsx`**
+- [x] **Step 12: Create `site/components/content/ClosingCta.tsx`**
 
 ```tsx
 'use client';
@@ -3756,7 +3756,7 @@ export function ClosingCta({
 }
 ```
 
-- [ ] **Step 13: Commit**
+- [x] **Step 13: Commit**
 
 ```bash
 git add -A
