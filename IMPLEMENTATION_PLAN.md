@@ -1367,6 +1367,8 @@ git commit -m "feat: add location context, persistence, and booking href resolut
 
 ## Task 6: Button and the pending-fact marker
 
+> **Approved Phase 3 TDD/copy correction (2026-08-11):** the “never stretches” test must assert the loaded CSS behavior (`display: inline-flex` and `width: auto`) rather than merely checking that a generated class name contains `button`. The pending marker must not mention or imply a from-price column; the binding no-price decision remains in force.
+
 **Files:**
 - Create: `site/components/system/Button.tsx`, `Button.module.css`
 - Create: `site/components/dev/PendingFact.tsx`, `PendingFact.module.css`
@@ -1588,6 +1590,8 @@ git commit -m "feat: port Button and add the pending-fact marker"
 ---
 
 ## Task 7: Site header with location and locale switches
+
+> **Approved mobile correction (2026-08-11):** returning patients must retain an immediate, visible, dialable phone path on mobile. The desktop number may become a compact translated “Call the practice” link at the narrow breakpoint, but it may not disappear from the header on the promise that a later, initially hidden and dismissible bar will carry it.
 
 **Files:**
 - Create: `site/components/chrome/LocationSwitch.tsx` + `.module.css`
@@ -2117,6 +2121,8 @@ git commit -m "feat: add sticky booking bar with session-scoped dismissal"
 ---
 
 ## Task 9: Site footer
+
+> **Approved message-layer correction (2026-08-11):** footer prose and hours labels must resolve through `messages/en.json` via `t`; only confirmed location data such as addresses and telephone numbers comes directly from `locations.ts`. Do not hardcode new rendered English prose in the component.
 
 **Files:**
 - Create: `site/components/chrome/SiteFooter.tsx` + `.module.css`
