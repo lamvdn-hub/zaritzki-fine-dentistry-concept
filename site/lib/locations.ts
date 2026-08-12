@@ -85,7 +85,7 @@ export const PRACTICES: Record<LocationId, Practice> = {
       'https://www.doctolib.de/zahnarztpraxis/berlin/fine-dentistry-dr-felix-zaritzki?pid=practice-540639',
     ),
     images: {
-      entrance: '/images/mitte/entrance.jpg',
+      entrance: '/images/mitte/entrance-chair.jpg',
       lounge: '/images/mitte/lounge.jpg',
       consultation: '/images/mitte/consultation.jpg',
       treatmentRoom: '/images/mitte/treatment-room.jpg',

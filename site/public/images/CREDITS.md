@@ -18,7 +18,7 @@ chrome around them does not change — only the photography and the address do.
 
 | Slot | File | Source URL | Photographer | Licence |
 |---|---|---|---|---|
-| Mitte · entrance | `mitte/entrance.jpg` | generated 2026-08-12 with OpenAI `gpt-image-2` | synthetic placeholder — not a photograph of the practice | generated |
+| Mitte · entrance | `mitte/entrance-chair.jpg` | generated 2026-08-12 with OpenAI `gpt-image-2` | synthetic placeholder — not a photograph of the practice | generated |
 | Mitte · lounge | `mitte/lounge.jpg` | https://unsplash.com/photos/-mzlFS5KuN8 | Grace Estrada (https://unsplash.com/@usermcleod1) | Unsplash |
 | Mitte · consultation | `mitte/consultation.jpg` | https://unsplash.com/photos/YISEqk2Zbq4 | Elist Nguyen (https://unsplash.com/@hieuanhcauam) | Unsplash |
 | Mitte · treatmentRoom | `mitte/treatment-room.jpg` | https://unsplash.com/photos/vtiQZJ1Ljx0 | 绎安 贺 (https://unsplash.com/@niceheyian) | Unsplash |
@@ -154,7 +154,7 @@ carpet. The user asked for a photo that tells visitors this is a dental clinic.
 Suitable licensed stock of a *warm* private-practice room was not available
 from Unsplash/Pexels in this environment (Unsplash download blocked; Pexels
 candidates were sterile blue-white chairs). A `gpt-image-2` still was generated
-instead and written over `mitte/entrance.jpg`. It is labelled generated in the
+instead and written to `mitte/entrance-chair.jpg`. It is labelled generated in the
 table above. The `photography` open fact is unchanged.
 
 ## Why the Mitte hero changed again in fix round 2
