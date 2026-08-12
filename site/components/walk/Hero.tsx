@@ -47,6 +47,7 @@ export function Hero({ t }: { t: Translator }) {
   return (
     <section className={styles.hero} id="step-street" aria-labelledby="hero-headline">
       <Image
+        key={practice.images.entrance}
         className={styles.image}
         src={practice.images.entrance}
         alt=""
