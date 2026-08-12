@@ -18,7 +18,7 @@ chrome around them does not change — only the photography and the address do.
 
 | Slot | File | Source URL | Photographer | Licence |
 |---|---|---|---|---|
-| Mitte · entrance | `mitte/entrance.jpg` | https://unsplash.com/photos/VitXrx5ajeQ | Daniel Romero (https://unsplash.com/@rmrdnl) | Unsplash |
+| Mitte · entrance | `mitte/entrance.jpg` | generated 2026-08-12 with OpenAI `gpt-image-2` | synthetic placeholder — not a photograph of the practice | generated |
 | Mitte · lounge | `mitte/lounge.jpg` | https://unsplash.com/photos/-mzlFS5KuN8 | Grace Estrada (https://unsplash.com/@usermcleod1) | Unsplash |
 | Mitte · consultation | `mitte/consultation.jpg` | https://unsplash.com/photos/YISEqk2Zbq4 | Elist Nguyen (https://unsplash.com/@hieuanhcauam) | Unsplash |
 | Mitte · treatmentRoom | `mitte/treatment-room.jpg` | https://unsplash.com/photos/vtiQZJ1Ljx0 | 绎安 贺 (https://unsplash.com/@niceheyian) | Unsplash |
@@ -44,31 +44,22 @@ non-European fittings. Where something is present it is named here, whether or
 not it survives the crop the page applies.
 
 **Nothing in the twelve contains a person, a patient, a procedure, a
-before/after, a tooth diagram, dental equipment, gloved hands, or a dentist's
-chair. Every interior is empty of people. No frame carries a legible
-third-party brand mark or shop sign.**
+before/after, a tooth diagram, or gloved hands.** The Mitte hero now shows a
+generated dental chair so the first viewport reads as a practice. Every
+interior is empty of people. No frame carries a legible third-party brand mark
+or shop sign.
 
 ### Mitte
 
-- **`entrance.jpg`** — a threshold: a pair of dark-stained hardwood doors set
-  in a panelled dark-wood surround, photographed square on at eye level in a
-  dim, warm interior. Each leaf carries two reeded panels in gilt mouldings
-  that catch the light; the hardware is brass — lever handles, rectangular
-  escutcheon plates with a round cylinder aperture, and exposed hinge knuckles
-  on both jambs. Two recessed ceiling downlights above. A marble threshold slab
-  in front of the doors, and a chevron-patterned carpet in front of that. A
-  narrow mirrored transom strip above the architrave reflects the warm ceiling
-  fittings as abstract orange shapes and one small cyan sliver about fifteen
-  pixels tall; magnified, it carries no word, letter or mark. A slack black
-  floor cable lies on the marble at the left of the threshold — the one untidy
-  object in the frame; it falls below the desktop crop entirely and sits under
-  the 0.9 end of the hero scrim on mobile. Nothing else is in the frame: no
-  people, no artwork, no signage, no brand name on the door furniture, no
-  religious symbol, no daylight, no window, no cool-white anywhere. The warm
-  mass is the two lit gilt panels, which sit between roughly 27% and 70% across
-  the desktop crop with the brighter right-hand panel closest to the comp's
-  amber glow at 72%; the left quarter of that crop measures a mean luma of 36
-  before the scrim and falls to near-black under it.
+- **`entrance.jpg`** — **generated image, not a photograph.** An empty private
+  treatment room: cognac leather dental chair in the right-center, dimmed
+  articulated lamp, dark oak cabinetry, espresso walls, brass fittings, warm
+  tungsten light, deep shadow on the left for hero copy. No people, no gloves,
+  no instruments in focus, no signage. Commissioned because licensed stock
+  dental interiors available here were all bright blue-white clinical rooms
+  (the brand anti-goal), and the previous hotel-door threshold did not tell a
+  visitor this is a dental practice. Still a placeholder — the practice must
+  approve or replace it.
 - **`lounge.jpg`** — a hotel lounge seen through a wide opening: two pairs of
   pale armchairs, a low dark table, a bronze balustrade, marble piers, an
   arched glazed screen, and a hanging lantern with a foliate crown finial —
@@ -154,6 +145,17 @@ previous Mitte hero cropped its lantern in half and put a cool-white blowout
 where the hero scrim is lightest, and the previous Charlottenburg closing and
 consultation were an English country house and a North American new-build
 rather than Berlin Altbau.
+
+## Why the Mitte hero changed again after Phase 6
+
+The shipped Unsplash door (Daniel Romero, `VitXrx5ajeQ`) read as a hotel
+guest-room threshold at the mobile crop — electronic locksets and convention
+carpet. The user asked for a photo that tells visitors this is a dental clinic.
+Suitable licensed stock of a *warm* private-practice room was not available
+from Unsplash/Pexels in this environment (Unsplash download blocked; Pexels
+candidates were sterile blue-white chairs). A `gpt-image-2` still was generated
+instead and written over `mitte/entrance.jpg`. It is labelled generated in the
+table above. The `photography` open fact is unchanged.
 
 ## Why the Mitte hero changed again in fix round 2
 
