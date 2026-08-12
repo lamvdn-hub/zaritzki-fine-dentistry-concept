@@ -108,7 +108,7 @@ export const PRACTICES: Record<LocationId, Practice> = {
     mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Kurf%C3%BCrstendamm+52+10707+Berlin',
     bookingUrl: known('https://www.doctolib.de/zahnarztpraxis/berlin/fine-dentistry-dr-felix-zaritzki'),
     images: {
-      entrance: '/images/charlottenburg/entrance.jpg',
+      entrance: '/images/charlottenburg/entrance-chair.jpg',
       lounge: '/images/charlottenburg/lounge.jpg',
       consultation: '/images/charlottenburg/consultation.jpg',
       treatmentRoom: '/images/charlottenburg/treatment-room.jpg',

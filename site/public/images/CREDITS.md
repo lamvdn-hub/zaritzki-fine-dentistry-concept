@@ -24,7 +24,7 @@ chrome around them does not change — only the photography and the address do.
 | Mitte · treatmentRoom | `mitte/treatment-room.jpg` | https://unsplash.com/photos/vtiQZJ1Ljx0 | 绎安 贺 (https://unsplash.com/@niceheyian) | Unsplash |
 | Mitte · detail | `mitte/detail.jpg` | https://unsplash.com/photos/EfNvmWDR7us | Clio Di Giovanni (https://unsplash.com/@catherinedaho) | Unsplash |
 | Mitte · closing | `mitte/closing.jpg` | https://unsplash.com/photos/EyF0iLIzLW0 | Michael D Beckwith (https://unsplash.com/@mdbeckwith) | Unsplash |
-| Charlottenburg · entrance | `charlottenburg/entrance.jpg` | https://unsplash.com/photos/YReU2FQoG_0 | Maria Shchevelova (https://unsplash.com/@mshhwqq) | Unsplash |
+| Charlottenburg · entrance | `charlottenburg/entrance-chair.jpg` | same generated still as Mitte · entrance | synthetic placeholder — not a photograph of the practice | generated |
 | Charlottenburg · lounge | `charlottenburg/lounge.jpg` | https://unsplash.com/photos/plAL61z3D9Y | Alex Rhee (https://unsplash.com/@alexdhrhee) | Unsplash |
 | Charlottenburg · consultation | `charlottenburg/consultation.jpg` | https://unsplash.com/photos/x3BCSWCAtrY | yann maignan (https://unsplash.com/@paris_interieurs) | Unsplash |
 | Charlottenburg · treatmentRoom | `charlottenburg/treatment-room.jpg` | https://unsplash.com/photos/4YhNRgL59Fc | Christian Lue (https://unsplash.com/@christianlue) | Unsplash |
@@ -97,10 +97,9 @@ or shop sign.
 
 ### Charlottenburg
 
-- **`entrance.jpg`** — a Gründerzeit facade from below in low golden light:
-  stucco cartouches, pedimented windows, red-framed casements, a slate mansard
-  and corner turret, clear blue sky at upper right. A little roof planting at
-  the top left. No people, no house numbers, no shop signs, no legible text.
+- **`entrance-chair.jpg`** — same generated treatment-room still as Mitte.
+  The old Gründerzeit façade file remains on disk as `entrance.jpg` but is
+  no longer the hero. Paths differ so the location switch still changes the URL.
 - **`lounge.jpg`** — an empty pale room: two tall sash windows in black
   frames with linen roman blinds, a European panel radiator with a thermostatic
   valve, a flush European socket and a wall thermostat, a turned wooden floor
