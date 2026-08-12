@@ -28,8 +28,10 @@
   color: var(--gold-light);
 }
 
+/* Inert until the German bundle lands. The muting is carried by the cursor and
+   the absence of a hover state, not by opacity: at 0.4 the label composited to
+   2.16:1 on the header ground, which is unreadable and fails WCAG AA. */
 .pending {
   color: var(--text-on-dark-muted);
   cursor: not-allowed;
-  opacity: 0.4;
 }
