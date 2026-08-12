@@ -56,7 +56,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 - [x] Phase 5 explicitly approved and execution budget confirmed before starting (2026-08-11)
 - [x] Task 17 — Source and verify photography (12 images + CREDITS.md; 2 fix rounds; attribution independently verified, no fabricated credits; `photography` remains an open fact)
 - [x] Task 18 — Structured data and metadata (two `Dentist` records, no `aggregateRating`/`review`; E2E 22/22)
-- [ ] Task 19 — End-to-end behavior, accessibility, and guards
+- [x] Task 19 — End-to-end behavior, accessibility, and guards (E2E 52/52; user ruling applied: `--text-gold` → cognac-deep for WCAG AA on light grounds; one latent `conversion.spec.ts` timing flake left open and carried forward)
 - [ ] Task 20 — Detector, finish review, and documentation
 - [ ] Reproduce and resolve the user-reported smaller-display hero issue with TDD and independent review
 - [ ] Phase 6 verification complete
