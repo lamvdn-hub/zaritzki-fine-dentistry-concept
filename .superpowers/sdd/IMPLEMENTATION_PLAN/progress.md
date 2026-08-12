@@ -134,3 +134,5 @@
 - Task 20 documenter: wrote `DESIGN.md` and `.impeccable/design.json` from the built artifact. Hotel-door crop, unused midnight/amber tokens, and unused kit primitives not canonized.
 - Task 20: complete (hero gate `8e959da`, steps 1–3 `0df9061`, finish fixes `2e636a9`, then docs commit). Four open facts still pending. Finish disposition `fix`. Phase 6 paused for user approval.
 - Phase 6: user explicitly approved (2026-08-12). Final whole-branch review authorized; then finishing-a-development-branch.
+- Final whole-branch review (`c33a539..9cfa70d`): Ready to merge? Yes. 0 Critical, 0 Important. No deferred minor is merge-blocking. File: `final-review.md`.
+- Finish-gate verification on `9cfa70d`: unit 98/98, lint clean, production build clean, E2E 66/66 (desktop 33 / mobile 33).
