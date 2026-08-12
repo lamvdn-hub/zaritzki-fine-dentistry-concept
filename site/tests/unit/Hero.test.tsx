@@ -41,8 +41,8 @@ class ControlledIntersectionObserver implements IntersectionObserver {
     return [];
   }
 
-  trigger(target: Element, isIntersecting: boolean) {
-    const rect = target.getBoundingClientRect();
+  trigger(target: Element, isIntersecting: boolean, boundingClientRect?: DOMRectReadOnly) {
+    const rect = boundingClientRect ?? target.getBoundingClientRect();
     const entry = {
       boundingClientRect: rect,
       intersectionRatio: isIntersecting ? 1 : 0,
@@ -56,6 +56,17 @@ class ControlledIntersectionObserver implements IntersectionObserver {
     this.callback([entry], this);
   }
 }
+
+/**
+ * The sentinel sits on the hero's bottom edge, so it is outside the viewport in
+ * two opposite situations: above it once the hero has been scrolled past, and
+ * below it while the hero's own bottom has simply not been reached yet. Only
+ * the first means "past the hero". Real rects are supplied so the direction is
+ * part of the fixture rather than an implicit jsdom zero.
+ */
+const ABOVE_VIEWPORT = new DOMRectReadOnly(0, -240, 320, 1);
+const INSIDE_VIEWPORT = new DOMRectReadOnly(0, 400, 320, 1);
+const BELOW_VIEWPORT = new DOMRectReadOnly(0, 900, 320, 1);
 
 function renderHero() {
   return render(
@@ -119,13 +130,34 @@ describe('Hero', () => {
     );
     expect(observer).toBeDefined();
 
-    act(() => observer!.trigger(sentinel!, false));
+    act(() => observer!.trigger(sentinel!, false, ABOVE_VIEWPORT));
     expect(document.body).toHaveAttribute('data-past-hero', 'true');
 
-    act(() => observer!.trigger(sentinel!, true));
+    act(() => observer!.trigger(sentinel!, true, INSIDE_VIEWPORT));
     expect(document.body).toHaveAttribute('data-past-hero', 'false');
 
     unmount();
     expect(document.body).not.toHaveAttribute('data-past-hero');
+  });
+
+  it('does not claim the hero is past while the sentinel is still below the fold', () => {
+    vi.stubGlobal('IntersectionObserver', ControlledIntersectionObserver);
+    const { container } = renderHero();
+    const sentinel = container.querySelector('#step-street > div[aria-hidden="true"]');
+    const observer = ControlledIntersectionObserver.instances.find((instance) =>
+      instance.targets.has(sentinel!),
+    );
+
+    // The observer's very first callback on a short viewport: not intersecting,
+    // because the hero is taller than the fold, not because anyone scrolled.
+    act(() => observer!.trigger(sentinel!, false, BELOW_VIEWPORT));
+    expect(document.body).toHaveAttribute('data-past-hero', 'false');
+
+    // Scrolling down past the hero flips it, and coming back up flips it back.
+    act(() => observer!.trigger(sentinel!, false, ABOVE_VIEWPORT));
+    expect(document.body).toHaveAttribute('data-past-hero', 'true');
+
+    act(() => observer!.trigger(sentinel!, false, BELOW_VIEWPORT));
+    expect(document.body).toHaveAttribute('data-past-hero', 'false');
   });
 });

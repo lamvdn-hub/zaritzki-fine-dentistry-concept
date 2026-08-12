@@ -23,7 +23,16 @@ export function Hero({ t }: { t: Translator }) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        document.body.setAttribute(PAST_HERO_ATTR, String(!entry.isIntersecting));
+        // The sentinel sits on the hero's bottom edge, so `!isIntersecting` is
+        // true in two opposite situations: the edge has left through the top of
+        // the viewport (genuinely scrolled past) and the edge is still below the
+        // fold (not reached yet). On any viewport shorter than the header plus
+        // the hero, the first callback arrives in the second state — so treating
+        // the two alike claims "past the hero" while the reader is still at the
+        // top of it. Only an edge above the root's top counts.
+        const rootTop = entry.rootBounds?.top ?? 0;
+        const pastHero = !entry.isIntersecting && entry.boundingClientRect.bottom <= rootTop;
+        document.body.setAttribute(PAST_HERO_ATTR, String(pastHero));
       },
       { rootMargin: '0px' },
     );

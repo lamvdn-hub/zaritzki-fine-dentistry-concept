@@ -90,3 +90,22 @@
     font-size: var(--text-lg);
   }
 }
+
+/*
+ * The scrim runs dark-to-light across the width so the photograph keeps its
+ * light side on desktop, where the copy occupies only the dark left third. Below
+ * this width the copy spans the whole hero and reaches into the transparent end,
+ * which over a bright photograph drops the eyebrow to 3.9:1. The anchor stop and
+ * the direction are the approved ones; only the two stops the copy has moved
+ * into are raised, and only where it would otherwise fail AA.
+ */
+@media (max-width: 640px) {
+  .scrim {
+    background: linear-gradient(
+      90deg,
+      rgba(20, 12, 7, 0.9) 0%,
+      rgba(20, 12, 7, 0.84) 46%,
+      rgba(20, 12, 7, 0.72) 100%
+    );
+  }
+}
