@@ -1,6 +1,6 @@
 # Phase 6 status — resume point for the next agent
 
-**Written:** 2026-08-12, mid-Task-20.
+**Written:** 2026-08-12, after the Task 20 hero-gate independent review.
 **Read this, then `HANDOFF.md`, then `IMPLEMENTATION_PLAN.md`'s "Continuation handoff — after Phase 5", its Global Constraints, and the Phase 6 binding note, then `BUILD_CHECKLIST.md`.**
 **The durable record of every finding is `.superpowers/sdd/IMPLEMENTATION_PLAN/progress.md` (the SDD ledger). It is tracked in git. Trust it and `git log` over any recollection.**
 
@@ -11,7 +11,7 @@
 | | |
 |---|---|
 | Branch | `feat/zaritzki-landing-page` |
-| HEAD | `8e959da` — *fix: stop the sticky bar painting over the hero on short viewports* |
+| HEAD | see `git log -1` — hero fix is `8e959da`; status/ledger docs may sit on top |
 | Worktree | clean except untracked `site/screenshots/` (diagnostics — deliberately not committed) |
 | Port 3000 | no listener |
 | Unit tests | 94 passing |
@@ -25,13 +25,11 @@ Phase 5 was explicitly approved by the user and Phase 6 authorized (recorded in 
 
 ---
 
-## STOP — where work was interrupted
+## Resume point
 
-**Task 20's hero fix is committed but has NOT been independently reviewed.** The review dispatch was interrupted before it ran.
+**Task 20 hero gate is complete.** Independent review of `b35c99e..8e959da` returned spec ✅ / quality Approved, 0 Critical, 0 Important, 4 deferred minors. The detector is now authorized.
 
-The plan's Phase 6 binding note requires, in order: reproduce → failing regression → minimum fix → **independent review** → verify the existing suites → *then* the detector. **The detector must not run before that review.**
-
-**Next action:** dispatch a fresh independent reviewer for commit `8e959da` against the range `b35c99e..8e959da`. The review package is already generated at `.superpowers/sdd/IMPLEMENTATION_PLAN/review-b35c99e..8e959da.diff`.
+**Next action:** Task 20 remaining — detector → sequential screenshots → inspect/fix one batch → `impeccable-finish-reviewer` → `impeccable-documenter` → client checklist. Then stop for explicit Phase 6 user approval.
 
 ---
 
@@ -40,8 +38,8 @@ The plan's Phase 6 binding note requires, in order: reproduce → failing regres
 - [x] **Task 17** — photography. 12 images + `CREDITS.md`. Two fix rounds. Attribution independently verified, **no fabricated credits**. `photography` deliberately still an open fact.
 - [x] **Task 18** — structured data. Two `Dentist` records, no `aggregateRating`/`review`.
 - [x] **Task 19** — E2E conversion / a11y / no-JS / voice guards. One fix round.
-- [ ] **Task 20 gate** — hero bug: reproduced ✅, fixed ✅ (`8e959da`), **independent review PENDING** ⬅ resume here
-- [ ] **Task 20** — detector → screenshots → `impeccable-finish-reviewer` → `impeccable-documenter` → client checklist
+- [x] **Task 20 gate** — hero bug: reproduced ✅, fixed ✅ (`8e959da`), independent review ✅ (spec / quality Approved; 4 deferred minors)
+- [ ] **Task 20** — detector → screenshots → `impeccable-finish-reviewer` → `impeccable-documenter` → client checklist ⬅ resume here
 - [ ] Phase 6 verification + visual review
 - [ ] **STOP for explicit user approval of Phase 6.** Do nothing beyond Phase 6 without it.
 

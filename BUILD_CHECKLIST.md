@@ -58,7 +58,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 - [x] Task 18 — Structured data and metadata (two `Dentist` records, no `aggregateRating`/`review`; E2E 22/22)
 - [x] Task 19 — End-to-end behavior, accessibility, and guards (E2E 52/52; user ruling applied: `--text-gold` → cognac-deep for WCAG AA on light grounds; one latent `conversion.spec.ts` timing flake left open and carried forward)
 - [ ] Task 20 — Detector, finish review, and documentation
-- [ ] Reproduce and resolve the user-reported smaller-display hero issue with TDD and independent review
+- [x] Reproduce and resolve the user-reported smaller-display hero issue with TDD and independent review (`8e959da`; independent review spec ✅ / quality Approved; 4 deferred minors)
 - [ ] Phase 6 verification complete
 - [ ] User approved Phase 6
 
