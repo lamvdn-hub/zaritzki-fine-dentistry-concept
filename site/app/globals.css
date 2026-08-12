@@ -11,6 +11,18 @@
   --font-sans: var(--font-sans-loaded), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
+/* --text-gold is commented in tokens/colors.css as "gold text that stays legible
+   on light", but --gold-deep #8F6C2C measures 4.25:1 on ivory and 3.92:1 on
+   parchment at the 11px eyebrow size — below the 4.5:1 WCAG AA floor, and no
+   brass in the palette is darker. Remapped downstream to --cognac-deep #7E4320,
+   the palette's warm secondary accent, at 6.82:1 on ivory and 6.30:1 on
+   parchment. This is an app-layer override on purpose: styles/tokens/colors.css
+   is read-only design authority and stays byte-identical to tokens/colors.css.
+   Light grounds only — gold on espresso uses --gold-light and is untouched. */
+:root {
+  --text-gold: var(--cognac-deep);
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
