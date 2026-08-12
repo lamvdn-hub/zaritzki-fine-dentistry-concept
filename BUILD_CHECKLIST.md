@@ -54,7 +54,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 ## Phase 6 — Assets, search, and verification
 
 - [x] Phase 5 explicitly approved and execution budget confirmed before starting (2026-08-11)
-- [ ] Task 17 — Source and verify photography
+- [x] Task 17 — Source and verify photography (12 images + CREDITS.md; 2 fix rounds; attribution independently verified, no fabricated credits; `photography` remains an open fact)
 - [ ] Task 18 — Structured data and metadata
 - [ ] Task 19 — End-to-end behavior, accessibility, and guards
 - [ ] Task 20 — Detector, finish review, and documentation
