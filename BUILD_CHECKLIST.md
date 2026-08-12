@@ -57,9 +57,9 @@ This checklist is updated after every task and phase. Phase transitions require 
 - [x] Task 17 — Source and verify photography (12 images + CREDITS.md; 2 fix rounds; attribution independently verified, no fabricated credits; `photography` remains an open fact)
 - [x] Task 18 — Structured data and metadata (two `Dentist` records, no `aggregateRating`/`review`; E2E 22/22)
 - [x] Task 19 — End-to-end behavior, accessibility, and guards (E2E 52/52; user ruling applied: `--text-gold` → cognac-deep for WCAG AA on light grounds; one latent `conversion.spec.ts` timing flake left open and carried forward)
-- [ ] Task 20 — Detector, finish review, and documentation
+- [x] Task 20 — Detector, finish review, and documentation (detector `[]`; screenshots captured; finish review `disposition: fix` with hotel-door + header-glass residuals for visual review; `DESIGN.md` written by documenter)
 - [x] Reproduce and resolve the user-reported smaller-display hero issue with TDD and independent review (`8e959da`; independent review spec ✅ / quality Approved; 4 deferred minors)
-- [ ] Phase 6 verification complete
+- [x] Phase 6 verification complete (unit 98; E2E 66 desktop 33 / mobile 33 on sequential rerun; pending exactly 4; seed `2c7cb46c` present; finish verdict recorded)
 - [ ] User approved Phase 6
 
 ## Pre-flight findings queued for their owning phases
@@ -67,4 +67,4 @@ This checklist is updated after every task and phase. Phase transitions require 
 - [x] Phase 3: preserve phone access on mobile and externalize footer copy.
 - [x] Phase 4: create `StepRail` before consumers; keep no-JavaScript content visible; implement rail release behavior.
 - [x] Phase 5: keep translation data serializable across the server/client boundary; type every unresolved fact.
-- [ ] Phase 6: strengthen interaction/reduced-motion/contrast verification; reproduce and fix the smaller-display hero issue; replace the Unicode star; use safe workspace image outputs and sequential captures; pass the complete finish-review packet.
+- [x] Phase 6: strengthen interaction/reduced-motion/contrast verification; reproduce and fix the smaller-display hero issue; replace the Unicode star; use safe workspace image outputs and sequential captures; pass the complete finish-review packet.

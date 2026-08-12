@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-12T12:00:00.000Z",
+  "title": "Design System: Zaritzki Fine Dentistry",
+  "extensions": {
+    "colorMeta": {
+      "espresso": {
+        "role": "neutral",
+        "displayName": "Espresso",
+        "canonical": "#241A12",
+        "tonalRamp": ["#140E09", "#241A12", "#3A2A1D", "#5C4128", "#7A5638", "#9A8663", "#C7B695", "#EFE7D6"]
+      },
+      "cocoa": {
+        "role": "neutral",
+        "displayName": "Cocoa",
+        "canonical": "#3A2A1D",
+        "tonalRamp": ["#1A120C", "#241A12", "#3A2A1D", "#5C4128", "#7A5638", "#A78B68", "#D4C4A4", "#F5F0E6"]
+      },
+      "ivory": {
+        "role": "neutral",
+        "displayName": "Ivory",
+        "canonical": "#F5F0E6",
+        "tonalRamp": ["#3A3428", "#6B6250", "#9A8E78", "#C7B695", "#E0D5C0", "#EFE7D6", "#F5F0E6", "#FBF8F1"]
+      },
+      "parchment": {
+        "role": "neutral",
+        "displayName": "Parchment",
+        "canonical": "#EFE7D6",
+        "tonalRamp": ["#3A3428", "#6B6250", "#9A8E78", "#C7B695", "#E0D5C0", "#EFE7D6", "#F5F0E6", "#FBF8F1"]
+      },
+      "stone": {
+        "role": "neutral",
+        "displayName": "Stone",
+        "canonical": "#E0D5C0",
+        "tonalRamp": ["#3A3428", "#6B6250", "#9A8663", "#C7B695", "#D4C6A8", "#E0D5C0", "#EFE7D6", "#F5F0E6"]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Brass",
+        "canonical": "#B58A3E",
+        "tonalRamp": ["#3D2E12", "#5C4419", "#8F6C2C", "#B58A3E", "#CDA75E", "#D4B87A", "#E4D0A0", "#EDE3CC"]
+      },
+      "gold-light": {
+        "role": "primary",
+        "displayName": "Brass Light",
+        "canonical": "#CDA75E",
+        "tonalRamp": ["#3D2E12", "#5C4419", "#8F6C2C", "#B58A3E", "#CDA75E", "#D4B87A", "#E4D0A0", "#EDE3CC"]
+      },
+      "gold-deep": {
+        "role": "primary",
+        "displayName": "Brass Deep",
+        "canonical": "#8F6C2C",
+        "tonalRamp": ["#3D2E12", "#5C4419", "#8F6C2C", "#B58A3E", "#CDA75E", "#D4B87A", "#E4D0A0", "#EDE3CC"]
+      },
+      "cognac": {
+        "role": "primary",
+        "displayName": "Cognac",
+        "canonical": "#A45A2A",
+        "tonalRamp": ["#2B1A0C", "#4A2814", "#7E4320", "#A45A2A", "#C4611C", "#D48958", "#E8C4A4", "#F6E9E4"]
+      },
+      "cognac-deep": {
+        "role": "primary",
+        "displayName": "Cognac Deep",
+        "canonical": "#7E4320",
+        "tonalRamp": ["#2B1A0C", "#4A2814", "#7E4320", "#A45A2A", "#C4611C", "#D48958", "#E8C4A4", "#F6E9E4"]
+      },
+      "umber": {
+        "role": "neutral",
+        "displayName": "Umber",
+        "canonical": "#7A5638",
+        "tonalRamp": ["#241A12", "#3A2A1D", "#5C4128", "#7A5638", "#9A8663", "#C7B695", "#E0D5C0", "#F5F0E6"]
+      },
+      "clay": {
+        "role": "neutral",
+        "displayName": "Clay",
+        "canonical": "#9A8663",
+        "tonalRamp": ["#241A12", "#3A2A1D", "#5C4128", "#7A5638", "#9A8663", "#C7B695", "#E0D5C0", "#F5F0E6"]
+      },
+      "text-body": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#33261A",
+        "tonalRamp": ["#1A120C", "#241A12", "#33261A", "#5C4128", "#7A5638", "#9A8663", "#C7B695", "#F5F0E6"]
+      },
+      "text-on-dark-muted": {
+        "role": "neutral",
+        "displayName": "On-Dark Muted",
+        "canonical": "#C2B49A",
+        "tonalRamp": ["#241A12", "#3A2A1D", "#5C4128", "#7A5638", "#9A8663", "#C2B49A", "#E0D5C0", "#F5F0E6"]
+      },
+      "brand-contrast": {
+        "role": "neutral",
+        "displayName": "Brand Contrast",
+        "canonical": "#2A1E10",
+        "tonalRamp": ["#140E09", "#2A1E10", "#3A2A1D", "#5C4128", "#7A5638", "#9A8663", "#C7B695", "#F5F0E6"]
+      },
+      "border-strong": {
+        "role": "neutral",
+        "displayName": "Strong Border",
+        "canonical": "#C3B291",
+        "tonalRamp": ["#3A3428", "#6B6250", "#9A8663", "#C3B291", "#D4C6A8", "#E0D5C0", "#EFE7D6", "#F5F0E6"]
+      },
+      "hairline-gold": {
+        "role": "primary",
+        "displayName": "Gold Hairline",
+        "canonical": "rgba(181,138,62,0.38)",
+        "tonalRamp": ["#3D2E12", "#5C4419", "#8F6C2C", "#B58A3E", "#CDA75E", "#D4B87A", "#E4D0A0", "#EDE3CC"]
+      },
+      "focus-ring": {
+        "role": "primary",
+        "displayName": "Focus Ring",
+        "canonical": "rgba(181,138,62,0.55)",
+        "tonalRamp": ["#3D2E12", "#5C4419", "#8F6C2C", "#B58A3E", "#CDA75E", "#D4B87A", "#E4D0A0", "#EDE3CC"]
+      },
+      "scrim": {
+        "role": "neutral",
+        "displayName": "Photo Scrim",
+        "canonical": "rgba(20,12,7,0.9)",
+        "tonalRamp": ["#140C07", "#241A12", "#3A2A1D", "#5C4128", "#7A5638", "#9A8663", "#C7B695", "#F5F0E6"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines only. Cap at 14ch." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles on the walk, cost, practices, and closing CTA." },
+      "title": { "displayName": "Title", "purpose": "Wordmark, step-rail labels, practice names, treatment names." },
+      "lede": { "displayName": "Lede", "purpose": "Opening paragraphs at light 300 / 1.7." },
+      "body": { "displayName": "Body", "purpose": "Default document type in Mulish." },
+      "label": { "displayName": "Eyebrow / Label", "purpose": "Tracked uppercase kickers and compact chrome labels." }
+    },
+    "shadows": [
+      {
+        "name": "shadow-xs",
+        "value": "0 1px 2px rgba(36,26,18,0.06)",
+        "purpose": "Rest lift on the primary button."
+      },
+      {
+        "name": "shadow-gold",
+        "value": "0 6px 24px rgba(181,138,62,0.28)",
+        "purpose": "Primary button hover only."
+      },
+      {
+        "name": "header-glass",
+        "value": "background: rgba(36,26,18,0.86); backdrop-filter: blur(12px)",
+        "purpose": "Sticky header. Booking bar uses 0.94 / 12px; step rail uses rgba(20,12,7,0.62) / 8px."
+      }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Default easing for color, border, and press transitions." },
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Entrances and the sticky booking bar. No overshoot." },
+      { "name": "duration-fast", "value": "140ms", "purpose": "Control hover, focus, and press." },
+      { "name": "duration-base", "value": "220ms", "purpose": "Sticky booking bar show/hide." },
+      { "name": "duration-slow", "value": "400ms", "purpose": "Reveal fade-and-rise on walk sections." }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "640px" },
+      { "name": "collapse", "value": "860px" },
+      { "name": "rail-fixed", "value": "861px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Brass fill that hugs its label. The only accent-filled action.",
+      "html": "<button class=\"ds-btn-primary\">Book a first visit <svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.55em; width: auto; height: 44px; padding: 0 22px; font-family: var(--font-sans); font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.01em; line-height: 1; color: var(--brand-contrast); background: var(--gold); border: 1px solid transparent; border-radius: var(--radius-sm); box-shadow: var(--shadow-xs); cursor: pointer; white-space: nowrap; transition: background-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard); } .ds-btn-primary:hover { background: var(--gold-light); box-shadow: var(--shadow-gold); } .ds-btn-primary:active { background: var(--gold-deep); transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }"
+    },
+    {
+      "name": "Primary Button Large",
+      "kind": "button",
+      "refersTo": "button-primary-lg",
+      "description": "Hero and closing CTA size. Same brass fill, 54px tall.",
+      "html": "<button class=\"ds-btn-primary-lg\">Book a first visit</button>",
+      "css": ".ds-btn-primary-lg { display: inline-flex; align-items: center; justify-content: center; width: auto; height: 54px; padding: 0 30px; font-family: var(--font-sans); font-size: 1rem; font-weight: 600; letter-spacing: 0.01em; line-height: 1; color: var(--brand-contrast); background: var(--gold); border: 1px solid transparent; border-radius: var(--radius-sm); box-shadow: var(--shadow-xs); cursor: pointer; white-space: nowrap; transition: background-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard); } .ds-btn-primary-lg:hover { background: var(--gold-light); box-shadow: var(--shadow-gold); } .ds-btn-primary-lg:active { background: var(--gold-deep); transform: translateY(1px); } .ds-btn-primary-lg:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Espresso fill for quieter actions on light grounds.",
+      "html": "<button class=\"ds-btn-secondary\">Call the practice</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; width: auto; height: 44px; padding: 0 22px; font-family: var(--font-sans); font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.01em; line-height: 1; color: var(--ivory); background: var(--espresso); border: 1px solid transparent; border-radius: var(--radius-sm); cursor: pointer; white-space: nowrap; transition: background-color var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard); } .ds-btn-secondary:hover { background: var(--cocoa); } .ds-btn-secondary:active { background: #160f0a; transform: translateY(1px); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Hairline control on light grounds. Hover fills parchment.",
+      "html": "<button class=\"ds-btn-ghost\">Get directions</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; width: auto; height: 44px; padding: 0 22px; font-family: var(--font-sans); font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.01em; line-height: 1; color: var(--text-body); background: transparent; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); cursor: pointer; white-space: nowrap; transition: background-color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard); } .ds-btn-ghost:hover { background: var(--parchment); border-color: var(--umber); } .ds-btn-ghost:active { background: var(--stone); transform: translateY(1px); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }"
+    },
+    {
+      "name": "Link Button",
+      "kind": "button",
+      "refersTo": "button-link",
+      "description": "Unboxed brass-deep text. Hover shifts to cognac.",
+      "html": "<button class=\"ds-btn-link\">Read the Impressum</button>",
+      "css": ".ds-btn-link { display: inline-flex; align-items: center; height: auto; padding: 0; font-family: var(--font-sans); font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.01em; color: var(--gold-deep); background: transparent; border: 0; border-radius: 0; cursor: pointer; transition: color var(--duration-fast) var(--ease-standard); } .ds-btn-link:hover { color: var(--cognac); } .ds-btn-link:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }"
+    },
+    {
+      "name": "Location Switch",
+      "kind": "nav",
+      "refersTo": "location-selected",
+      "description": "Two-stop capsule. Selected cell is the brass fill.",
+      "html": "<div class=\"ds-loc\" role=\"radiogroup\" aria-label=\"Practice\"><button class=\"ds-loc-opt ds-loc-opt-on\" aria-checked=\"true\">Mitte</button><button class=\"ds-loc-opt\" aria-checked=\"false\">Charlottenburg</button></div>",
+      "css": ".ds-loc { display: inline-flex; border: 1px solid var(--hairline-gold); border-radius: var(--radius-sm); overflow: hidden; } .ds-loc-opt { min-height: 40px; padding: 8px 12px; border: 0; background: transparent; color: var(--text-on-dark-muted); font-family: var(--font-sans); font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard); } .ds-loc-opt + .ds-loc-opt { border-left: 1px solid var(--hairline-gold); } .ds-loc-opt:hover { color: var(--text-on-dark); } .ds-loc-opt:focus-visible { outline: 0; box-shadow: inset 0 0 0 2px var(--focus-ring); } .ds-loc-opt-on { background: var(--brand); color: var(--brand-contrast); font-weight: 700; } .ds-loc-opt-on:hover { color: var(--brand-contrast); }"
+    },
+    {
+      "name": "Wordmark",
+      "kind": "nav",
+      "refersTo": "title",
+      "description": "Cormorant name. Fine Dentistry is italic brass light.",
+      "html": "<a class=\"ds-mark\" href=\"#\">Zaritzki <em>Fine Dentistry</em></a>",
+      "css": ".ds-mark { color: var(--text-on-dark); font-family: var(--font-display); font-size: var(--text-display-sm); font-weight: 500; line-height: 1; text-decoration: none; } .ds-mark:hover { color: var(--text-on-dark); } .ds-mark em { color: var(--gold-light); font-style: italic; font-weight: 300; } .ds-mark:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }"
+    },
+    {
+      "name": "Step Rail",
+      "kind": "nav",
+      "refersTo": "title",
+      "description": "Five-step walk navigation. Brass number, serif label, current wash.",
+      "html": "<nav class=\"ds-rail\" aria-label=\"The visit\"><a class=\"ds-rail-link ds-rail-current\" aria-current=\"step\" href=\"#\"><span class=\"ds-rail-num\">01</span><span class=\"ds-rail-label\">Street</span></a><a class=\"ds-rail-link\" href=\"#\"><span class=\"ds-rail-num\">02</span><span class=\"ds-rail-label\">Lounge</span></a><a class=\"ds-rail-link\" href=\"#\"><span class=\"ds-rail-num\">03</span><span class=\"ds-rail-label\">Talk</span></a></nav>",
+      "css": ".ds-rail { display: grid; grid-template-columns: repeat(3, 1fr); background: rgba(20, 12, 7, 0.62); border-top: 1px solid var(--hairline-gold); } .ds-rail-link { display: block; padding: 12px 16px; text-decoration: none; border-right: 1px solid rgba(245, 240, 230, 0.1); transition: background-color var(--duration-fast) var(--ease-standard); } .ds-rail-link:last-child { border-right: 0; } .ds-rail-link:hover { background: rgba(181, 138, 62, 0.08); } .ds-rail-link:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; } .ds-rail-num { display: block; color: var(--gold); font-family: var(--font-sans); font-size: 0.6875rem; letter-spacing: 0.22em; } .ds-rail-label { display: block; margin-top: 2px; color: var(--text-on-dark); font-family: var(--font-display); font-size: 1.75rem; font-weight: 400; line-height: 1.1; } .ds-rail-current { background: rgba(181, 138, 62, 0.14); } .ds-rail-current .ds-rail-label { color: var(--gold-light); }"
+    },
+    {
+      "name": "Eyebrow",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "Native kicker. Cognac-deep on light; brass light on espresso.",
+      "html": "<p class=\"ds-eyebrow\">Private &amp; self-pay · Mitte</p>",
+      "css": ".ds-eyebrow { margin: 0; font-family: var(--font-sans); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-gold); } .ds-eyebrow:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Visit",
+    "overview": "This is a boutique-hotel register, not a clinic. Espresso wood and ivory plaster are the grounds; brass is the single accent fill; Cormorant Garamond speaks over Mulish. The atmosphere is unhurried and tactile — restrained warmth, never sales volume and never cool clinical chrome. Confidence shows up as space, sentence case, and materials that already exist in the rooms.\n\nDensity is generous. Sections breathe on a 96px vertical measure; copy sits in short serif headlines and light-leaded sans paragraphs. Photography is full-bleed and real-interior; type lives inside a warm espresso scrim, not on a white slab. Chrome stays espresso and brass even when the two Berlin interiors change. Motion settles in 140 / 220 / 400ms and never overshoots. Anxious patients are a named audience: reduced-motion is a first-class path, not an afterthought.\n\nConfirmed rejections: cool blue-and-white dental visuals, gloved close-ups, bright clinical rooms, grey drop shadows, pill-round marketing chrome, stretched full-width CTAs, emoji, and shouting case.",
+    "keyCharacteristics": [
+      "Espresso and ivory grounds; brass as the only accent fill",
+      "Cormorant Garamond display over Mulish body, with tracked uppercase eyebrows",
+      "Architectural 4px controls; warm brown-tinted shadows",
+      "Calm motion at 140 / 220 / 400ms, no bounce",
+      "Location swaps photography and facts; the chrome language does not change"
+    ],
+    "rules": [
+      { "name": "The Brass Fill Rule", "body": "Brass is the only accent fill. It paints the primary action, the selected location, and small moments of shine — never a large flat ground.", "section": "colors" },
+      { "name": "The Light-Gold Text Rule", "body": "Gold type on ivory or parchment is remapped to cognac-deep. Gold-deep fails AA at eyebrow size; gold-light is reserved for espresso grounds.", "section": "colors" },
+      { "name": "The Eyebrow Rule", "body": "Every major section opens with a Mulish eyebrow: 11px, semibold, uppercase, 0.22em tracking. On espresso, brass light; on ivory, cognac-deep. Eyebrows are native to this world.", "section": "typography" },
+      { "name": "The Serif Feeling Rule", "body": "Cormorant carries headlines, the wordmark, step labels, and practice names. Mulish carries body, UI, and eyebrows. Never the reverse.", "section": "typography" },
+      { "name": "The Warm Lamp Rule", "body": "Shadows are espresso-tinted and diffuse. Neutral grey shadows are out.", "section": "elevation" },
+      { "name": "The Hug Rule", "body": "Primary actions hug their label (width: auto, align-self: flex-start). They never stretch to fill a container.", "section": "elevation" },
+      { "name": "The Chrome Stays Rule", "body": "Location state swaps photography, address, and booking destination. Espresso grounds, brass accent, and type stay constant.", "section": "elevation" },
+      { "name": "The No Overshoot Rule", "body": "Motion is 140 / 220 / 400ms with standard (cubic-bezier(0.4, 0, 0.2, 1)) or ease-out (cubic-bezier(0.16, 1, 0.3, 1)). Nothing bounces. prefers-reduced-motion cancels duration.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do open major sections with a tracked uppercase Mulish eyebrow (11px / 0.22em).",
+      "Do keep brass fills rare: the primary action, the selected location, small shine.",
+      "Do set gold type on light grounds to cognac-deep; use brass light only on espresso.",
+      "Do let buttons hug their label at 4px radius, 140ms, with a 1px press.",
+      "Do use espresso-tinted shadows and left-weighted rgba(20,12,7) scrims over photography.",
+      "Do honor prefers-reduced-motion by dropping animation and transition duration."
+    ],
+    "donts": [
+      "Don't use cool blue-white dental palettes, gloved close-ups, or bright clinical rooms.",
+      "Don't use neutral grey shadows or pill-round marketing chrome.",
+      "Don't stretch a primary button to full width.",
+      "Don't set brass-deep type on ivory at eyebrow size.",
+      "Don't reverse the pairing: no sans headlines, no serif UI.",
+      "Don't use emoji, ALL-CAPS headlines, or motion with bounce or overshoot."
+    ]
+  }
+}

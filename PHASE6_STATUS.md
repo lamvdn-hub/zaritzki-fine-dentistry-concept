@@ -1,6 +1,6 @@
 # Phase 6 status — resume point for the next agent
 
-**Written:** 2026-08-12, after the Task 20 hero-gate independent review.
+**Written:** 2026-08-12, Task 20 complete — waiting on Phase 6 user approval.
 **Read this, then `HANDOFF.md`, then `IMPLEMENTATION_PLAN.md`'s "Continuation handoff — after Phase 5", its Global Constraints, and the Phase 6 binding note, then `BUILD_CHECKLIST.md`.**
 **The durable record of every finding is `.superpowers/sdd/IMPLEMENTATION_PLAN/progress.md` (the SDD ledger). It is tracked in git. Trust it and `git log` over any recollection.**
 
@@ -11,11 +11,11 @@
 | | |
 |---|---|
 | Branch | `feat/zaritzki-landing-page` |
-| HEAD | see `git log -1` — hero fix is `8e959da`; status/ledger docs may sit on top |
-| Worktree | clean except untracked `site/screenshots/` (diagnostics — deliberately not committed) |
+| HEAD | see `git log -1` — Task 20 code ends at `2e636a9`; docs commit sits on top |
+| Worktree | untracked `site/screenshots/diagnostics/`, `inspect.json`, `review20/` (deliberately not committed) |
 | Port 3000 | no listener |
-| Unit tests | 94 passing |
-| E2E | 62 passing (desktop 31 / mobile 31) |
+| Unit tests | 98 passing |
+| E2E | 66 passing on sequential rerun (desktop 33 / mobile 33); latent `settleStickyBar` flake recurred once under 8 workers |
 | Lint / build / TypeScript | clean |
 | Direction seed `2c7cb46c` | present in built server output |
 | Token mirrors | all five `site/styles/tokens/*.css` byte-identical to root `tokens/` |
@@ -27,9 +27,9 @@ Phase 5 was explicitly approved by the user and Phase 6 authorized (recorded in 
 
 ## Resume point
 
-**Task 20 hero gate is complete.** Independent review of `b35c99e..8e959da` returned spec ✅ / quality Approved, 0 Critical, 0 Important, 4 deferred minors. The detector is now authorized.
+**Task 20 is complete.** Stop here for explicit Phase 6 user approval. Do nothing beyond Phase 6 without it.
 
-**Next action:** Task 20 remaining — detector → sequential screenshots → inspect/fix one batch → `impeccable-finish-reviewer` → `impeccable-documenter` → client checklist. Then stop for explicit Phase 6 user approval.
+Finish review disposition (verbatim): **`fix`**. Residuals for visual review: Mitte hotel-door crop; header glass reads solid in stills over the dark hero (CSS already matches the approved `0.86` + 12px blur).
 
 ---
 
@@ -39,9 +39,12 @@ Phase 5 was explicitly approved by the user and Phase 6 authorized (recorded in 
 - [x] **Task 18** — structured data. Two `Dentist` records, no `aggregateRating`/`review`.
 - [x] **Task 19** — E2E conversion / a11y / no-JS / voice guards. One fix round.
 - [x] **Task 20 gate** — hero bug: reproduced ✅, fixed ✅ (`8e959da`), independent review ✅ (spec / quality Approved; 4 deferred minors)
-- [ ] **Task 20** — detector → screenshots → `impeccable-finish-reviewer` → `impeccable-documenter` → client checklist ⬅ resume here
-- [ ] Phase 6 verification + visual review
-- [ ] **STOP for explicit user approval of Phase 6.** Do nothing beyond Phase 6 without it.
+- [x] **Task 20 Steps 1–3** — detector `[]`, screenshots, one inspect/fix (`0df9061`), independent review ✅
+- [x] **Task 20 finish review** — `disposition: fix`; rail + pending marks applied (`2e636a9`); residuals parked for visual review
+- [x] **Task 20 documenter** — `DESIGN.md` + `.impeccable/design.json`
+- [x] **Task 20** — complete; client checklist below
+- [x] Phase 6 verification + visual review packet ready
+- [ ] **STOP for explicit user approval of Phase 6.** Do nothing beyond Phase 6 without it. ⬅ resume here
 
 ---
 
