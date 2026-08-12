@@ -28,4 +28,15 @@ describe('PracticesSection', () => {
 
     expect(screen.getAllByText('Monday to Friday, 08:00–20:00')).toHaveLength(2);
   });
+
+  it('marks the unconfirmed shared-team fact once, without inventing an org chart', () => {
+    render(<PracticesSection t={t} />);
+
+    const markers = screen.getAllByRole('status', { name: 'Awaiting practice' });
+    expect(markers).toHaveLength(1);
+    expect(markers[0]).toHaveAttribute(
+      'title',
+      'Whether both addresses share clinicians is unknown',
+    );
+  });
 });

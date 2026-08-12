@@ -1,7 +1,9 @@
 'use client';
 
 import { TreatmentSchedule } from '@/components/content/TreatmentSchedule';
+import { PendingFact } from '@/components/dev/PendingFact';
 import { useLocation } from '@/lib/LocationProvider';
+import { OPEN_FACTS } from '@/lib/openFacts';
 import { StepSection } from './StepSection';
 
 type Translator = (key: string, values?: Record<string, string | number>) => string;
@@ -50,7 +52,17 @@ export function RoomSection({ t }: { t: Translator }) {
       eyebrow={t('room.eyebrow')}
       headline={t('room.headline')}
       body={t('room.body')}
-      note={t('room.clinician')}
+      note={
+        <>
+          {t('room.clinician')}
+          {OPEN_FACTS.clinicians.known ? null : (
+            <>
+              {' '}
+              <PendingFact note={OPEN_FACTS.clinicians.note} />
+            </>
+          )}
+        </>
+      }
       image={practice.images.treatmentRoom}
       imageSide="left"
       tone="dark"

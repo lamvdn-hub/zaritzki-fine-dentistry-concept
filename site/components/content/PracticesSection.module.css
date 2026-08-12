@@ -18,6 +18,10 @@
   line-height: var(--lh-snug);
 }
 
+.shared {
+  margin: var(--space-4) 0 0;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

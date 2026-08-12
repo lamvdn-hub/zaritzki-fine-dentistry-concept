@@ -106,6 +106,61 @@ for (const viewport of SHORT_VIEWPORTS) {
   });
 }
 
+const FIRST_VIEWPORT = { width: 390, height: 664 };
+
+for (const practice of [
+  { name: 'mitte', url: '/en' },
+  { name: 'charlottenburg', url: '/en?praxis=charlottenburg' },
+] as const) {
+  test(`the step rail sits in the first viewport at 390x664 (${practice.name})`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(FIRST_VIEWPORT);
+    await page.goto(practice.url);
+    await settleStickyBar(page);
+
+    expect(await page.evaluate(() => window.scrollY)).toBe(0);
+
+    const bar = page.getByTestId('sticky-bar');
+    const rail = page.locator('#step-street nav');
+    const heroCta = page
+      .locator('#step-street')
+      .getByRole('link', { name: /Book a first consultation/ });
+
+    await expect(rail).toBeInViewport();
+
+    const railBox = await stableViewportBox(rail);
+    const ctaBox = await stableViewportBox(heroCta);
+    const barBox = clipToViewport(await stableViewportBox(bar), FIRST_VIEWPORT);
+
+    expect(
+      ctaBox.height,
+      `${practice.name} hero CTA must keep its 54px height`,
+    ).toBeGreaterThanOrEqual(54);
+    expect(
+      ctaBox.y + ctaBox.height,
+      `${practice.name} hero CTA bottom ${ctaBox.y + ctaBox.height} must be ≤ 664`,
+    ).toBeLessThanOrEqual(FIRST_VIEWPORT.height);
+    expect(
+      railBox.y,
+      `${practice.name} rail top ${railBox.y} must be on-screen`,
+    ).toBeGreaterThanOrEqual(0);
+    expect(
+      railBox.y + railBox.height,
+      `${practice.name} rail bottom ${railBox.y + railBox.height} must be ≤ 664`,
+    ).toBeLessThanOrEqual(FIRST_VIEWPORT.height);
+    expect(
+      rectsOverlap(ctaBox, railBox),
+      `${practice.name} rail ${JSON.stringify(railBox)} must not cover the CTA ${JSON.stringify(ctaBox)}`,
+    ).toBe(false);
+    expect(
+      rectsOverlap(barBox, ctaBox),
+      `${practice.name} sticky bar ${JSON.stringify(barBox)} must not cover the CTA`,
+    ).toBe(false);
+    await expect(bar).toHaveAttribute('data-visible', 'false');
+  });
+}
+
 /* -------------------------------------------------------------------------- */
 /* Hero copy contrast over the photograph                                      */
 /* -------------------------------------------------------------------------- */

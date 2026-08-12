@@ -2,7 +2,11 @@ import { act, render, screen, waitFor } from '@testing-library/react';
 import { renderToString } from 'react-dom/server';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { Reveal } from '@/components/motion/Reveal';
+import { LocationProvider } from '@/lib/LocationProvider';
+import { translator } from '@/lib/i18n';
+import en from '@/messages/en.json';
 import { StepSection } from '@/components/walk/StepSection';
+import { RoomSection } from '@/components/walk/StepSections';
 
 class ControlledIntersectionObserver implements IntersectionObserver {
   static instances: ControlledIntersectionObserver[] = [];
@@ -218,5 +222,25 @@ describe('StepSection', () => {
     expect(section).toHaveAttribute('data-image', 'right');
     expect(screen.getByText('A written estimate follows.')).toBeInTheDocument();
     expect(screen.getByText('Treatment schedule')).toBeInTheDocument();
+  });
+});
+
+describe('RoomSection', () => {
+  const t = translator(en as Record<string, unknown>);
+
+  it('keeps the confirmed clinician sentence and marks names beyond him as pending', () => {
+    render(
+      <LocationProvider>
+        <RoomSection t={t} />
+      </LocationProvider>,
+    );
+
+    expect(
+      screen.getByText(/Dr\. med\. dent\. Felix Zaritzki, and a team whose experience comes from years in university hospitals\./),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('status', { name: 'Awaiting practice' })).toHaveAttribute(
+      'title',
+      'Names and credentials beyond Dr. Zaritzki not supplied',
+    );
   });
 });

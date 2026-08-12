@@ -82,8 +82,11 @@
 }
 
 @media (max-width: 860px) {
+  /* 145px is the measured wrapped-header offset already used as
+     scroll-padding-top. Header sits in flow, so the hero must fill only what
+     remains or the five-step rail drops below the first screen. */
   .hero {
-    min-height: 92svh;
+    min-height: calc(100svh - 145px);
   }
 
   .lede {
@@ -109,9 +112,26 @@
     );
   }
 
-  /* CHARLOTTENBURG wraps the eyebrow onto a second line and otherwise shaves
-     ~5px off the hero CTA at the 390×664 first viewport. */
+  .inner {
+    padding: var(--space-4) var(--space-4);
+  }
+
+  .headline {
+    font-size: clamp(2.25rem, 8vw, var(--text-display-xl));
+  }
+
+  .lede {
+    margin-top: var(--space-4);
+  }
+
+  .qualifier {
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+  }
+
+  /* CHARLOTTENBURG wraps the eyebrow onto a second line. Keep the 54px CTA
+     and the rail on-screen together at 390×664. */
   .cta {
-    margin-top: var(--space-5);
+    margin-top: var(--space-4);
   }
 }

@@ -5,6 +5,7 @@
   border-bottom: 1px solid var(--hairline-gold);
   background: rgba(36, 26, 18, 0.86);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .inner {

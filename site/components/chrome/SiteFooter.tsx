@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import { PendingFact } from '@/components/dev/PendingFact';
 import { PRACTICE_ORDER, getPractice } from '@/lib/locations';
+import { OPEN_FACTS } from '@/lib/openFacts';
 import styles from './SiteFooter.module.css';
 
 export function SiteFooter({ t }: { t: (key: string) => string }) {
@@ -9,6 +11,11 @@ export function SiteFooter({ t }: { t: (key: string) => string }) {
         <div>
           <div className={styles.mark}>{t('footer.rights')}</div>
           <p className={styles.tagline}>{t('footer.tagline')}</p>
+          {OPEN_FACTS.photography.known ? null : (
+            <p className={styles.credit}>
+              <PendingFact note={OPEN_FACTS.photography.note} />
+            </p>
+          )}
         </div>
         {PRACTICE_ORDER.map((id) => {
           const practice = getPractice(id);

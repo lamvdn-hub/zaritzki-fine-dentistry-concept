@@ -32,6 +32,10 @@
   line-height: var(--lh-relaxed);
 }
 
+.credit {
+  margin: var(--space-3) 0 0;
+}
+
 .practice {
   font-style: normal;
 }

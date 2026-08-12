@@ -31,6 +31,15 @@ describe('SiteFooter', () => {
     );
   });
 
+  it('marks the photography as licensed stock still awaiting approval', () => {
+    render(<SiteFooter t={t} />);
+
+    expect(screen.getByRole('status', { name: 'Awaiting practice' })).toHaveAttribute(
+      'title',
+      'All 12 images are licensed stock awaiting approval or replacement',
+    );
+  });
+
   it('renders the footer tagline and hours from the translation bundle', () => {
     const messages = {
       ...en,

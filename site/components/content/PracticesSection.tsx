@@ -1,5 +1,7 @@
+import { PendingFact } from '@/components/dev/PendingFact';
 import { Reveal } from '@/components/motion/Reveal';
 import { PRACTICE_ORDER, getPractice } from '@/lib/locations';
+import { OPEN_FACTS } from '@/lib/openFacts';
 import styles from './PracticesSection.module.css';
 
 export function PracticesSection({ t }: { t: (key: string) => string }) {
@@ -9,6 +11,11 @@ export function PracticesSection({ t }: { t: (key: string) => string }) {
         <Reveal>
           <p className="eyebrow">{t('practices.eyebrow')}</p>
           <h2 className={styles.headline}>{t('practices.headline')}</h2>
+          {OPEN_FACTS.sharedTeam.known ? null : (
+            <p className={styles.shared}>
+              <PendingFact note={OPEN_FACTS.sharedTeam.note} />
+            </p>
+          )}
         </Reveal>
         <div className={styles.grid}>
           {PRACTICE_ORDER.map((id, index) => {
