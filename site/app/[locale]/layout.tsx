@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { cormorant, mulish } from '@/lib/fonts';
 import { LOCALES, isLocale, getMessages, translator } from '@/lib/i18n';
+import { PracticeJsonLd } from '@/components/seo/PracticeJsonLd';
 import '@/app/globals.css';
 
 export function generateStaticParams() {
@@ -50,6 +51,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${cormorant.variable} ${mulish.variable}`}>
       <body>
         <div dangerouslySetInnerHTML={{ __html: `<!--${DIRECTION_CONTRACT}-->` }} />
+        <PracticeJsonLd />
         {children}
       </body>
     </html>
