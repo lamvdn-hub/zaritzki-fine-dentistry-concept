@@ -60,7 +60,7 @@ This checklist is updated after every task and phase. Phase transitions require 
 - [x] Task 20 — Detector, finish review, and documentation (detector `[]`; screenshots captured; finish review `disposition: fix` with hotel-door + header-glass residuals for visual review; `DESIGN.md` written by documenter)
 - [x] Reproduce and resolve the user-reported smaller-display hero issue with TDD and independent review (`8e959da`; independent review spec ✅ / quality Approved; 4 deferred minors)
 - [x] Phase 6 verification complete (unit 98; E2E 66 desktop 33 / mobile 33 on sequential rerun; pending exactly 4; seed `2c7cb46c` present; finish verdict recorded)
-- [ ] User approved Phase 6
+- [x] User approved Phase 6 (2026-08-12, explicit)
 
 ## Pre-flight findings queued for their owning phases
 

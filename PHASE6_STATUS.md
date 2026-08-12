@@ -44,7 +44,7 @@ Finish review disposition (verbatim): **`fix`**. Residuals for visual review: Mi
 - [x] **Task 20 documenter** — `DESIGN.md` + `.impeccable/design.json`
 - [x] **Task 20** — complete; client checklist below
 - [x] Phase 6 verification + visual review packet ready
-- [ ] **STOP for explicit user approval of Phase 6.** Do nothing beyond Phase 6 without it. ⬅ resume here
+- [x] **STOP for explicit user approval of Phase 6.** User approved 2026-08-12.
 
 ---
 

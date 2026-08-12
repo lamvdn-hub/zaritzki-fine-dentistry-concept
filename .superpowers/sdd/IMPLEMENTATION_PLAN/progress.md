@@ -133,3 +133,4 @@
 - Task 20 finish verdict: rail resolved; pending marks resolved; motion resolved; header glass partial (CSS matches approved 0.86 + 12px blur; stills over a dark hero read solid); hotel-door unresolved by design. `disposition: fix`. No second fix wave. Residuals go to the user’s Phase 6 visual review.
 - Task 20 documenter: wrote `DESIGN.md` and `.impeccable/design.json` from the built artifact. Hotel-door crop, unused midnight/amber tokens, and unused kit primitives not canonized.
 - Task 20: complete (hero gate `8e959da`, steps 1–3 `0df9061`, finish fixes `2e636a9`, then docs commit). Four open facts still pending. Finish disposition `fix`. Phase 6 paused for user approval.
+- Phase 6: user explicitly approved (2026-08-12). Final whole-branch review authorized; then finishing-a-development-branch.
