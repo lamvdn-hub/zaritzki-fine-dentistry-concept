@@ -137,10 +137,11 @@ test('the whole tab order is walkable and every stop shows the focus ring', asyn
   // underneath the walk. The sticky booking bar is deliberately excluded from
   // the *expected* set: it is visibility:hidden until the hero leaves the
   // viewport, so its two controls come and go with scroll and cannot be a
-  // required stop. On desktop the walk does reach both of them once scrolling
-  // reveals the bar, and their rings are then asserted like any other stop —
-  // they are simply not demanded. conversion.spec.ts owns the bar's appearance
-  // and its data-visible flip.
+  // required stop. On desktop the walk may reach them once scrolling reveals
+  // the bar — measured visited ∈ {20, 21, 22}, timing-dependent — and any
+  // rings that do land are asserted like any other stop. They are simply not
+  // demanded. conversion.spec.ts owns the bar's appearance and its
+  // data-visible flip.
   const offered = await page.evaluate((selector) => {
     return [...document.querySelectorAll(selector)]
       .filter((el) => {

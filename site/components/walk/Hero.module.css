@@ -108,4 +108,10 @@
       rgba(20, 12, 7, 0.72) 100%
     );
   }
+
+  /* CHARLOTTENBURG wraps the eyebrow onto a second line and otherwise shaves
+     ~5px off the hero CTA at the 390×664 first viewport. */
+  .cta {
+    margin-top: var(--space-5);
+  }
 }

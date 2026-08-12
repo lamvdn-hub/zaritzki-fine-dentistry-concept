@@ -25,4 +25,12 @@ describe('ProofBand', () => {
 
     expect(screen.getByText('Ratings as published on Google.')).toBeInTheDocument();
   });
+
+  it('marks each rating with a decorative SVG star, not a unicode glyph', () => {
+    const { container } = render(<ProofBand t={t} />);
+
+    expect(container.textContent).not.toContain('★');
+    expect(container.querySelectorAll('[aria-hidden] svg')).toHaveLength(2);
+    expect(screen.getAllByText('5.0', { exact: false })).toHaveLength(2);
+  });
 });

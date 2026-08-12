@@ -21,6 +21,14 @@
   line-height: 1;
 }
 
+.star {
+  display: inline-block;
+  width: 0.55em;
+  height: 0.55em;
+  margin-inline-start: 0.08em;
+  vertical-align: 0.08em;
+}
+
 .label {
   margin: var(--space-3) 0 0;
   color: var(--text-on-dark-muted);
