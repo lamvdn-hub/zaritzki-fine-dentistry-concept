@@ -1,11 +1,18 @@
 'use client';
 
-import Image from 'next/image';
 import { Button } from '@/components/system/Button';
 import { bookingHref } from '@/lib/booking';
 import { useLocation } from '@/lib/LocationProvider';
 import styles from './ClosingCta.module.css';
 
+/**
+ * Closes on a plain espresso ground rather than a photograph.
+ *
+ * The slot used to carry a full-bleed interior under a 0.78 espresso scrim —
+ * which meant the picture was almost invisible anyway, while still being a
+ * stock building presented as theirs. Since nearly nothing of it survived the
+ * scrim, dropping the image loses no design and removes the claim.
+ */
 export function ClosingCta({
   t,
 }: {
@@ -15,15 +22,6 @@ export function ClosingCta({
 
   return (
     <section className={styles.section}>
-      <Image
-        className={styles.image}
-        src={practice.images.closing}
-        alt=""
-        fill
-        sizes="100vw"
-        data-testid="closing-image"
-      />
-      <div className={styles.scrim} aria-hidden="true" />
       <div className={styles.inner}>
         <h2 className={styles.headline}>{t('closing.headline')}</h2>
         <p className={styles.body}>{t('closing.body')}</p>

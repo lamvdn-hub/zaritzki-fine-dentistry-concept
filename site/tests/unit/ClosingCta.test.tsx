@@ -41,9 +41,10 @@ describe('ClosingCta', () => {
     );
   });
 
-  it('marks the atmospheric photograph as decorative', () => {
-    renderClosingCta();
+  it('closes on a plain ground, carrying no photograph of a building', () => {
+    const { container } = renderClosingCta();
 
-    expect(screen.getByTestId('closing-image')).toHaveAttribute('alt', '');
+    expect(screen.queryByTestId('closing-image')).not.toBeInTheDocument();
+    expect(container.querySelector('img')).toBeNull();
   });
 });

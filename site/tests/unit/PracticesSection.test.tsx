@@ -32,7 +32,7 @@ describe('PracticesSection', () => {
   it('marks the unconfirmed shared-team fact once, without inventing an org chart', () => {
     render(<PracticesSection t={t} />);
 
-    const markers = screen.getAllByRole('status', { name: 'Awaiting practice' });
+    const markers = screen.getAllByRole('status', { name: 'Placeholder — needs your content' });
     expect(markers).toHaveLength(1);
     expect(markers[0]).toHaveAttribute(
       'title',

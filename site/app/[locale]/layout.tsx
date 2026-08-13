@@ -15,7 +15,18 @@ export async function generateMetadata(
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const t = translator(await getMessages(locale));
-  return { title: t('meta.title'), description: t('meta.description') };
+  return {
+    title: t('meta.title'),
+    description: t('meta.description'),
+    // An unofficial concept for a real practice must not be indexable. See
+    // `app/robots.ts` for the reasoning and the other two layers.
+    robots: {
+      index: false,
+      follow: false,
+      nocache: true,
+      googleBot: { index: false, follow: false, noimageindex: true },
+    },
+  };
 }
 
 const DIRECTION_CONTRACT = `

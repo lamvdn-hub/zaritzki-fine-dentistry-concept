@@ -14,11 +14,16 @@ describe('SiteFooter', () => {
     expect(screen.getByText('Kurfürstendamm 52')).toBeInTheDocument();
   });
 
-  it('keeps the German legal links in German', () => {
+  it('disclaims affiliation instead of linking to legal pages that do not exist', () => {
     render(<SiteFooter t={t} />);
 
-    expect(screen.getByRole('link', { name: 'Impressum' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Datenschutz' })).toBeInTheDocument();
+    const disclaimer = screen.getByText(/unofficial design concept/i);
+    expect(disclaimer).toHaveTextContent(/not affiliated with or endorsed by/i);
+    expect(disclaimer).toHaveTextContent(/taken down on request/i);
+
+    // Both of these used to be links, and both used to 404.
+    expect(screen.queryByRole('link', { name: 'Impressum' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Datenschutz' })).not.toBeInTheDocument();
   });
 
   it('offers the telephone number as the returning-patient path', () => {
@@ -34,9 +39,9 @@ describe('SiteFooter', () => {
   it('marks the photography as licensed stock still awaiting approval', () => {
     render(<SiteFooter t={t} />);
 
-    expect(screen.getByRole('status', { name: 'Awaiting practice' })).toHaveAttribute(
+    expect(screen.getByRole('status', { name: 'Placeholder — needs your content' })).toHaveAttribute(
       'title',
-      'All 12 images are licensed stock awaiting approval or replacement',
+      'All 10 images are placeholders — 5 generated, 5 licensed stock — awaiting approval or replacement',
     );
   });
 

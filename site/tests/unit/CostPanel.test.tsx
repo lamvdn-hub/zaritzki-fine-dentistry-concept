@@ -18,9 +18,11 @@ describe('CostPanel', () => {
     expect(headings).toEqual(['Privately insured', 'Self-paying', 'Statutory (GKV)']);
   });
 
-  it('explains private practice as the reason for the long appointments', () => {
+  it('explains private practice as what pays for the time, without describing their rooms', () => {
     render(<CostPanel t={t} />);
-    expect(screen.getByText(/the appointments are long and the rooms are like this/)).toBeInTheDocument();
+    expect(screen.getByText(/what makes the time and the rooms possible/)).toBeInTheDocument();
+    // The old wording pointed at a stock photograph and called it their room.
+    expect(screen.queryByText(/the rooms are like this/)).not.toBeInTheDocument();
   });
 
   it('withholds unconfirmed self-pay wording and shows its typed note instead', () => {

@@ -25,6 +25,33 @@ test('does not emit self-serving review markup', async ({ page }) => {
   }
 });
 
+/**
+ * This is an unofficial concept for a real practice, so the whole point is that
+ * it must NOT be findable. Three independent layers, asserted separately —
+ * a regression in any one of them is the single worst failure this demo has.
+ */
+test('is unindexable by meta tag, by robots.txt, and by response header', async ({ page, request }) => {
+  const response = await page.goto('/en');
+
+  const meta = await page.locator('meta[name="robots"]').getAttribute('content');
+  expect(meta).toContain('noindex');
+  expect(meta).toContain('nofollow');
+
+  expect(response?.headers()['x-robots-tag']).toContain('noindex');
+
+  const robots = await request.get('/robots.txt');
+  expect(robots.ok()).toBe(true);
+  expect(await robots.text()).toMatch(/User-Agent: \*\s*\nDisallow: \/$/im);
+});
+
+test('keeps the images out of the index too', async ({ request }) => {
+  // Only the header can carry this — a meta tag cannot, and the images are the
+  // part most likely to be mistaken for photographs of the real practice.
+  const image = await request.get('/images/mitte/lounge-generated.jpg');
+  expect(image.ok()).toBe(true);
+  expect(image.headers()['x-robots-tag']).toContain('noimageindex');
+});
+
 test('sets the document language and a descriptive title', async ({ page }) => {
   await page.goto('/en');
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');

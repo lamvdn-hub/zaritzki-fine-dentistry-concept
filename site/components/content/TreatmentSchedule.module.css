@@ -20,18 +20,6 @@
   color: var(--text-strong);
 }
 
-.focus {
-  display: inline-block;
-  margin-left: var(--space-3);
-  font-family: var(--font-sans);
-  font-size: var(--text-2xs);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
-  color: var(--text-gold);
-  vertical-align: middle;
-}
-
 .gloss { font-family: var(--font-sans); font-size: var(--text-sm); color: var(--text-muted); }
 
 .noPrices {
@@ -54,5 +42,4 @@
   .row td { border-bottom: 0; padding-block: 0; }
   .row { border-bottom: 1px solid var(--border-soft); padding-block: var(--space-3); }
   .name { font-size: var(--text-xl); }
-  .focus { display: block; margin-left: 0; margin-top: var(--space-1); }
 }

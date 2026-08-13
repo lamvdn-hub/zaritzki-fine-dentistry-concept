@@ -50,7 +50,7 @@ test('seeds Charlottenburg from a valid praxis query', async ({ page }) => {
   await expect(page.getByRole('radio', { name: 'Charlottenburg' })).toBeChecked();
   await expect(page.getByTestId('hero-image')).toHaveAttribute(
     'src',
-    /charlottenburg%2Fentrance\.jpg|charlottenburg\/entrance\.jpg/,
+    /charlottenburg%2Fentrance-chair\.jpg|charlottenburg\/entrance-chair\.jpg/,
   );
 });
 
@@ -61,7 +61,7 @@ test('rejects inherited object keys as praxis values', async ({ page }) => {
   await expect(page.getByRole('radio', { name: 'Mitte' })).toBeChecked();
   await expect(page.getByTestId('hero-image')).toHaveAttribute(
     'src',
-    /mitte%2Fentrance\.jpg|mitte\/entrance\.jpg/,
+    /mitte%2Fentrance-chair\.jpg|mitte\/entrance-chair\.jpg/,
   );
 });
 

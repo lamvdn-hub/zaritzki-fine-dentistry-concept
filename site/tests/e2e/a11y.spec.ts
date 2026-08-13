@@ -193,9 +193,11 @@ test('the whole tab order is walkable and every stop shows the focus ring', asyn
     testInfo.project.name === 'desktop' ? offered : offered.filter((el) => el.tag !== 'A');
 
   // Canary against a silently collapsing enumeration: the page currently offers
-  // 20 scroll-independent interactive elements on desktop, of which 1 is a form
+  // 18 scroll-independent interactive elements on desktop, of which 1 is a form
   // control. Losing any of them should fail here rather than pass vacuously.
-  expect(expected.length).toBeGreaterThanOrEqual(testInfo.project.name === 'desktop' ? 20 : 1);
+  // Was 20 until the footer's Impressum and Datenschutz links were removed —
+  // both pointed at routes that did not exist and returned 404.
+  expect(expected.length).toBeGreaterThanOrEqual(testInfo.project.name === 'desktop' ? 18 : 1);
   expect(
     expected.filter((el) => !visited.includes(el.id)).map((el) => el.label),
     'these interactive elements are not reachable by Tab',

@@ -6,6 +6,7 @@ import type { Locale } from '@/lib/i18n';
 import { Button } from '@/components/system/Button';
 import { LocaleSwitch } from './LocaleSwitch';
 import { LocationSwitch } from './LocationSwitch';
+import { Wordmark } from './Wordmark';
 import styles from './SiteHeader.module.css';
 
 export function SiteHeader({
@@ -25,7 +26,7 @@ export function SiteHeader({
       </a>
       <div className={styles.inner}>
         <a className={styles.mark} href={`/${locale}`}>
-          Zaritzki <em>Fine Dentistry</em>
+          <Wordmark className={styles.wordmark} />
         </a>
         <div className={styles.actions}>
           <LocationSwitch t={t} />

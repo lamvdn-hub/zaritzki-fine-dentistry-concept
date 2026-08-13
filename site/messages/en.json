@@ -29,7 +29,7 @@
   "lounge": {
     "eyebrow": "02 — The lounge",
     "headline": "You will not be kept waiting in a queue",
-    "body": "Appointments are spaced so that yours starts when it says it will. The room you wait in was furnished, not fitted out.",
+    "body": "The room you wait in should be furnished, not fitted out.",
     "hours": "08:00–20:00, Monday to Friday — appointments before work and after it."
   },
   "talk": {
@@ -38,13 +38,12 @@
     "body": "Your first appointment is a conversation and an examination. You leave knowing what you need, what it will cost, and what happens if you do nothing.",
     "columnTreatment": "Treatment",
     "columnTypical": "What it is",
-    "focusLabel": "Our particular focus",
     "noPrices": "We do not publish a price list. Private dental fees in Germany are set under the GOZ and depend on the treatment plan, so a fixed figure would be a guess. You get a written estimate before anything is agreed."
   },
   "treatments": {
     "implantologie": "replacing a tooth at the root",
     "invisalign": "clear aligners, adults and teenagers",
-    "veneers": "porcelain, including no-preparation veneers",
+    "veneers": "porcelain, including non-preparation veneers",
     "prothetik": "crowns and inlays",
     "funktionstherapie": "jaw joint and bite (CMD)",
     "endodontologie": "root canals, under the microscope",
@@ -57,13 +56,13 @@
   "room": {
     "eyebrow": "04 — The room",
     "headline": "Lamplight, not a light in your eyes",
-    "body": "The surgery was designed to look like the rest of the practice. Same wood, same lamps, same quiet — with 3D imaging, microscopes and 3D scanners where the work actually needs them.",
-    "clinician": "Dr. med. dent. Felix Zaritzki, and a team whose experience comes from years in university hospitals."
+    "body": "The surgery should look like the rest of the practice. Same wood, same lamps, same quiet — with the 3D imaging, microscopes and 3D scanners we already use, where the work actually needs them.",
+    "clinician": "Dr. med. dent. Felix Zaritzki."
   },
   "leaving": {
     "eyebrow": "05 — Leaving",
     "headline": "What it costs, said plainly",
-    "body": "We are a private practice. That is the reason the appointments are long and the rooms are like this — and it means we can only treat you if you are privately insured or paying yourself.",
+    "body": "We are a private practice. That is what makes the time and the rooms possible — and it means we can only treat you if you are privately insured or paying yourself.",
     "privateTitle": "Privately insured",
     "privateBody": "Billed per GOZ. You receive a written estimate before treatment begins.",
     "selfTitle": "Self-paying",
@@ -90,12 +89,12 @@
     "dismiss": "Hide this bar"
   },
   "footer": {
-    "imprint": "Impressum",
-    "privacy": "Datenschutz",
     "rights": "Zaritzki Fine Dentistry",
-    "tagline": "A private dental practice in Berlin for privately insured and self-paying patients."
+    "tagline": "A private dental practice in Berlin for privately insured and self-paying patients.",
+    "disclaimer": "An unofficial design concept, not affiliated with or endorsed by Zaritzki Fine Dentistry. Built by {builder} as a speculative proposal. It will be taken down on request.",
+    "builder": "Lam"
   },
   "pending": {
-    "label": "Awaiting practice confirmation"
+    "label": "Placeholder — needs your content"
   }
 }

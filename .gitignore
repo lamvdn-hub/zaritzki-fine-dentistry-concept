@@ -9,3 +9,20 @@ test-results/
 .DS_Store
 *.log
 .env*.local
+
+# Any env file, not just *.local — this project is run with API keys passed in
+# for image generation, and one stray commit of those is unrecoverable.
+.env
+.env.*
+
+# Hero-sizing diagnostic captures: ~35MB of scratch from the Phase 6 debugging
+# runs. Recorded as "deliberately not committed" in PHASE6_STATUS.md. The
+# screenshots worth keeping live directly in site/screenshots/ and are tracked.
+site/screenshots/diagnostics/
+site/screenshots/review20/
+site/screenshots/inspect.json
+site/screenshots/hero-candidates-check.png
+
+# Stray lockfile from an npm invocation in the wrong directory — there is no
+# package.json at the repository root. The real one is site/package-lock.json.
+/package-lock.json

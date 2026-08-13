@@ -14,5 +14,7 @@ export const OPEN_FACTS: OpenFacts = {
   clinicians: pending('Names and credentials beyond Dr. Zaritzki not supplied'),
   sharedTeam: pending('Whether both addresses share clinicians is unknown'),
   selfPayWording: pending('Estimate wording awaiting practice confirmation'),
-  photography: pending('All 12 images are licensed stock awaiting approval or replacement'),
+  photography: pending(
+    'All 10 images are placeholders — 5 generated, 5 licensed stock — awaiting approval or replacement',
+  ),
 };

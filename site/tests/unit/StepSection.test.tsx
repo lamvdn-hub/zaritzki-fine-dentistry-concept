@@ -158,7 +158,7 @@ describe('StepSection', () => {
         eyebrow="02 — The lounge"
         headline="You will not be kept waiting in a queue"
         body="Appointments are spaced."
-        image="/images/mitte/lounge.jpg"
+        image="/images/mitte/lounge-generated.jpg"
         imageSide="left"
         tone="dark"
       />,
@@ -174,7 +174,7 @@ describe('StepSection', () => {
         eyebrow="02 — The lounge"
         headline="You will not be kept waiting in a queue"
         body="Appointments are spaced."
-        image="/images/mitte/lounge.jpg"
+        image="/images/mitte/lounge-generated.jpg"
         imageSide="left"
         tone="dark"
       />,
@@ -192,7 +192,7 @@ describe('StepSection', () => {
         eyebrow="04 — The room"
         headline="Lamplight, not a light in your eyes"
         body="Designed to look like the rest."
-        image="/images/mitte/treatment-room.jpg"
+        image="/images/mitte/treatment-room-generated.jpg"
         imageSide="right"
         tone="dark"
       />,
@@ -228,17 +228,17 @@ describe('StepSection', () => {
 describe('RoomSection', () => {
   const t = translator(en as Record<string, unknown>);
 
-  it('keeps the confirmed clinician sentence and marks names beyond him as pending', () => {
+  it('names only the clinician the practice publishes, and marks the rest as pending', () => {
     render(
       <LocationProvider>
         <RoomSection t={t} />
       </LocationProvider>,
     );
 
-    expect(
-      screen.getByText(/Dr\. med\. dent\. Felix Zaritzki, and a team whose experience comes from years in university hospitals\./),
-    ).toBeInTheDocument();
-    expect(screen.getByRole('status', { name: 'Awaiting practice' })).toHaveAttribute(
+    expect(screen.getByText(/Dr\. med\. dent\. Felix Zaritzki\./)).toBeInTheDocument();
+    // The team's university-hospital background was never confirmed by the practice.
+    expect(screen.queryByText(/university hospital/i)).not.toBeInTheDocument();
+    expect(screen.getByRole('status', { name: 'Placeholder — needs your content' })).toHaveAttribute(
       'title',
       'Names and credentials beyond Dr. Zaritzki not supplied',
     );

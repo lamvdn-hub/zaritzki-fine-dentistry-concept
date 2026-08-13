@@ -7,16 +7,13 @@ export type ImageSlot =
   | 'lounge'
   | 'consultation'
   | 'treatmentRoom'
-  | 'detail'
-  | 'closing';
+  | 'detail';
 
 export type Treatment = {
   /** Proper noun, as the practice publishes it. Never translated. */
   name: string;
   /** Key into messages.treatments — the plain-language gloss, which is translated. */
   glossKey: string;
-  /** The practice names veneers as its particular focus. Exactly one is true. */
-  focus?: boolean;
 };
 
 export type Practice = {
@@ -55,7 +52,7 @@ const HOURS = { opens: '08:00', closes: '20:00', days: ['Mo', 'Tu', 'We', 'Th', 
 export const TREATMENTS: Treatment[] = [
   { name: 'Implantologie', glossKey: 'treatments.implantologie' },
   { name: 'Invisalign', glossKey: 'treatments.invisalign' },
-  { name: 'Veneers', glossKey: 'treatments.veneers', focus: true },
+  { name: 'Veneers', glossKey: 'treatments.veneers' },
   { name: 'Ästhetische Prothetik', glossKey: 'treatments.prothetik' },
   { name: 'Funktionstherapie', glossKey: 'treatments.funktionstherapie' },
   { name: 'Endodontologie', glossKey: 'treatments.endodontologie' },
@@ -86,11 +83,10 @@ export const PRACTICES: Record<LocationId, Practice> = {
     ),
     images: {
       entrance: '/images/mitte/entrance-chair.jpg',
-      lounge: '/images/mitte/lounge.jpg',
+      lounge: '/images/mitte/lounge-generated.jpg',
       consultation: '/images/mitte/consultation.jpg',
-      treatmentRoom: '/images/mitte/treatment-room.jpg',
+      treatmentRoom: '/images/mitte/treatment-room-generated.jpg',
       detail: '/images/mitte/detail.jpg',
-      closing: '/images/mitte/closing.jpg',
     },
   },
   charlottenburg: {
@@ -109,11 +105,10 @@ export const PRACTICES: Record<LocationId, Practice> = {
     bookingUrl: known('https://www.doctolib.de/zahnarztpraxis/berlin/fine-dentistry-dr-felix-zaritzki'),
     images: {
       entrance: '/images/charlottenburg/entrance-chair.jpg',
-      lounge: '/images/charlottenburg/lounge.jpg',
+      lounge: '/images/charlottenburg/lounge-generated.jpg',
       consultation: '/images/charlottenburg/consultation.jpg',
-      treatmentRoom: '/images/charlottenburg/treatment-room.jpg',
+      treatmentRoom: '/images/charlottenburg/treatment-room-generated.jpg',
       detail: '/images/charlottenburg/detail.jpg',
-      closing: '/images/charlottenburg/closing.jpg',
     },
   },
 };

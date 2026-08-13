@@ -25,12 +25,7 @@ export function TreatmentSchedule({
         <tbody>
           {TREATMENTS.map((treatment) => (
             <tr key={treatment.name} className={styles.row}>
-              <td className={styles.name}>
-                {treatment.name}
-                {treatment.focus ? (
-                  <span className={styles.focus}>{t('talk.focusLabel')}</span>
-                ) : null}
-              </td>
+              <td className={styles.name}>{treatment.name}</td>
               <td className={styles.gloss}>{t(treatment.glossKey)}</td>
             </tr>
           ))}

@@ -1,16 +1,28 @@
+/* An ochre hairline chip, not a solid red fill. Two constraints shape it:
+   it sits on both grounds (espresso in the room note and the footer, ivory and
+   parchment in the cost and practices panels), and it must stay quiet enough to
+   read as scaffolding rather than as an error.
+
+   So the ochre lives in the border and a barely-there wash, both fixed-alpha
+   brass that hold on either ground, while the text simply inherits the colour
+   of the block it sits in — which is already contrast-checked there. Colouring
+   the text ochre instead would fail on one ground or the other: --gold-deep is
+   about 3.9:1 on ivory and worse on espresso. */
 .pending {
   display: inline-flex;
   align-items: baseline;
   gap: var(--space-2);
-  padding: 2px var(--space-2);
-  color: var(--danger-fg);
+  padding: 1px var(--space-2);
+  border: 1px solid var(--hairline-gold);
+  border-radius: var(--radius-xs);
+  background: rgba(181, 138, 62, 0.1);
+  color: inherit;
   font-family: var(--font-sans);
   font-size: var(--text-2xs);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
-  background: var(--danger);
-  border-radius: var(--radius-xs);
+  font-weight: var(--fw-medium);
+  /* No uppercase and only a trace of tracking: the eyebrow treatment was built
+     for two words, and this label is a sentence with an em dash in it. */
+  letter-spacing: 0.04em;
 }
 
 .dash {

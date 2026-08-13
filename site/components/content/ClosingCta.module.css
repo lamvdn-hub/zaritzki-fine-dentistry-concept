@@ -1,19 +1,15 @@
+/* A plain ground where a scrimmed photograph used to be. The old flat 0.78
+   espresso scrim is kept as the base colour, so the block lands at the same
+   value it always did; the faint warm lift off the top-left stands in for the
+   lamplight the photograph used to supply, using the system's own browns. */
 .section {
   position: relative;
   min-height: 21rem;
   overflow: hidden;
-  background: var(--surface-inverse);
-}
-
-.image {
-  object-fit: cover;
-}
-
-.scrim {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  background: rgba(20, 12, 7, 0.78);
+  background:
+    radial-gradient(120% 90% at 20% 0%, rgba(90, 62, 34, 0.5), transparent 62%),
+    rgba(20, 12, 7, 0.98);
+  border-block: 1px solid var(--hairline-gold);
 }
 
 .inner {

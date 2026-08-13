@@ -1,8 +1,15 @@
 # Image credits and swap list
 
-**Every image here is licensed placeholder stock.** None depicts the actual
-Zaritzki practices. Replace all twelve before launch, or confirm the practice
-is content to publish stock interiors.
+> **Superseded in parts by the build-checklist pass (2026-08-13).** The set is
+> now **ten files, not twelve**, and five of the ten are generated rather than
+> photographed. Read `## The 2026-08-13 pass` at the foot of this file before
+> the older sections — where the two disagree, the newer section is correct.
+> The older sections are kept because they record what was on the page before,
+> and why each earlier swap was made.
+
+**No image here depicts the actual Zaritzki practices.** Five are generated
+placeholders and five are licensed stock. Replace all ten before launch, or
+confirm the practice is content to publish them as they are.
 
 Sourced under the Unsplash licence. No image depicts a patient, a
 procedure, a before/after, or an identifiable person — required under HWG.
@@ -182,3 +189,81 @@ all twelve. Nothing in `lib/open-facts.ts` was touched by this task.
 - **treatmentRoom** — the chair, lit warmly, no instruments in focus.
 - **detail** — one material close up: brass, oak, wool, or parquet.
 - **closing** — a wide, quiet room, space at the top for a headline.
+
+---
+
+## The 2026-08-13 pass
+
+Run against `zaritzki-build-checklist.md` §6. Three images were named there as
+reading like the wrong building; two more were found in the same state on the
+Charlottenburg side, and the closing slot was removed outright.
+
+### What the set is now
+
+| Slot | Mitte | Charlottenburg | Origin |
+|---|---|---|---|
+| entrance | `entrance-chair.jpg` | `entrance-chair.jpg` (same file) | generated, `gpt-image-2`, earlier pass |
+| lounge | `lounge-generated.jpg` | `lounge-generated.jpg` | **generated, `gpt-image-2`, this pass** |
+| consultation | `consultation.jpg` | `consultation.jpg` | Unsplash, unchanged |
+| treatmentRoom | `treatment-room-generated.jpg` | `treatment-room-generated.jpg` | **generated, `gpt-image-2`, this pass** |
+| detail | `detail.jpg` | `detail.jpg` | Unsplash, unchanged |
+| ~~closing~~ | — | — | **slot deleted** |
+
+Ten files, of which five are generated. The `closing` slot no longer exists in
+`ImageSlot`, so nothing can point at it again by accident.
+
+### Why these five were replaced or deleted
+
+- **`mitte/lounge.jpg`** — a hotel lobby: chandelier, marble piers, bronze
+  balustrade. Sat directly under copy about the room a patient waits in.
+- **`mitte/treatment-room.jpg`** — a warm hotel lounge with a Tiffany lamp, a
+  palm and tan leather settles; read as a bar. This is also the file with the
+  two taxidermy heads in the un-rendered upper crop, disclosed above. Both
+  problems go away with the file.
+- **`charlottenburg/lounge.jpg`** — **not on the checklist; found during the
+  audit.** An empty pale room with a floor lamp and no seating at all. It reads
+  as an apartment listing, not a waiting room, under a headline about waiting.
+- **`charlottenburg/treatment-room.jpg`** — **also not on the checklist.** An
+  empty flat with bare walls and a patched skirting, under copy describing a
+  surgery with microscopes and 3D imaging in it. The worst mismatch of the five.
+- **`mitte/closing.jpg` and `charlottenburg/closing.jpg`** — a Gothic Revival
+  library and a Baroque church vestibule. The checklist allowed "drop to a
+  plain ground" and that is what happened: `ClosingCta` now paints an espresso
+  ground with a warm radial lift. The old block covered its photograph with a
+  flat 0.78 espresso scrim anyway, so almost nothing was lost. Both files are
+  deleted rather than left orphaned in `public/`.
+
+`mitte/entrance.jpg` and `charlottenburg/entrance.jpg` were byte-identical
+copies of `entrance-chair.jpg` that nothing referenced; they are deleted too.
+
+### How the four new files were made
+
+`gpt-image-2` at 1536x1024, quality `high`, then re-encoded to JPEG at 0.86.
+The exact prompts are recorded in the checklist entry for §6.
+
+Two registers were held deliberately, matching the split this file already
+describes: **Mitte** warm, dim and lamplit at dusk; **Charlottenburg** pale
+Gruenderzeit Altbau in afternoon daylight. Both share the same material
+vocabulary as the existing hero — espresso and dark oak, cognac tan leather,
+brass fittings, herringbone parquet — so the five generated files read as one
+practice rather than five stock photographs.
+
+Every prompt carried explicit negative constraints: no people, no faces, no
+hands, no gloves, no teeth, no tooth diagrams, no charts or x-ray images, no
+signage, no lettering, no logos. All four outputs were opened and checked
+against those constraints before being installed.
+
+### Why generated rather than sourced
+
+The same conclusion the earlier hero pass reached, re-tested and confirmed:
+Unsplash was reachable this time, and its dental interiors are still uniformly
+bright, cool, white-and-teal clinical rooms — the design system's stated
+anti-goal. The few warm candidates were not dental practices, which is the exact
+failure being fixed. Sourcing could satisfy "unmistakably a dental practice" or
+"in the existing palette", but not both at once.
+
+### This does not resolve the photography fact
+
+`OPEN_FACTS.photography` stays open, and its note still needs updating from
+"All 12 images" to ten. The practice must still approve or replace every file.
+A generated image is a placeholder, not a photograph of their rooms.

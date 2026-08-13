@@ -36,10 +36,19 @@ describe('TreatmentSchedule', () => {
     expect(within(row as HTMLElement).getByText('root canals, under the microscope')).toBeInTheDocument();
   });
 
-  it("marks veneers as the practice's stated focus", () => {
+  it('singles out no treatment, and does not claim veneers as a focus', () => {
     setup();
     const row = screen.getByText('Veneers').closest('tr');
-    expect(within(row as HTMLElement).getByText('Our particular focus')).toBeInTheDocument();
+    expect(within(row as HTMLElement).queryByText(/particular focus/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/particular focus/i)).not.toBeInTheDocument();
+  });
+
+  it('keeps the non-preparation veneers gloss, which their Doctolib profile publishes', () => {
+    setup();
+    const row = screen.getByText('Veneers').closest('tr');
+    expect(
+      within(row as HTMLElement).getByText('porcelain, including non-preparation veneers'),
+    ).toBeInTheDocument();
   });
 
   it('has no price column, and shows no price anywhere', () => {

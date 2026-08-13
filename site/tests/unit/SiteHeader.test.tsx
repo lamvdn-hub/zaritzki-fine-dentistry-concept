@@ -18,6 +18,15 @@ function setup() {
 }
 
 describe('SiteHeader', () => {
+  it('carries the practice wordmark as the link home', () => {
+    setup();
+
+    expect(screen.getByRole('link', { name: 'Zaritzki Fine Dentistry' })).toHaveAttribute(
+      'href',
+      '/en',
+    );
+  });
+
   it('presents the two practices as a radio group with Mitte selected', () => {
     setup();
 

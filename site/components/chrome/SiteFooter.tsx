@@ -1,10 +1,13 @@
-import Link from 'next/link';
 import { PendingFact } from '@/components/dev/PendingFact';
 import { PRACTICE_ORDER, getPractice } from '@/lib/locations';
 import { OPEN_FACTS } from '@/lib/openFacts';
 import styles from './SiteFooter.module.css';
 
-export function SiteFooter({ t }: { t: (key: string) => string }) {
+export function SiteFooter({
+  t,
+}: {
+  t: (key: string, values?: Record<string, string | number>) => string;
+}) {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -37,13 +40,14 @@ export function SiteFooter({ t }: { t: (key: string) => string }) {
           );
         })}
       </div>
+      {/* The Impressum and Datenschutz links that used to sit here both 404'd.
+          A demo of someone else's medical practice cannot be given a real
+          Impressum without inventing legal text on their behalf, so the row
+          now carries the disclaimer that actually applies to this page. */}
       <div className={styles.legal}>
-        <Link className={styles.link} href="/impressum">
-          {t('footer.imprint')}
-        </Link>
-        <Link className={styles.link} href="/datenschutz">
-          {t('footer.privacy')}
-        </Link>
+        <p className={styles.disclaimer}>
+          {t('footer.disclaimer', { builder: t('footer.builder') })}
+        </p>
       </div>
     </footer>
   );

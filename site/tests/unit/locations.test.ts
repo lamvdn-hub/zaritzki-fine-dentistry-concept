@@ -48,10 +48,9 @@ describe('practice data', () => {
     expect('treatments' in PRACTICES.mitte).toBe(false);
   });
 
-  it("marks veneers as the practice's one stated focus", () => {
-    const focused = TREATMENTS.filter((t) => t.focus);
-    expect(focused).toHaveLength(1);
-    expect(focused[0].name).toBe('Veneers');
+  it('singles out no treatment as a focus', () => {
+    // The practice never said veneers were its focus; the demo must not claim it.
+    expect(TREATMENTS.every((t) => !('focus' in t))).toBe(true);
   });
 
   it('sends each practice to its own Doctolib destination', () => {
